@@ -1,0 +1,25 @@
+body {
+    background-image: url("helloWorld.png");
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-color: white;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 65px;
+    background-color: #222831;
+    padding: 10px;
+    margin: 10px;
+}
+ 
+.container {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 2em;
+    background-color: #222831;
+}
