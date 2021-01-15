@@ -1,0 +1,183 @@
+body {
+  height: 100vh;
+  margin: 0;
+  background: #f1f6f9;
+  letter-spacing: 1.5px;
+}
+
+body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  background: #14274e;
+  transform: skew(-30deg);
+  transform-origin: top;
+  z-index: -1;
+}
+.home-link {
+  text-decoration: none;
+  color: black;
+}
+
+.home-link:visited {
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+  font-size: xx-large;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #9ba4b4;
+  color: black;
+  padding: 15px;
+  font-size: 20px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropMenu {
+  position: relative;
+  display: inline-block;
+  left: 50px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content > a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropMenu:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropMenu:hover .dropbtn {
+  background-color: #394867;
+}
+
+.image-class {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.intro {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.intro-text {
+  font-size: larger;
+}
+
+.interest {
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.button-class {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-class > button {
+  margin: 5px;
+  padding: 5px;
+}
+
+.assignment-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.assignment-img > img {
+  width: 50%;
+   border-radius: 10px;
+}
+
+footer {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  background-color: #394867;
+  text-align: center;
+  color: #f1f6f9;
+}
+
+.footer-links > a {
+  color: #f1f6f9;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.footer-links > a:hover {
+  color: #9ba4b4;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    background-color: #9ba4b4;
+    width: 100%;
+    display: flex;
+  }
+  /* Dropdown Button */
+  .dropbtn {
+    color: black;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+  }
+
+  .dropMenu {
+    left: auto;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .image-class {
+    width: 500px;
+    height: 600px;
+  }
+}
