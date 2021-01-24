@@ -1,0 +1,29 @@
+.product_container {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: auto auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ffe2e2;
+    box-shadow: 0 0 12px rgb(63, 63, 63);
+}
+
+.product {
+    padding: 2px;
+    width: 275px;
+    height: auto;
+    margin: 5px;
+    background-color: #f6f6f6;
+    box-shadow: 0 0 12px rgb(63, 63, 63);
+    border-radius: 10px;
+    color: black;
+}
+
+.product>img {
+    width: 275px;
+    height: 200px;
+}
