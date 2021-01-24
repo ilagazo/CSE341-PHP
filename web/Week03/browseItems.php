@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -10,10 +10,8 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="shoppingCart.css">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
     <title>Browse Items</title>
 </head>
 
@@ -27,27 +25,41 @@ session_start();
             <div class="product">
                 <p>Price: $100</p>
                 <img src="miniSession.jpg" alt="Mini Photography Session">
-                <input type="number" id="prod1" name="item1" min="0" max="5" value="0">
+                <input type="number" id="prod1" name="item1" min="0" max="1" value="0">
                 <br><br><label for="prod1">Mini Session (30 mins)<br></label>
+
             </div>
             <div class="product">
                 <p>Price $200</p>
                 <img src="hourSession.jpg" alt="Hour Photography Session">
-                <input type="number" id="prod2" name="item2" min="0" max="3" value="0">
+                <input type="number" id="prod2" name="item2" min="0" max="1" value="0">
                 <br><br><label for="prod2"> Full Session (1 hr)<br></label>
             </div>
             <div class="product">
                 <p>Price $265</p>
                 <img src="2HourSession.jpg" alt="2 Hour Photography Session">
-                <input type="number" id="prod3" name="item3" min="0" max="2" value="0">
+                <input type="number" id="prod3" name="item3" min="0" max="1" value="0">
                 <br><br><label for="prod3"> Extended Session (2 hr)<br></label>
             </div>
         </div>
         <!-- Submit Button -->
-        <button type="submit">Submit</button>
+        <button type="submit" name="submit">Proceed to Cart</button>
     </form>
-
-
 </body>
 
 </html>
+
+<!-- Check if items were sent via post -->
+<?php
+if (isset($_POST["item1"])) {
+    $_SESSION["item1"] = $_POST["item1"];
+}
+
+if (isset($_POST["item2"])) {
+    $_SESSION["item2"] = $_POST["item2"];
+}
+
+if (isset($_POST["item3"])) {
+    $_SESSION["item3"] = $_POST["item3"];
+}
+?>
