@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -12,13 +12,20 @@
     <link rel="stylesheet" href="shoppingCart.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <title>Browse Items</title>
+    <title>Josie's Photography: Product List</title>
 </head>
 
 <body>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <h1>Browse Items</h1>
+    <header>
+        <h1>Josie's Photography</h1>
+    </header>
+    <div class="img_container">
+        <img src="centerImage.jpg" alt="Photography Center 1 Image">
+    </div>
+
+    <h2>Services Offered:</h2>
     <form action="viewCart.php" method="POST">
         <!-- Products -->
         <div class="product_container">
@@ -45,6 +52,7 @@
         <!-- Submit Button -->
         <button type="submit" name="submit">Proceed to Cart</button>
     </form>
+    <?php include('footer.php'); ?>
 </body>
 
 </html>
