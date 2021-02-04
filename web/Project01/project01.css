@@ -1,0 +1,35 @@
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+}
+
+nav > a {
+    text-decoration: none;
+    padding: 5px;
+    color: black;
+}
+
+nav > a:hover {
+    color: blue;
+}
+
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    color: whitesmoke;
+  }
+  
+  .footer-links > a {
+    text-decoration: none;
+    padding: 5px;
+    color: whitesmoke;
+  }
+  
+  .footer-links > a:hover {
+    color: #9ba4b4;
+  }
