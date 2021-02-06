@@ -1,35 +1,117 @@
+h1, h2, h3 {
+  text-align: center;
+}
+
+h1 > a {
+  text-decoration: none;
+  color: black;
+}
+
+h1 > a:hover {
+  color: black;
+}
+
+
 nav {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-evenly;
-    text-transform: uppercase;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  text-transform: uppercase;
 }
 
 nav > a {
-    text-decoration: none;
-    padding: 5px;
-    color: black;
+  font-size: larger;
+  text-decoration: none;
+  padding: 5px;
+  color: black;
 }
 
 nav > a:hover {
-    color: blue;
+  color: #9ba4b4;
+}
+
+.heroImg {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heroImg > img {
+  max-width: 100%;
+  height: 500px;
+  box-shadow: 0 0 12px rgb(63, 63, 63);
+}
+
+.text-section {
+  text-align: center;
+  text-transform: capitalize;
+  padding: 10px;
+  margin: 20px;
+}
+
+form {
+  text-align: center;
+  padding: 10px;
+}
+
+.product_container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: auto auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.product {
+  padding: 2px;
+  width: 275px;
+  height: auto;
+  margin: 5px;
+  background-color: whitesmoke;
+  box-shadow: 0 0 5px rgb(63, 63, 63);
+  border-radius: 10px;
+  color: black;
+}
+
+.product > img {
+  width: 270px;
+  height: 200px;
+}
+
+.emp_login {
+  border: black 1px solid;
+  margin: 20px;
+  padding: 10px;
+  background-color: gainsboro;
+}
+
+.emp_login > form > label {
+font-size: larger;
+color: black;
 }
 
 footer {
-    background-color: black;
-    text-align: center;
-    padding: 10px;
-    color: whitesmoke;
-  }
-  
-  .footer-links > a {
-    text-decoration: none;
-    padding: 5px;
-    color: whitesmoke;
-  }
-  
-  .footer-links > a:hover {
-    color: #9ba4b4;
-  }
+  background-color: black;
+  text-align: center;
+  padding: 10px;
+  color: whitesmoke;
+}
+
+.footer-links > a {
+  text-decoration: none;
+  padding: 5px;
+  color: whitesmoke;
+}
+
+.footer-links > a:hover {
+  color: #9ba4b4;
+}

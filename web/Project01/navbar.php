@@ -16,6 +16,7 @@
         <a href="../Project01/services.php">Services</a>
         <a href="../Project01/employeePortalLogin.php">Employee Portal</a>
     </nav>
+    <hr>
 </body>
 
 </html>
