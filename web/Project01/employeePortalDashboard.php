@@ -1,5 +1,6 @@
 <?php
-require "dbConnect.php";
+// require "dbConnect.php";
+include "../Project01/dbConnect.php";
 $db = get_db();
 ?>
 

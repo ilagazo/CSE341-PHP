@@ -6,9 +6,9 @@ function get_db() {
 		// default Heroku Postgres configuration URL
 		$dbUrl = getenv('DATABASE_URL');
 
-		if (!isset($dbUrl) || empty($dbUrl)) {
-			$dbUrl = "postgres://tczslyjguuugfd:d002dfd294a725069c5384783b41937d9e4ca2df67c63b1d4650e21bf6ea3ce8@ec2-3-231-241-17.compute-1.amazonaws.com:5432/dadbrpbrosik1k";
-		}
+		// if (!isset($dbUrl) || empty($dbUrl)) {
+		// 	$dbUrl = "postgres://tczslyjguuugfd:d002dfd294a725069c5384783b41937d9e4ca2df67c63b1d4650e21bf6ea3ce8@ec2-3-231-241-17.compute-1.amazonaws.com:5432/dadbrpbrosik1k";
+		// }
 
 		// Get the various parts of the DB Connection from the URL
 		$dbopts = parse_url($dbUrl);
@@ -25,12 +25,11 @@ function get_db() {
 		// this line makes PDO give us an exception when there are problems, and can be very helpful in debugging!
 		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	}
-	catch (PDOException $ex) {
-		// If this were in production, you would not want to echo
-		// the details of the exception.
-		echo "Error connecting to DB. Details: $ex";
-		die();
-	}
+	catch (PDOException $ex)
+    {
+    echo 'Error!: ' . $ex->getMessage();
+    die();
+    }
 
 	return $db;
 }

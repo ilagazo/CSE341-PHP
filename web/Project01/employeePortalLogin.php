@@ -1,3 +1,9 @@
+<?php
+// require "dbConnect.php";
+include "../Project01/dbConnect.php";
+$db = get_db();
+?>
+
 <!doctype html>
 <html lang="en">
 
