@@ -28,17 +28,11 @@ $db = get_db();
   <h2>Employee Portal Dashboard:</h2>
   <div class="order_container">
     <?php
-    // $customerOrder_statement = $db->query('SELECT order_id FROM customer_order');
-    // $customerOrder_statement->execute();
-
     // Retrieve data from each column and table
     $customerOrder_statement = $db->query('SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number FROM customer_order INNER JOIN customer ON customer_order.customer_id = customer.customer_id');
     $customerOrder_statement->execute();
 
-    // $customerInfo_statement = $db->query('SELECT first_name, last_name, email, phone_number FROM customer'
-    // $orderID_row = $customerOrder_statement->fetch(PDO::FETCH_ASSOC) &&
-
-     // Retrieve Data from each row
+    // Retrieve and display data per row
     echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
     while ($customerInfo_row = $customerOrder_statement->fetch(PDO::FETCH_ASSOC)) {
       $order_id = $customerInfo_row['order_id'];
@@ -47,7 +41,7 @@ $db = get_db();
       $customer_email = $customerInfo_row['email'];
       $customer_phone_number = $customerInfo_row['phone_number'];
 
-    echo "<tr><td>$order_id</td><td>$customer_first_name</td><td>$customer_last_name</td><td>$customer_email</td><td>$customer_phone_number</td></tr>";
+      echo "<tr><td>$order_id</td><td>$customer_first_name</td><td>$customer_last_name</td><td>$customer_email</td><td>$customer_phone_number</td></tr>";
     }
     echo "</table>";
     ?>
