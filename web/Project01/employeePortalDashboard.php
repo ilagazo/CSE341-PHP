@@ -29,19 +29,25 @@ $db = get_db();
   <div class="order_container">
     <?php
     // Retrieve data from each column and table
-    $customerOrder_statement = $db->query('SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number FROM customer_order INNER JOIN customer ON customer_order.customer_id = customer.customer_id');
+    $customerOrder_statement = $db->query('SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number, product.product_name, product.price, product.quantity
+     FROM customer_order 
+     INNER JOIN customer ON customer_order.customer_id = customer.customer_id
+     INNER JOIN product ON customer_order.product_id = product.product_id ');
     $customerOrder_statement->execute();
 
     // Retrieve and display data per row
-    echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
+    echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th><th>Product</th><th>Price</th><th>Quantity Ordered</th></tr>";
     while ($customerInfo_row = $customerOrder_statement->fetch(PDO::FETCH_ASSOC)) {
       $order_id = $customerInfo_row['order_id'];
       $customer_first_name = $customerInfo_row['first_name'];
       $customer_last_name = $customerInfo_row['last_name'];
       $customer_email = $customerInfo_row['email'];
       $customer_phone_number = $customerInfo_row['phone_number'];
+      $product_name = $customerInfo_row['product_name'];
+      $product_price = $customerInfo_row['product_price'];
+      $product_quantity = $customerInfo_row['product_quantity'];
 
-      echo "<tr><td>$order_id</td><td>$customer_first_name</td><td>$customer_last_name</td><td>$customer_email</td><td>$customer_phone_number</td></tr>";
+      echo "<tr><td>$order_id</td><td>$customer_first_name</td><td>$customer_last_name</td><td>$customer_email</td><td>$customer_phone_number</td><td>$product_name</td><td>product_price</td><td>product_quantity</td></tr>";
     }
     echo "</table>";
     ?>
