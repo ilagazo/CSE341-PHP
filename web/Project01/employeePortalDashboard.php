@@ -26,27 +26,28 @@ $db = get_db();
     <img src="hero_empDashboard.jpg" alt="Josie's Mountain Spa Retreat Pool">
   </div>
   <h2>Employee Portal Dashboard:</h2>
-  <div class="view_order_container">
+  <div class="order_container">
     <?php
     // $customerOrder_statement = $db->query('SELECT order_id FROM customer_order');
     // $customerOrder_statement->execute();
 
     // Retrieve data from each column and table
-    $customerInfo_statement = $db->query('SELECT first_name, last_name, email, phone_number FROM customer' && 'SELECT order_id FROM customer_order');
-    $customerInfo_statement->execute();
+    $customerOrder_statement = $db->query('SELECT orders.order_id, customers.first_name, customer.last_name, customer.email, customer.phone_number FROM customer_order INNER JOIN customers ON Orders.customer_id = Customers.customer_id');
+    $customerOrder_statement->execute();
 
+    // $customerInfo_statement = $db->query('SELECT first_name, last_name, email, phone_number FROM customer'
     // $orderID_row = $customerOrder_statement->fetch(PDO::FETCH_ASSOC) &&
 
      // Retrieve Data from each row
     echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
-    while ($customerInfo_row = $customerInfo_statement->fetch(PDO::FETCH_ASSOC)) {
+    while ($customerInfo_row = $customerOrder_statement->fetch(PDO::FETCH_ASSOC)) {
       $order_id = $customerInfo_row['order_id'];
       $customer_first_name = $customerInfo_row['first_name'];
       $customer_last_name = $customerInfo_row['last_name'];
       $customer_email = $customerInfo_row['email'];
       $customer_phone_number = $customerInfo_row['phone_number'];
 
-      echo "<tr><td>$order_id</td><td>$customer_first_name</td><td>$customer_last_name</td><td>$customer_email</td><td>$customer_phone_number</td></tr>";
+    echo "<tr><td>$order_id</td><td>$customer_first_name</td><td>$customer_last_name</td><td>$customer_email</td><td>$customer_phone_number</td></tr>";
     }
     echo "</table>";
     ?>
