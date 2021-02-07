@@ -47,7 +47,7 @@ $db = get_db();
       $product_price = $customerInfo_row['product_price'];
       $product_quantity = $customerInfo_row['product_quantity'];
 
-      echo "<tr><td>$order_id</td><td>$customer_first_name</td><td>$customer_last_name</td><td>$customer_email</td><td>$customer_phone_number</td><td>$product_name</td><td>product_price</td><td>product_quantity</td></tr>";
+      echo "<tr><td>$order_id</td><td>$customer_first_name</td><td>$customer_last_name</td><td>$customer_email</td><td>$customer_phone_number</td><td>$product_name</td><td>$product_price</td><td>$product_quantity</td></tr>";
     }
     echo "</table>";
     ?>
