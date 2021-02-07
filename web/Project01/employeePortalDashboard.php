@@ -1,6 +1,6 @@
 <?php
-  require "dbConnect.php";
-  $db = get_db();
+require "dbConnect.php";
+$db = get_db();
 ?>
 
 <!doctype html>
@@ -27,21 +27,19 @@
   </div>
   <h2>Employee Dashboard:</h2>
   <div class="view_order_container">
+
     <?php
-      $statement = $db("SELECT order_id, customer_id, payment_id, product_id FROM customer_order");
-      $statement->execute();
+    $statement = $db('SELECT order_id, customer_id, payment_id, product_id FROM customer_order');
+    $statement->execute();
 
-      while($row = $statement->fetch(PDO::FETCH_ASSOC))
-      {
-        $order_id = $row['order_id'];
-        $customer_id = $row['customer_id'];
-        $payment_id = $row['payment_id'];
-        $product_id = $row['product_id'];
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      $order_id = $row['order_id'];
+      $customer_id = $row['customer_id'];
+      $payment_id = $row['payment_id'];
+      $product_id = $row['product_id'];
 
-        echo "<p>$order_id, $customer_id, $payment_id, $product_id</p>";
-      }
-
-
+      echo "<p>$order_id, $customer_id, $payment_id, $product_id</p>";
+    }
     ?>
   </div>
 
