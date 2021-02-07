@@ -31,7 +31,7 @@ $db = get_db();
   
   </div> -->
   <?php
-    $statement = $db('SELECT order_id, customer_id, payment_id, product_id FROM customer_order');
+    $statement = $db->query('SELECT order_id, customer_id, payment_id, product_id FROM customer_order');
     $statement->execute();
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
