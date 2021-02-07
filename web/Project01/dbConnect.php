@@ -6,10 +6,6 @@ function get_db() {
 		// default Heroku Postgres configuration URL
 		$dbUrl = getenv('DATABASE_URL');
 
-		// if (!isset($dbUrl) || empty($dbUrl)) {
-		// 	$dbUrl = "postgres://tczslyjguuugfd:d002dfd294a725069c5384783b41937d9e4ca2df67c63b1d4650e21bf6ea3ce8@ec2-3-231-241-17.compute-1.amazonaws.com:5432/dadbrpbrosik1k";
-		// }
-
 		// Get the various parts of the DB Connection from the URL
 		$dbopts = parse_url($dbUrl);
 

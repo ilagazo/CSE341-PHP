@@ -24,7 +24,7 @@ $db = get_db();
   <h1><a href="../Project01/homepage.php">Josie's Mountain Spa Retreat</a></h1>
   <?php include('navbar.php'); ?>
   <div class="heroImg">
-    <img src="hero_empLogin.jpg" alt="Josie's Mountain Spa Retreat Pool">
+    <img src="../Project01/Images/hero_empLogin.jpg" alt="Josie's Mountain Spa Retreat Pool">
   </div>
   <h2>Employee Login:</h2>
   <div class="emp_login">

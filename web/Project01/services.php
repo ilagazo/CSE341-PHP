@@ -22,7 +22,7 @@ session_start();
     <h1><a href="../Project01/homepage.php">Josie's Mountain Spa Retreat</a></h1>
     <?php include('navbar.php'); ?>
     <div class="heroImg">
-        <img src="hero_services.jpg" alt="Josie's Mountain Spa Retreat Pool">
+        <img src="../Project01/Images/hero_services.jpg" alt="Josie's Mountain Spa Retreat Pool">
     </div>
     <div class="text-section">
         <h2>How It Works:</h2>
@@ -37,32 +37,32 @@ session_start();
             <div class="product_container">
                 <div class="product">
                     <p>Price: $100</p>
-                    <img src="swedishMassage.jpg" alt="Swedish Massage Package">
+                    <img src="../Project01/Images/swedishMassage.jpg" alt="Swedish Massage Package">
                     <input type="number" id="prod1" name="item1" min="0" max="3" value="0">
                     <br><br><label for="prod1">Swedish Massage Package<br></label>
 
                 </div>
                 <div class="product">
                     <p>Price: $150</p>
-                    <img src="hotStoneMassage.jpg" alt="Hot Stone Massage Package">
+                    <img src="../Project01/Images/hotStoneMassage.jpg" alt="Hot Stone Massage Package">
                     <input type="number" id="prod2" name="item2" min="0" max="3" value="0">
                     <br><br><label for="prod2">Hot Stone Massage Package<br></label>
                 </div>
                 <div class="product">
                     <p>Price: $175</p>
-                    <img src="coupleMassage.jpg" alt="Couples Massage Package">
+                    <img src="../Project01/Images/coupleMassage.jpg" alt="Couples Massage Package">
                     <input type="number" id="prod3" name="item3" min="0" max="3" value="0">
                     <br><br><label for="prod3">Couples Massage Package<br></label>
                 </div>
                 <div class="product">
                     <p>Price: $125</p>
-                    <img src="prenatal.jpg" alt="Prenatal Massage Package">
+                    <img src="../Project01/Images/prenatal.jpg" alt="Prenatal Massage Package">
                     <input type="number" id="prod3" name="item3" min="0" max="3" value="0">
                     <br><br><label for="prod3">Prenatal Massage Package<br></label>
                 </div>
                 <div class="product">
                     <p>Price: $125</p>
-                    <img src="aromaTherapy.jpg" alt="Aromatherapy Massage Package">
+                    <img src="../Project01/Images/aromaTherapy.jpg" alt="Aromatherapy Massage Package">
                     <input type="number" id="prod3" name="item3" min="0" max="3" value="0">
                     <br><br><label for="prod3">Aromatherapy Massage Package<br></label>
                 </div>

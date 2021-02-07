@@ -1,4 +1,6 @@
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
 }
 
@@ -10,7 +12,6 @@ h1 > a {
 h1 > a:hover {
   color: black;
 }
-
 
 nav {
   display: flex;
@@ -95,8 +96,8 @@ form {
 }
 
 .emp_login > form > label {
-font-size: larger;
-color: black;
+  font-size: larger;
+  color: black;
 }
 
 .order_container {
@@ -108,12 +109,14 @@ color: black;
   padding: 5px;
 }
 
-.order_container > table,th,td {
+.order_container > table,
+th,
+td {
   text-align: center;
   padding: 5px;
   border: 1px solid black;
   border-collapse: collapse;
-} 
+}
 
 footer {
   background-color: black;
