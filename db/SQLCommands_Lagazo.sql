@@ -64,7 +64,7 @@ CREATE TABLE employee (
 	occupation VARCHAR (50) NOT NULL
 );
 
--- EXTRA: Inserting, dropping, and adding tables and/or columns. 
+-- INSERT Customer #1
 INSERT INTO address (address_st, city, country, postal_code) 
 VALUES ('905 N Hargrave St', 'Banning', 'US', '92220');
 
@@ -83,7 +83,45 @@ VALUES ('jill.korn', 'jill.korn121', 'jill.korn@gmail.com', 'Jill', 'Korn', '951
 INSERT INTO customer_order (customer_id, payment_id, product_id)
 VALUES ((SELECT customer_id from customer), (SELECT payment_id from payment), (SELECT product_id from product));
 
--- Optional Commands needed to alter data 
+-- INSERT Customer #3
+INSERT INTO address (address_st, city, country, postal_code) 
+VALUES ('1500 s 1000 w', 'Logan', 'US', '84321');
+
+INSERT INTO customer (first_name, last_name, email, phone_number, address_id)
+VALUES ('Ivan', 'Russian', 'ivan.russian@gmail.com', '9522222222', (SELECT address_id from address WHERE address_id = '3'));
+
+INSERT INTO payment (payment_type, card_number, security_code, exp_month, exp_year, name_on_card)
+VALUES ('MasterCard', '4111111111111111', '321', '02', '26', 'Ivan Russian');
+
+INSERT INTO product (product_name, price, quantity)
+VALUES ('Swedish Massage Package', '120', '2');
+
+INSERT INTO employee (username, employee_password, email, first_name, last_name, phone_number, occupation)
+VALUES ('josie.russian', 'josie.russian212', 'josie.russian@gmail.com', 'Josie', 'Russian', '9522222222', 'Therapist');
+
+INSERT INTO customer_order (customer_id, payment_id, product_id)
+VALUES ((SELECT customer_id from customer WHERE customer_id = '8'), (SELECT payment_id from payment where payment_id = '3'), (SELECT product_id from product WHERE product_id = '3'));
+
+--  INSERT Customer #2
+INSERT INTO address (address_st, city, country, postal_code) 
+VALUES ('Poop Lane', 'Kansas City', 'US', '58999');
+
+INSERT INTO customer (first_name, last_name, email, phone_number, address_id)
+VALUES ('Chief', 'Football', 'cheif@gmail.com', '9533333333', (SELECT address_id from address WHERE address_id='2'));
+
+INSERT INTO payment (payment_type, card_number, security_code, exp_month, exp_year, name_on_card)
+VALUES ('VISA', '5555555555554444', '789', '03', '27', 'Chief Football');
+
+INSERT INTO product (product_name, price, quantity)
+VALUES ('Couples Massage', '120', '1');
+
+INSERT INTO employee (username, employee_password, email, first_name, last_name, phone_number, occupation)
+VALUES ('josie.russian', 'josie.russian212', 'josie.russian@gmail.com', 'Josie', 'Russian', '9522222222', 'Therapist');
+
+INSERT INTO customer_order (customer_id, payment_id, product_id)
+VALUES ((SELECT customer_id from customer WHERE customer_id = '7'), (SELECT payment_id from payment where payment_id = '2'), (SELECT product_id from product WHERE product_id = '2'));
+
+--  Commands needed to alter data 
 ALTER TABLE customer
 DROP COLUMN phone_number;
 

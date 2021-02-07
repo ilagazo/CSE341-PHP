@@ -1,5 +1,4 @@
 <?php
-// require "dbConnect.php";
 include "../Project01/dbConnect.php";
 $db = get_db();
 ?>
@@ -26,25 +25,31 @@ $db = get_db();
   <div class="heroImg">
     <img src="hero_empDashboard.jpg" alt="Josie's Mountain Spa Retreat Pool">
   </div>
-  <h2>Employee Dashboard:</h2>
-  <!-- <div class="view_order_container">
-  
-  </div> -->
-  <?php
-    $statement = $db->query('SELECT order_id, customer_id, payment_id, product_id FROM customer_order');
-    $statement->execute();
+  <h2>Employee Portal Dashboard:</h2>
+  <div class="view_order_container">
+    <?php
+    $customerOrder_statement = $db->query('SELECT order_id FROM customer_order');
+    $customerOrder_statement->execute();
 
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $order_id = $row['order_id'];
-      $customer_id = $row['customer_id'];
-      $payment_id = $row['payment_id'];
-      $product_id = $row['product_id'];
+    $customerInfo_statement = $db->query('SELECT first_name, last_name, email, phone_number FROM customer');
+    $customerOrder_statement->execute();
 
-      echo "<p>$order_id, $customer_id, $payment_id, $product_id</p>";
+    echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
+    while ($orderID_row = $customerOrder_statement->fetch(PDO::FETCH_ASSOC) && $customerInfo_row = $customerInfo_statement->fetch(PDO::FETCH_ASSOC)) {
+      $order_id = $orderID_row['order_id'];
+      $customer_first_name = $customerInfo_row['first_name'];
+      $customer_last_name = $customerInfo_row['last_name'];
+      $customer_email = $customerInfo_row['email'];
+      $customer_phone_number = $customerInfo_row['phone_number'];
+
+      echo "<tr><td>$order_id</td><td>$customer_first_name</td><td>$customer_last_name</td><td>$customer_email</td><td>$customer_phone_number</td></tr>";
     }
+    echo "</table>";
     ?>
+  </div>
 
- <?php include('footer.php'); ?>
+
+  <?php include('footer.php'); ?>
 </body>
 
 </html>
