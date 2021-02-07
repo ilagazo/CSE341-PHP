@@ -100,7 +100,10 @@ color: black;
 }
 
 .order_container {
-  border: black 1px solid;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
   margin: 20px;
   padding: 10px;
 }
