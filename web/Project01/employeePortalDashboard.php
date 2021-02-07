@@ -1,27 +1,51 @@
+<?php
+  require "dbConnect.php";
+  $db = get_db();
+?>
+
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="project01.css">
+  <title>JMSR:Employee Portal Dashboard</title>
+</head>
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+<body>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <h1><a href="../Project01/homepage.php">Josie's Mountain Spa Retreat</a></h1>
+  <?php include('navbar.php'); ?>
+  <div class="heroImg">
+    <img src="hero_empDashboard.jpg" alt="Josie's Mountain Spa Retreat Pool">
+  </div>
+  <h2>Employee Dashboard:</h2>
+  <div class="view_order_container">
+    <?php
+      $statement = $db("SELECT order_id, customer_id, payment_id, product_id FROM customer_order");
+      $statement->execute();
 
-    <!-- Optional JavaScript; choose one of the two! -->
+      while($row = $statement->fetch(PDO::FETCH_ASSOC))
+      {
+        $order_id = $row['order_id'];
+        $customer_id = $row['customer_id'];
+        $payment_id = $row['payment_id'];
+        $product_id = $row['product_id'];
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        echo "<p>$order_id, $customer_id, $payment_id, $product_id</p>";
+      }
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
-  </body>
+
+    ?>
+  </div>
+
+  <?php include('footer.php'); ?>
+</body>
+
 </html>

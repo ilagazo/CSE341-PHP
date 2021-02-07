@@ -99,6 +99,12 @@ font-size: larger;
 color: black;
 }
 
+.view_order_container {
+  border: black 1px solid;
+  margin: 20px;
+  padding: 10px;
+}
+
 footer {
   background-color: black;
   text-align: center;

@@ -68,8 +68,8 @@ CREATE TABLE employee (
 INSERT INTO address (address_st, city, country, postal_code) 
 VALUES ('905 N Hargrave St', 'Banning', 'US', '92220');
 
-INSERT INTO customer (first_name, last_name, email, phone_number)
-VALUES ('BOB', 'BOBBY', 'bob.bobby@gmail.com', '9511111111');
+INSERT INTO customer (first_name, last_name, email, phone_number, address_id)
+VALUES ('BOB', 'BOBBY', 'bob.bobby@gmail.com', '9511111111', (SELECT address_id from address));
 
 INSERT INTO payment (payment_type, card_number, security_code, exp_month, exp_year, name_on_card)
 VALUES ('VISA', '4242424242424242', '123', '01', '25', 'Bob Bobby');
@@ -79,6 +79,9 @@ VALUES ('Hot Stone Massage', '120', '1');
 
 INSERT INTO employee (username, employee_password, email, first_name, last_name, phone_number, occupation)
 VALUES ('jill.korn', 'jill.korn121', 'jill.korn@gmail.com', 'Jill', 'Korn', '9512222222', 'Therapist');
+
+INSERT INTO customer_order (customer_id, payment_id, product_id)
+VALUES ((SELECT customer_id from customer), (SELECT payment_id from payment), (SELECT product_id from product));
 
 -- Optional Commands needed to alter data 
 ALTER TABLE customer

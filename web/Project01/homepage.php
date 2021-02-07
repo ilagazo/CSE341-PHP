@@ -20,12 +20,15 @@
     <div class="heroImg">
         <img src="hero_home.jpg" alt="Josie's Mountain Spa Retreat Pool">
     </div>
-    <div class="text-section">
+    <div class="view_orders">
+
+    </div>
+    <!-- <div class="text-section">
         <h2>Our Legacy. Our Passion.</h2>
         <p>Rated as one of Utah's best destinations to relax and destress, Josie's Mountain Spa Retreat's goal is help you relax and destress! To do so we take pride in providing quality customer service and satisfaction.
             We offer top-tier massage services from Hot Stone Massage to Swedish.
         </p>
-    </div>
+    </div> -->
 
     <?php include('footer.php'); ?>
 </body>
