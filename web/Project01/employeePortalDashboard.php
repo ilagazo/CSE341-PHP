@@ -32,7 +32,7 @@ $db = get_db();
     // $customerOrder_statement->execute();
 
     // Retrieve data from each column and table
-    $customerOrder_statement = $db->query('SELECT orders.order_id, customers.first_name, customer.last_name, customer.email, customer.phone_number FROM customer_order INNER JOIN customers ON Orders.customer_id = Customers.customer_id');
+    $customerOrder_statement = $db->query('SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number FROM customer_order INNER JOIN customer ON customer_order.customer_id = customer.customer_id');
     $customerOrder_statement->execute();
 
     // $customerInfo_statement = $db->query('SELECT first_name, last_name, email, phone_number FROM customer'
