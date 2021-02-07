@@ -26,10 +26,11 @@ $db = get_db();
   <div class="heroImg">
     <img src="hero_empDashboard.jpg" alt="Josie's Mountain Spa Retreat Pool">
   </div>
-  <?php include('footer.php'); ?>
   <h2>Employee Dashboard:</h2>
-  <div class="view_order_container">
-    <?php
+  <!-- <div class="view_order_container">
+  
+  </div> -->
+  <?php
     $statement = $db('SELECT order_id, customer_id, payment_id, product_id FROM customer_order');
     $statement->execute();
 
@@ -42,9 +43,8 @@ $db = get_db();
       echo "<p>$order_id, $customer_id, $payment_id, $product_id</p>";
     }
     ?>
-  </div>
 
-  <!-- <?php include('footer.php'); ?> -->
+ <?php include('footer.php'); ?>
 </body>
 
 </html>
