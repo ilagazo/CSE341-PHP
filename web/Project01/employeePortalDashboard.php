@@ -32,7 +32,7 @@ $db = get_db();
     $customerOrder_statement->execute();
 
     $customerInfo_statement = $db->query('SELECT first_name, last_name, email, phone_number FROM customer');
-    $customerOrder_statement->execute();
+    $customerInfo_statement->execute();
 
     echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
     while ($orderID_row = $customerOrder_statement->fetch(PDO::FETCH_ASSOC) && $customerInfo_row = $customerInfo_statement->fetch(PDO::FETCH_ASSOC)) {
