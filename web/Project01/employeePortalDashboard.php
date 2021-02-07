@@ -28,15 +28,19 @@ $db = get_db();
   <h2>Employee Portal Dashboard:</h2>
   <div class="view_order_container">
     <?php
-    $customerOrder_statement = $db->query('SELECT order_id FROM customer_order');
-    $customerOrder_statement->execute();
+    // $customerOrder_statement = $db->query('SELECT order_id FROM customer_order');
+    // $customerOrder_statement->execute();
 
-    $customerInfo_statement = $db->query('SELECT first_name, last_name, email, phone_number FROM customer');
+    // Retrieve data from each column and table
+    $customerInfo_statement = $db->query('SELECT first_name, last_name, email, phone_number FROM customer' && 'SELECT order_id FROM customer_order');
     $customerInfo_statement->execute();
 
+    // $orderID_row = $customerOrder_statement->fetch(PDO::FETCH_ASSOC) &&
+
+     // Retrieve Data from each row
     echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
-    while ($orderID_row = $customerOrder_statement->fetch(PDO::FETCH_ASSOC) && $customerInfo_row = $customerInfo_statement->fetch(PDO::FETCH_ASSOC)) {
-      $order_id = $orderID_row['order_id'];
+    while ($customerInfo_row = $customerInfo_statement->fetch(PDO::FETCH_ASSOC)) {
+      $order_id = $customerInfo_row['order_id'];
       $customer_first_name = $customerInfo_row['first_name'];
       $customer_last_name = $customerInfo_row['last_name'];
       $customer_email = $customerInfo_row['email'];
