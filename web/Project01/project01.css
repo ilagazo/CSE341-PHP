@@ -125,16 +125,16 @@ td {
 }
 
 .button_checkout > a {
-  background-color:#EFEFEF;
- border:2px outset black;
- color: black;
- margin-right:10px;
- padding: 4px 6px;
- text-decoration: none;
- letter-spacing: normal;
- text-indent: 0px;
- word-spacing: normal;
- font: 400 15px Arial;
+  background-color: grey;
+  border: 2px solid black;
+  color: black;
+  margin-right: 10px;
+  padding: 4px 6px;
+  text-decoration: none;
+  letter-spacing: normal;
+  text-indent: 0px;
+  word-spacing: normal;
+  font: 400 15px Arial;
 }
 
 .billing_info {
@@ -147,9 +147,9 @@ td {
   background-color: whitesmoke;
 }
 
-.billing_info> form > input {
+.billing_info > form > input {
   margin: 10px;
-  }
+}
 
 .billing_info_seperate {
   text-align: left;
