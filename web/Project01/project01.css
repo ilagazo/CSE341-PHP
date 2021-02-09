@@ -118,6 +118,47 @@ td {
   border-collapse: collapse;
 }
 
+.button_checkout {
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.button_checkout > a {
+  background-color:#EFEFEF;
+ border:2px outset black;
+ color: black;
+ margin-right:10px;
+ padding: 4px 6px;
+ text-decoration: none;
+ letter-spacing: normal;
+ text-indent: 0px;
+ word-spacing: normal;
+ font: 400 15px Arial;
+}
+
+.billing_info {
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.billing_info> form > input {
+  margin: 10px;
+  }
+
+.billing_info_seperate {
+  text-align: left;
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  flex-flow: column wrap;
+}
+
 footer {
   background-color: black;
   text-align: center;
