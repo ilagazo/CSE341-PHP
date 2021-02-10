@@ -22,7 +22,7 @@ $db = get_db();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
     <!-- Form to get user input for scripture and topic -->
-    <form action="displayTopic.php" method="POST">
+    <form action="" method="POST">
         <label for="book">Book:</label>
         <input type="text" id="book" name="book"><br><br>
 
@@ -52,6 +52,18 @@ $db = get_db();
 
         <button type="submit">Submit!</button>
     </form>
+
+    <?php
+    if (isset($_POST['submit'])) {
+        extract($_POST);
+        if (!empty($_POST['topic'])) {
+            foreach ($_POST['topic'] as $topicIDs) {
+                echo $topicIDs;
+            }
+        }
+    }
+    ?>
+
 </body>
 
 </html>

@@ -1,5 +1,4 @@
 <?php
-
 require("dbConnect.php");
 $db = get_db();
 
@@ -34,17 +33,7 @@ $db = get_db();
         $statement = $db->prepare('INSERT INTO scripture(book, chapter, verse, content) VALUES($book, $chapter, $verse, $content)');
        
 
-        // Insert the topic into the database
-
-        if(isset($_POST['submit'])) {
-            extract($_POST);
-            if (!empty($_POST['topic'])) {
-                foreach ($_POST['topic'] as $topicIDs) {
-                    echo $topicIDs;
-                }
-             }
-        }
-        
+        // Insert the topic into the database   
          $statement->execute();
 
 
