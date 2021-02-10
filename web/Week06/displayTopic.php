@@ -7,6 +7,7 @@ $db = get_db();
     $chapter = $_POST['chapter'];
     $verse = $_POST['verse'];
     $content = $_POST['content'];
+    $topicID = $_POST['topic'];
 ?>
 
 <!doctype html>
@@ -31,9 +32,17 @@ $db = get_db();
     <?php
         // Insert the Scripture into the database
         $statement = $db->prepare('INSERT INTO scripture(book, chapter, verse, content) VALUES($book, $chapter, $verse, $content)');
-        $statement->execute();
+       
 
         // Insert the topic into the database
+        if (!empty($_POST['topic'])) {
+            foreach ($_POST['topic'] as $topicID) {
+                echo $topicID;
+
+            }
+
+         }
+         $statement->execute();
 
 
     ?>
