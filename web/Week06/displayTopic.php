@@ -35,13 +35,15 @@ $db = get_db();
        
 
         // Insert the topic into the database
-        if (!empty($_POST['topic'])) {
-            foreach ($_POST['topic'] as $topicIDs) {
-                echo $topicIDs;
 
-            }
-
-         }
+        if(isset($_POST['submit'])) {
+            if (!empty($_POST['topic'])) {
+                foreach ($_POST['topic'] as $topicIDs) {
+                    echo $topicIDs;
+                }
+             }
+        }
+        
          $statement->execute();
 
 
