@@ -50,7 +50,7 @@ $db = get_db();
 
         ?>
 
-        <button type="submit">Submit!</button>
+        <button type="submit" name="submit" value="submit">Submit!</button>
     </form>
 
     <?php
