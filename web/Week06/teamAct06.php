@@ -54,6 +54,7 @@ $db = get_db();
     </form>
 
     <?php
+    var_dump($_POST);
     if (isset($_POST['submit'])) {
         extract($_POST);
         if (!empty($_POST['topic'])) {
