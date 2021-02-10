@@ -37,6 +37,7 @@ $db = get_db();
         // Insert the topic into the database
 
         if(isset($_POST['submit'])) {
+            extract($_POST);
             if (!empty($_POST['topic'])) {
                 foreach ($_POST['topic'] as $topicIDs) {
                     echo $topicIDs;

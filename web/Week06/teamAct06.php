@@ -44,8 +44,7 @@ $db = get_db();
             $id = $row['id'];
             $topic_name = $row['topic_name'];
 
-            echo "
-                <label for='topic$id'>$topic_name</label>
+            echo "<label for='topic$id'>$topic_name</label>
                 <input type='checkbox' name='topic' id='topic' value='$id'><br><br>";
         }
 
