@@ -64,6 +64,8 @@ session_start();
     <?php
     echo "First Name: " . $_SESSION["first_name"] . "<br>";
     echo "Last Name: " . $_SESSION["last_name"] . "<br>";
+    echo "Email: " . $_SESSION["email"] . "<br>";
+    echo "Phone Number: " . $_SESSION["phone"] . "<br>";
     echo "Address: " . $_SESSION["address"] . "<br>";
     echo "City: " . $_SESSION["city"] . "<br>";
     echo "State: " . $_SESSION["state"] . "<br>";
