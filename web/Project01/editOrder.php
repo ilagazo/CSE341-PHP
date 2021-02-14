@@ -32,61 +32,46 @@ $id = $_GET['order_id'];
         <?php
         // Retrieve data from each column and table
         $statement = $db->query("SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number, 
-    product.product_name, product.price, product.quantity,
-    address.address_st, address.city, address.postal_code,
-    payment.payment_type, payment.card_number, payment.name_on_card
-     FROM customer_order 
-     INNER JOIN customer ON customer_order.customer_id = customer.customer_id
-     INNER JOIN payment ON customer_order.payment_id = payment.payment_id
-     INNER JOIN address ON customer.address_id = address.address_id
-     INNER JOIN product ON customer_order.product_id = product.product_id
-     WHERE customer_order.order_id = '{$id}'");
-
+                                product.product_name, product.price, product.quantity,
+                                address.address_st, address.city, address.postal_code,
+                                payment.payment_type, payment.card_number, payment.name_on_card
+                                FROM customer_order 
+                                INNER JOIN customer ON customer_order.customer_id = customer.customer_id
+                                INNER JOIN payment ON customer_order.payment_id = payment.payment_id
+                                INNER JOIN address ON customer.address_id = address.address_id
+                                INNER JOIN product ON customer_order.product_id = product.product_id
+                                WHERE customer_order.order_id = '{$id}'");
         $statement->execute();
 
-        echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th>
-    <th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
+        // Display the table into a "neat" table
+        echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email / Phone #</th></tr>";
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            // Order / Customer Info Row
             $order_id = $row['order_id'];
             $first_name = $row['first_name'];
             $last_name = $row['last_name'];
             $email = $row['email'];
             $phone = $row['phone_number'];
+            echo "<tr><td>$order_id</td><td>$first_name</td><td>$last_name</td><td>$email / $phone</td></tr>";
+            // Product Info Row
+            echo "<tr><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
             $prod_name = $row['product_name'];
             $price = $row['price'];
             $prod_qty = $row['quantity'];
             $total = $price * $prod_qty;
-
-
-            echo "<tr><td>$order_id</td><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td>
-        <td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr>";
-
-        echo "<tr><th>Address:</th>
-        <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
-        $add_st = $row['address_st'];
+            echo "<tr><td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr>";
+            // Address / Payment Row
+            echo "<tr><th>Address:</th>
+            <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
+            $add_st = $row['address_st'];
             $city = $row['city'];
             $postal_code = $row['postal_code'];
             $pay_type = $row['payment_type'];
             $pay_num = $row['card_number'];
             $pay_name = $row['name_on_card'];
-
             echo "<tr><td>$add_st, $city, $postal_code</td>
-        <td>$pay_type</td><td>$pay_num</td><td>$pay_name</td></tr>";
+            <td>$pay_type</td><td>$pay_num</td><td>$pay_name</td></tr>";
         }
-
-    //     echo "<tr><th>Address:</th>
-    // <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
-    //     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-    //         $add_st = $row['address_st'];
-    //         $city = $row['city'];
-    //         $postal_code = $row['postal_code'];
-    //         $pay_type = $row['payment_type'];
-    //         $pay_num = $row['card_number'];
-    //         $pay_name = $row['name_on_card'];
-
-    //         echo "<tr><td>$add_st, $city, $postal_code</td>
-    //     <td>$pay_type</td><td>$pay_num</td><td>$pay_name</td></tr>";
-    //     }
         echo "</table>";
         ?>
     </div>

@@ -110,7 +110,6 @@ form {
 }
 
 .order_container > table,
-th,
 td {
   text-align: center;
   padding: 5px;
@@ -121,6 +120,10 @@ td {
 .order_container > th {
   background-color: black;
   color: whitesmoke;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 
 .button_checkout {
