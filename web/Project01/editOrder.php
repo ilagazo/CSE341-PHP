@@ -54,7 +54,7 @@ $id = $_GET['order_id'];
             $prod_id = $row['product_id'];
             echo "<tr><td>$order_id</td><td>$cust_id</td><td>$pay_id</td><td>$prod_id</td></tr>";
             // / Customer Info Row
-            echo "<tr><th>Customer's First Name</th><th>Last Name</th><th>Email / Phone #</th></tr>";
+            echo "<tr><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
             $first_name = $row['first_name'];
             $last_name = $row['last_name'];
             $email = $row['email'];
