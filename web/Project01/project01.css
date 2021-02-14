@@ -125,7 +125,8 @@ td {
 }
 
 .button_checkout > a {
-  background-color: grey;
+  /* background-color: #EFEFEF; */
+  background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
   border: 2px solid black;
   color: black;
   margin-right: 10px;
