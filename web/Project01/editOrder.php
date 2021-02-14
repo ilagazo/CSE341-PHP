@@ -41,9 +41,9 @@ $id = $_GET['order_id'];
      INNER JOIN payment ON customer_order.payment_id = payment.payment_id
     --  INNER JOIN address ON customer.address_id = address.address_id
      INNER JOIN product ON customer_order.product_id = product.product_id
-     WHERE customer_order.order_id = ?');
+     WHERE customer_order.order_id = :id');
 
-    $statement->bindParam("s", $id);
+    $statement->bindParam(":id", $id);
     $statement->execute();
 
     echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th>
