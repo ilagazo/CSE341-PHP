@@ -2,7 +2,7 @@
 include "../Project01/dbConnect.php";
 $db = get_db();
 
-$order_id = $_GET['order_id'];
+$id = $_GET['order_id'];
 ?>
 
 <!doctype html>
@@ -30,7 +30,7 @@ $order_id = $_GET['order_id'];
     <h2>More Information:</h2>
 
     <?php
-        echo $order_id;
+        echo $id;
     ?>
 </body>
 
