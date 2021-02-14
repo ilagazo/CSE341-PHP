@@ -118,6 +118,11 @@ td {
   border-collapse: collapse;
 }
 
+.order_container > tr {
+  background-color: black;
+  color: whitesmoke;
+}
+
 .button_checkout {
   text-align: center;
   padding: 10px;

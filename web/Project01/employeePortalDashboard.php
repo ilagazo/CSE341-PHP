@@ -49,7 +49,7 @@ $db = get_db();
       $total = $product_price * $product_quantity;
 
       echo "<tr><td>$order_id</td><td>$customer_first_name</td><td>$customer_last_name</td><td>$customer_email</td><td>$customer_phone_number</td><td>$product_name</td><td>$product_price</td><td>$product_quantity</td>
-      <td>$total</td><td><a href=\"../Project01/editOrder.php?order_id=$order_id\">More/Edit</a></td></tr>";
+      <td>$total</td><td><a href=\"../Project01/editOrder.php?order_id=$order_id\">More Info</a></td></tr>";
     }
     echo "</table>";
     ?>

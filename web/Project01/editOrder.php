@@ -30,7 +30,6 @@ $id = $_GET['order_id'];
     <h2>Customer Order Information:</h2>
 
     <?php
-    echo $id;
     // Retrieve data from each column and table
     $statement = $db->query("SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number, 
     product.product_name, product.price, product.quantity,
@@ -46,8 +45,8 @@ $id = $_GET['order_id'];
     $statement->execute();
 
     echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th>
-    <th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th>
-    <th>Address:</th>
+    <th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>
+    <tr><th>Address:</th>
     <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
         $order_id = $row['order_id'];
@@ -67,8 +66,8 @@ $id = $_GET['order_id'];
         $pay_name = $row['name_on_card'];
 
         echo "<tr><td>$order_id</td><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td>
-        <td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td>
-        <td>$add_st, $city, $postal_code</td>
+        <td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr>
+        <tr><td>$add_st, $city, $postal_code</td>
         <td>$pay_type</td><td>$pay_num</td><td>$pay_name</td></tr>";
       
     }
