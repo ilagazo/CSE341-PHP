@@ -60,12 +60,10 @@ $id = $_GET['order_id'];
 
             echo "<tr><td>$order_id</td><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td>
         <td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr>";
-        }
 
         echo "<tr><th>Address:</th>
-    <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
-        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            $add_st = $row['address_st'];
+        <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
+        $add_st = $row['address_st'];
             $city = $row['city'];
             $postal_code = $row['postal_code'];
             $pay_type = $row['payment_type'];
@@ -75,6 +73,20 @@ $id = $_GET['order_id'];
             echo "<tr><td>$add_st, $city, $postal_code</td>
         <td>$pay_type</td><td>$pay_num</td><td>$pay_name</td></tr>";
         }
+
+    //     echo "<tr><th>Address:</th>
+    // <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
+    //     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    //         $add_st = $row['address_st'];
+    //         $city = $row['city'];
+    //         $postal_code = $row['postal_code'];
+    //         $pay_type = $row['payment_type'];
+    //         $pay_num = $row['card_number'];
+    //         $pay_name = $row['name_on_card'];
+
+    //         echo "<tr><td>$add_st, $city, $postal_code</td>
+    //     <td>$pay_type</td><td>$pay_num</td><td>$pay_name</td></tr>";
+    //     }
         echo "</table>";
         ?>
     </div>
