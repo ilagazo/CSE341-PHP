@@ -30,6 +30,7 @@ $id = $_GET['order_id'];
     <h2>Customer Order Information:</h2>
 
     <?php
+    echo $id;
     // Retrieve data from each column and table
     $statement = $db->query('SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number, 
     product.product_name, product.price, product.quantity,
