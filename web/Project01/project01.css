@@ -159,7 +159,7 @@ td {
   flex-flow: column wrap;
 }
 
-.display_customer_infp {
+.display_customer_info {
   justify-content: center;
   align-items: center;
   border: 2px solid black;
