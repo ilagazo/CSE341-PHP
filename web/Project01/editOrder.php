@@ -32,7 +32,7 @@ $id = $_GET['order_id'];
     <?php
     echo $id;
     // Retrieve data from each column and table
-    $statement = $db->query('SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number, 
+    $statement = $db->query("SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number, 
     product.product_name, product.price, product.quantity,
     -- address.address_st, address.city, address.postal_code,
     payment.payment_type, payment.card_number, payment.name_on_card
@@ -41,9 +41,8 @@ $id = $_GET['order_id'];
      INNER JOIN payment ON customer_order.payment_id = payment.payment_id
     --  INNER JOIN address ON customer.address_id = address.address_id
      INNER JOIN product ON customer_order.product_id = product.product_id
-     WHERE customer_order.order_id = :id');
+     WHERE customer_order.order_id = '{$id}'");
 
-    $statement->bindParam(":id", $id);
     $statement->execute();
 
     echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th>
