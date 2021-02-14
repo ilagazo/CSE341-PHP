@@ -45,12 +45,12 @@ session_start();
     <div class="product">
       <p>Price: $125</p>
       <img src="../Project01/Images/prenatal.jpg" alt="Prenatal Massage Package">
-      <p>Prenatal Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item3"]; ?></p>
+      <p>Prenatal Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item4"]; ?></p>
     </div>
     <div class="product">
       <p>Price: $125</p>
       <img src="../Project01/Images/aromaTherapy.jpg" alt="Aromatherapy Massage Package">
-      <p>Aromatherapy Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item3"]; ?></p>
+      <p>Aromatherapy Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item5"]; ?></p>
     </div>
   </div>
 

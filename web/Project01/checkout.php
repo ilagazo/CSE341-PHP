@@ -45,12 +45,12 @@ session_start();
     <div class="product">
       <p>Price: $125</p>
       <img src="../Project01/Images/prenatal.jpg" alt="Prenatal Massage Package">
-      <p>Prenatal Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item3"]; ?></p>
+      <p>Prenatal Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item4"]; ?></p>
     </div>
     <div class="product">
       <p>Price: $125</p>
       <img src="../Project01/Images/aromaTherapy.jpg" alt="Aromatherapy Massage Package">
-      <p>Aromatherapy Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item3"]; ?></p>
+      <p>Aromatherapy Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item5"]; ?></p>
     </div>
   </div>
 
@@ -80,11 +80,30 @@ session_start();
         <a href="../Project01/cart.php">Return to Cart</a>
         <button type="submit" name="submitChecktout">Confirm Purchase</button>
       </div>
-
-      <!-- Submit Button
-      <button type="submit" name="submitChecktout">Confirm Purchase</button> -->
     </form>
   </div>
+
+  <!-- Make Session Variables for Payment Info -->
+  <?php
+  if (isset($_POST["first_name"])) {
+    $_SESSION["first_Name"] = $_POST["first_name"];
+  }
+  if (isset($_POST["last_name"])) {
+    $_SESSION["last_name"] = $_POST["last_name"];
+  }
+  if (isset($_POST["address"])) {
+    $_SESSION["address"] = $_POST["address"];
+  }
+  if (isset($_POST["city"])) {
+    $_SESSION["city"] = $_POST["city"];
+  }
+  if (isset($_POST["state"])) {
+    $_SESSION["state"] = $_POST["state"];
+  }
+  if (isset($_POST["zipCode"])) {
+    $_SESSION["zipCode"] = $_POST["zipCode"];
+  }
+  ?>
 
   <div class="text-section">
     <h2>Our Legacy. Our Passion.</h2>

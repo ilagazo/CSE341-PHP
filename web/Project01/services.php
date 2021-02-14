@@ -57,19 +57,38 @@ session_start();
                 <div class="product">
                     <p>Price: $125</p>
                     <img src="../Project01/Images/prenatal.jpg" alt="Prenatal Massage Package">
-                    <input type="number" id="prod3" name="item3" min="0" max="3" value="0">
-                    <br><br><label for="prod3">Prenatal Massage Package<br></label>
+                    <input type="number" id="prod4" name="item4" min="0" max="3" value="0">
+                    <br><br><label for="prod4">Prenatal Massage Package<br></label>
                 </div>
                 <div class="product">
                     <p>Price: $125</p>
                     <img src="../Project01/Images/aromaTherapy.jpg" alt="Aromatherapy Massage Package">
-                    <input type="number" id="prod3" name="item3" min="0" max="3" value="0">
-                    <br><br><label for="prod3">Aromatherapy Massage Package<br></label>
+                    <input type="number" id="prod5" name="item5" min="0" max="3" value="0">
+                    <br><br><label for="prod5">Aromatherapy Massage Package<br></label>
                 </div>
             </div>
             <!-- Submit Button -->
             <button type="submit" name="submit">Proceed to Cart</button>
         </form>
+
+        <!-- Check if items were sent via post -->
+        <?php
+        if (isset($_POST["item1"])) {
+            $_SESSION["item1"] = $_POST["item1"];
+        }
+        if (isset($_POST["item2"])) {
+            $_SESSION["item2"] = $_POST["item2"];
+        }
+        if (isset($_POST["item3"])) {
+            $_SESSION["item3"] = $_POST["item3"];
+        }
+        if (isset($_POST["item4"])) {
+            $_SESSION["item4"] = $_POST["item4"];
+        }
+        if (isset($_POST["item5"])) {
+            $_SESSION["item5"] = $_POST["item5"];
+        }
+        ?>
 
         <?php include('footer.php'); ?>
 </body>
