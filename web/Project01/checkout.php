@@ -86,11 +86,11 @@ session_start();
         <label for="card_number">Card Number:</label>
         <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16">
         <label for="card_security">Security Code:</label>
-        <input type="number" id="card_security" name="card_security" minlength="3" maxlength="3">
+        <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3">
         <label for="card_exp_month">Expiration Month:</label>
-        <input type="number" id="card_exp_month" name="card_exp_month" minlength="2" maxlength="2">
+        <input type="number" id="card_exp_month" name="card_exp_month" min="0" minlength="2" maxlength="2">
         <label for="card_exp_month">Expiration Year:</label>
-        <input type="number" id="card_exp_year" name="card_exp_year" minlength="2" maxlength="2">
+        <input type="number" id="card_exp_year" name="card_exp_year" min="0" minlength="2" maxlength="2">
       </div>
 
       <!-- Button Container -->

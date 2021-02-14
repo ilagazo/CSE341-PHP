@@ -36,7 +36,7 @@ $db = get_db();
     $customerOrder_statement->execute();
 
     // Retrieve and display data per row
-    echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
+    echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th><th>Options:</th></tr>";
     while ($customerInfo_row = $customerOrder_statement->fetch(PDO::FETCH_ASSOC)) {
       $order_id = $customerInfo_row['order_id'];
       $customer_first_name = $customerInfo_row['first_name'];
@@ -49,7 +49,8 @@ $db = get_db();
       $total = $product_price * $product_quantity;
 
       echo "<tr><td>$order_id</td><td>$customer_first_name</td><td>$customer_last_name</td><td>$customer_email</td><td>$customer_phone_number</td><td>$product_name</td><td>$product_price</td><td>$product_quantity</td>
-      <td>$total</td></tr>";
+      <td>$total</td>
+      <td><a href=\"../Project01/editOrder.php\">More/Edit</a></td></tr>";
     }
     echo "</table>";
     ?>
