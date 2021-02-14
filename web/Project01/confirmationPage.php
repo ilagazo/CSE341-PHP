@@ -26,10 +26,11 @@ session_start();
   </div>
   <div class="text-section">
     <h2>Confirmation Page</h2>
-    <p>Thank you for your order <?php echo $_SESSION["first_name"]; ?>!</p>
+    <p>Thank you for your order <?php echo $_SESSION["first_name"]; ?>!<br> A member of our team will contact you shortly to schedule your visit.
+      We are excited to serve you!</p>
   </div>
 
-  <!-- Products -->
+  <!-- Products Ordered-->
   <div class="product_container">
     <div class="product">
       <p>Price: $100</p>
@@ -58,9 +59,17 @@ session_start();
     </div>
   </div>
 
-  
-
-
+  <!-- Display Customer Info -->
+  <div class="display_customer_info">
+    <?php
+    echo "First Name: " . $_SESSION["first_name"] . "<br>";
+    echo "Last Name: " . $_SESSION["last_name"] . "<br>";
+    echo "Address: " . $_SESSION["address"] . "<br>";
+    echo "City: " . $_SESSION["city"] . "<br>";
+    echo "State: " . $_SESSION["state"] . "<br>";
+    echo "Zipcode: " . $_SESSION["zipCode"];
+    ?>
+  </div>
 </body>
 
 </html>
