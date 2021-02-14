@@ -28,10 +28,10 @@ $id = $_GET['order_id'];
         <img src="../Project01/Images/hero_editOrders.jpg" alt="Josie's Mountain Spa Retreat Edit Orders">
     </div>
     <h2>Customer Order Information:</h2>
-
-    <?php
-    // Retrieve data from each column and table
-    $statement = $db->query("SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number, 
+    <div class="order_container">
+        <?php
+        // Retrieve data from each column and table
+        $statement = $db->query("SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number, 
     product.product_name, product.price, product.quantity,
     address.address_st, address.city, address.postal_code,
     payment.payment_type, payment.card_number, payment.name_on_card
@@ -42,43 +42,42 @@ $id = $_GET['order_id'];
      INNER JOIN product ON customer_order.product_id = product.product_id
      WHERE customer_order.order_id = '{$id}'");
 
-    $statement->execute();
+        $statement->execute();
 
-    echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th>
+        echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th>
     <th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        $order_id = $row['order_id'];
-        $first_name = $row['first_name'];
-        $last_name = $row['last_name'];
-        $email = $row['email'];
-        $phone = $row['phone_number'];
-        $prod_name = $row['product_name'];
-        $price = $row['price'];
-        $prod_qty = $row['quantity'];
-        $total = $price * $prod_qty;
-        
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $order_id = $row['order_id'];
+            $first_name = $row['first_name'];
+            $last_name = $row['last_name'];
+            $email = $row['email'];
+            $phone = $row['phone_number'];
+            $prod_name = $row['product_name'];
+            $price = $row['price'];
+            $prod_qty = $row['quantity'];
+            $total = $price * $prod_qty;
 
-        echo "<tr><td>$order_id</td><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td>
+
+            echo "<tr><td>$order_id</td><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td>
         <td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr>";
-    }
+        }
 
-    echo "<tr><th>Address:</th>
+        echo "<tr><th>Address:</th>
     <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        $add_st = $row['address_st'];
-        $city = $row['city'];
-        $postal_code = $row['postal_code'];
-        $pay_type = $row['payment_type'];
-        $pay_num = $row['card_number'];
-        $pay_name = $row['name_on_card'];
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $add_st = $row['address_st'];
+            $city = $row['city'];
+            $postal_code = $row['postal_code'];
+            $pay_type = $row['payment_type'];
+            $pay_num = $row['card_number'];
+            $pay_name = $row['name_on_card'];
 
-        echo "<tr><td>$add_st, $city, $postal_code</td>
+            echo "<tr><td>$add_st, $city, $postal_code</td>
         <td>$pay_type</td><td>$pay_num</td><td>$pay_name</td></tr>";
-      
-    }
-    echo "</table>";
-
-    ?>
+        }
+        echo "</table>";
+        ?>
+    </div>
     <?php include('footer.php'); ?>
 </body>
 

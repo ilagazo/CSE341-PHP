@@ -118,7 +118,7 @@ td {
   border-collapse: collapse;
 }
 
-.order_container > tr {
+.order_container > th {
   background-color: black;
   color: whitesmoke;
 }
