@@ -121,7 +121,7 @@ VALUES ('josie.russian', 'josie.russian212', 'josie.russian@gmail.com', 'Josie',
 INSERT INTO customer_order (customer_id, payment_id, product_id)
 VALUES ((SELECT customer_id from customer WHERE customer_id = '7'), (SELECT payment_id from payment where payment_id = '2'), (SELECT product_id from product WHERE product_id = '2'));
 
---  Commands needed to alter data 
+--  Commands needed to alter data tables
 ALTER TABLE customer
 DROP COLUMN phone_number;
 
@@ -139,6 +139,9 @@ DROP COLUMN phone_number;
 
 ALTER TABLE employee
 ADD phone_number varchar(11) not null;
+
+-- Commands needed to update data
+UPDATE
 
 -- View Data
 SELECT * FROM customer_order;

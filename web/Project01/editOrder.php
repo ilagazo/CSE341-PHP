@@ -78,42 +78,49 @@ $id = $_GET['order_id'];
 
     <!-- Change Data Form -->
     <h3>Edit Data Form:</h3>
-  <div class="billing_info">
-    <form action="../Project01/insert_edit_db.php" method="POST">
-      <div class="billing_info_seperate">
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" required maxlength="50">
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" required maxlength="50">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required maxlength="50">
-        <label for="phone">Phone Number:</label>
-        <input type="text" id="phone" name="phone" required minlength="11" maxlength="11">
-      </div>
-      <div class="billing_info_seperate">
-        <label for="address">Street Address:</label>
-        <input type="text" id="address" name="address" required maxlength="50">
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state" required maxlength="14">
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" required maxlength="50">
-        <label for="zipCode">Zipcode:</label>
-        <input type="text" id="zipCode" name="zipCode" required maxlength="10">
-      </div>
-      <div class="billing_info_seperate">
-        <label for="card_type">Card Type:</label>
-        <input type="text" id="card_type" name="card_type" required maxlength="50">
-        <label for="card_name">Name on Card:</label>
-        <input type="text" id="card_name" name="card_name" required maxlength="255">
-        <label for="card_number">Card Number:</label>
-        <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16">
-        <label for="card_security">Security Code:</label>
-        <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3">
-        <label for="card_exp_month">Expiration Month:</label>
-        <input type="number" id="card_exp_month" name="card_exp_month" min="0" minlength="2" maxlength="2">
-        <label for="card_exp_month">Expiration Year:</label>
-        <input type="number" id="card_exp_year" name="card_exp_year" min="0" minlength="2" maxlength="2">
-      </div>
+    <div class="billing_info">
+        <form action="../Project01/update.php" method="POST">
+            <div class="billing_info_seperate">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required maxlength="50">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required maxlength="50">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required maxlength="50">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required minlength="11" maxlength="11">
+            </div>
+            <div class="billing_info_seperate">
+                <label for="address">Street Address:</label>
+                <input type="text" id="address" name="address" required maxlength="50">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required maxlength="14">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required maxlength="50">
+                <label for="zipCode">Zipcode:</label>
+                <input type="text" id="zipCode" name="zipCode" required maxlength="10">
+            </div>
+            <div class="billing_info_seperate">
+                <label for="card_type">Card Type:</label>
+                <input type="text" id="card_type" name="card_type" required maxlength="50">
+                <label for="card_name">Name on Card:</label>
+                <input type="text" id="card_name" name="card_name" required maxlength="255">
+                <label for="card_number">Card Number:</label>
+                <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16">
+                <label for="card_security">Security Code:</label>
+                <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3">
+                <label for="card_exp_month">Expiration Month:</label>
+                <input type="number" id="card_exp_month" name="card_exp_month" min="0" minlength="2" maxlength="2">
+                <label for="card_exp_month">Expiration Year:</label>
+                <input type="number" id="card_exp_year" name="card_exp_year" min="0" minlength="2" maxlength="2">
+            </div>
+
+            <!-- Button Container -->
+            <div class="button_checkout">
+                <button type="submit" name="submit" value="$id">Confirm Changes</button>
+            </div>
+        </form>
+    </div>
     <?php include('footer.php'); ?>
 </body>
 
