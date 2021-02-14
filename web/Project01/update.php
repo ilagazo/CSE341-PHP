@@ -1,7 +1,9 @@
 <?php
 // Initialize and Declare PHP variables from Form
- // NOTE: Will be switching to $_POST instead of Session
-$id = $_POST['submit'];
+$id = $_POST['id'];
+$cust_id = $_POST['cust_id'];
+$pay_id = $_POST['pay_id'];
+$prod_id = $_POST['prod_id'];
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
 $email = $_POST['email'];
@@ -22,29 +24,28 @@ include "../Project01/dbConnect.php";
 $db = get_db();
 
 try {
-    echo $id;
-    // FirstL Prepare Query Statements
-    // $queryCustomer = "UPDATE customer SET first_name='{$first_name}', last_name='{$last_name}', email='{$email}', phone_number='{$phone}' WHERE customer_id='{$id}'";
+    // First Prepare Query Statements
+    $queryCustomer = "UPDATE customer SET first_name='{$first_name}', last_name='{$last_name}', email='{$email}', phone_number='{$phone}' 
+    WHERE customer_id='{$cust_id}'";
 
-    // NOTE: Need to Add state to DB
-    // $queryAddress = "";
+    // TASL: Need to update address
+    // $queryAddress = "UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$adress_state}, 'postal_code='{$zipCode}' 
+    // WHERE address_id='{}'";
 
-    // $queryPayment = "";
+    $queryPayment = "UPDATE payment SET payment_type='{$cardType}', card_number='{$card_number}', security_code='{$card_security}', exp_month='{$exp_month}', exp_year='{$exp_year}', name_on_card='{$card_name}'
+    WHERE payment_id='{$pay_id}'";
 
-    // // TASK: ADD Product Insert. More complicated then I thought
+    // TASK: ADD Product Update
 
-    // $query = 'INSERT INTO customer_order(customer_id, payment_id, product_id) 
-    // VALUES ((SELECT customer_id from customer), (SELECT payment_id from payment), (SELECT product_id from product))';
-
-    // // Prepare each query and execute
+    // Prepare each query and execute
     // $statement1 = $db->prepare($queryAddress);
     // $statement1->execute();
 
-    // $statement2 = $db->prepare($queryCustomer);
-    // $statement2->execute();
+    $statement2 = $db->prepare($queryCustomer);
+    $statement2->execute();
 
-    // $statement3 = $db->prepare($queryPayment);
-    // $statement3->execute();
+    $statement3 = $db->prepare($queryPayment);
+    $statement3->execute();
 }
 catch (Exception $ex)
 {
@@ -55,7 +56,7 @@ catch (Exception $ex)
 }
 
 // Redirect to Confirmation Page
-header("Location: ../Project01/editOrder.php");
+header("Location: ../Project01/employeePortalDashboard.php");
 die();
 
 ?>

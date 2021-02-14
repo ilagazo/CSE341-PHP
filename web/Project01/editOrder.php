@@ -31,7 +31,8 @@ $id = $_GET['order_id'];
     <div class="order_container">
         <?php
         // Retrieve data from each column and table
-        $statement = $db->query("SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number, 
+        $statement = $db->query("SELECT customer_order.order_id, customer_order.customer_id, customer_order.payment_id, customer_order.product_id,
+                                customer.first_name, customer.last_name, customer.email, customer.phone_number, 
                                 product.product_name, product.price, product.quantity,
                                 address.address_st, address.city, address.postal_code,
                                 payment.payment_type, payment.card_number, payment.name_on_card
@@ -44,15 +45,21 @@ $id = $_GET['order_id'];
         $statement->execute();
 
         // Display the table into a "neat" table
-        echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email / Phone #</th></tr>";
+        echo "<table><tr><th>Order Number:</th><th>Customer ID:</th><th>Payment ID:</th><th>Product ID:</th></tr>";
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            // Order / Customer Info Row
+            // Order Info Row
             $order_id = $row['order_id'];
+            $cust_id = $row['customer_id'];
+            $pay_id = $row['payment_id'];
+            $prod_id = $row['product_id'];
+            echo "<tr><td>$order_id</td><td>$cust_id</td><td>$pay_id</td><td>$prod_id</td></tr>";
+            // / Customer Info Row
+            echo "<tr><th>Customer's First Name</th><th>Last Name</th><th>Email / Phone #</th></tr>";
             $first_name = $row['first_name'];
             $last_name = $row['last_name'];
             $email = $row['email'];
             $phone = $row['phone_number'];
-            echo "<tr><td>$order_id</td><td>$first_name</td><td>$last_name</td><td>$email / $phone</td></tr>";
+            echo "<tr><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td></tr>";
             // Product Info Row
             echo "<tr><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
             $prod_name = $row['product_name'];
@@ -80,6 +87,16 @@ $id = $_GET['order_id'];
     <h3>Edit Data Form:</h3>
     <div class="billing_info">
         <form action="../Project01/update.php" method="POST">
+            <div class="billing_info_seperate">
+                <label for="id">Order ID:</label>
+                <input type="number" id="id" name="id" required  minlength="1">
+                <label for="id">Customer ID:</label>
+                <input type="number" id="cust_id" name="cust_id" required  minlength="1">
+                <label for="id">Payment ID:</label>
+                <input type="number" id="pay_id" name="pay_id" required  minlength="1">
+                <label for="id">Product ID:</label>
+                <input type="number" id="prod_id" name="prod_id" required  minlength="1">
+            </div>
             <div class="billing_info_seperate">
                 <label for="first_name">First Name:</label>
                 <input type="text" id="first_name" name="first_name" required maxlength="50">
@@ -117,7 +134,7 @@ $id = $_GET['order_id'];
 
             <!-- Button Container -->
             <div class="button_checkout">
-                <button type="submit" name="submit" value="$id">Confirm Changes</button>
+                <button type="submit" name="submit">Confirm Changes</button>
             </div>
         </form>
     </div>
