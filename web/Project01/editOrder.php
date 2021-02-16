@@ -39,7 +39,7 @@ $id = $_GET['order_id'];
                                 FROM customer_order 
                                 INNER JOIN customer ON customer_order.customer_id = customer.customer_id
                                 INNER JOIN payment ON customer_order.payment_id = payment.payment_id
-                                INNER JOIN address ON customer.address_id = address.address_id
+                                INNER JOIN address ON customer_order.address_id = address.address_id
                                 INNER JOIN product ON customer_order.product_id = product.product_id
                                 WHERE customer_order.order_id = '{$id}'");
         $statement->execute();
