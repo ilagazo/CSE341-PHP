@@ -45,7 +45,7 @@ $id = $_GET['order_id'];
         $statement->execute();
 
         // Display the table into a "neat" table
-        echo "<table><tr><th>Order Number:</th><th>Customer ID:</th><th>Payment ID:</th><th>Product ID:</th><th>Address ID:</th></tr>";
+        echo "<div class=\"order_container\"><table><tr><th>Order Number:</th><th>Customer ID:</th><th>Payment ID:</th><th>Product ID:</th><th>Address ID:</th></tr>";
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
             // Order Info Row
             $order_id = $row['order_id'];
@@ -53,23 +53,23 @@ $id = $_GET['order_id'];
             $pay_id = $row['payment_id'];
             $prod_id = $row['product_id'];
             $add_id = $row['address_id'];
-            echo "<tr><td>$order_id</td><td>$cust_id</td><td>$pay_id</td><td>$prod_id</td><td>$add_id</td></tr></table><br><br>";
+            echo "<tr><td>$order_id</td><td>$cust_id</td><td>$pay_id</td><td>$prod_id</td><td>$add_id</td></tr></table></div>";
             // / Customer Info Row
-            echo "<table><tr><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
+            echo "<div class=\"order_container\"><table><tr><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
             $first_name = $row['first_name'];
             $last_name = $row['last_name'];
             $email = $row['email'];
             $phone = $row['phone_number'];
-            echo "<tr><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td></tr></table><br><br>";
+            echo "<tr><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td></tr></table></div>";
             // Product Info Row
-            echo "<table><tr><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
+            echo "<div class=\"order_container\"><table><tr><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
             $prod_name = $row['product_name'];
             $price = $row['price'];
             $prod_qty = $row['quantity'];
             $total = $price * $prod_qty;
-            echo "<tr><td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr></table><br><br>";
+            echo "<tr><td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr></table></div>";
             // Address / Payment Row
-            echo "<table><tr><th>Address:</th>
+            echo "<div class=\"order_container\"><table><tr><th>Address:</th>
             <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
             $add_st = $row['address_st'];
             $city = $row['city'];
@@ -80,8 +80,7 @@ $id = $_GET['order_id'];
             echo "<tr><td>$add_st, $city, $postal_code</td>
             <td>$pay_type</td><td>$pay_num</td><td>$pay_name</td></tr>";
         }
-        echo "</table>";
-        echo "</div>";
+        echo "</table></div></div>";
         ?>
 
     <!-- Change Data Form -->
