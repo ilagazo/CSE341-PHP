@@ -53,23 +53,23 @@ $id = $_GET['order_id'];
             $pay_id = $row['payment_id'];
             $prod_id = $row['product_id'];
             $add_id = $row['address_id'];
-            echo "<tr><td>$order_id</td><td>$cust_id</td><td>$pay_id</td><td>$prod_id</td><td>$add_id</td></tr>";
+            echo "<tr><td>$order_id</td><td>$cust_id</td><td>$pay_id</td><td>$prod_id</td><td>$add_id</td></tr></table>";
             // / Customer Info Row
-            echo "<tr><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
+            echo "<table><tr><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
             $first_name = $row['first_name'];
             $last_name = $row['last_name'];
             $email = $row['email'];
             $phone = $row['phone_number'];
-            echo "<tr><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td></tr>";
+            echo "<tr><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td></tr></table>";
             // Product Info Row
-            echo "<tr><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
+            echo "<table><tr><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
             $prod_name = $row['product_name'];
             $price = $row['price'];
             $prod_qty = $row['quantity'];
             $total = $price * $prod_qty;
-            echo "<tr><td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr>";
+            echo "<tr><td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr></table>";
             // Address / Payment Row
-            echo "<tr><th>Address:</th>
+            echo "<table><tr><th>Address:</th>
             <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
             $add_st = $row['address_st'];
             $city = $row['city'];
