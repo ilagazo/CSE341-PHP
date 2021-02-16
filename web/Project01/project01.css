@@ -110,16 +110,8 @@ form {
 }
 
 .order_container > table,
-td {
-  text-align: center;
-  padding: 5px;
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-.order_container > th {
-  background-color: black;
-  color: whitesmoke;
+td,
+th {
   text-align: center;
   padding: 5px;
   border: 1px solid black;
