@@ -34,7 +34,7 @@ $id = $_GET['order_id'];
         $statement = $db->query("SELECT customer_order.order_id, customer_order.customer_id, customer_order.payment_id, customer_order.product_id, customer_order.address_id,
                                 customer.first_name, customer.last_name, customer.email, customer.phone_number, 
                                 product.product_name, product.price, product.quantity,
-                                address.address_st, address.city, address.postal_code,
+                                address.address_st, address.city, address.postal_code, address.state,
                                 payment.payment_type, payment.card_number, payment.name_on_card
                                 FROM customer_order 
                                 INNER JOIN customer ON customer_order.customer_id = customer.customer_id
@@ -74,10 +74,11 @@ $id = $_GET['order_id'];
             $add_st = $row['address_st'];
             $city = $row['city'];
             $postal_code = $row['postal_code'];
+            $state = $row['state'];
             $pay_type = $row['payment_type'];
             $pay_num = $row['card_number'];
             $pay_name = $row['name_on_card'];
-            echo "<tr><td>$add_st, $city, $postal_code</td>
+            echo "<tr><td>$add_st, $city $state, $postal_code</td>
             <td>$pay_type</td><td>$pay_num</td><td>$pay_name</td></tr>";
         }
         echo "</table></div></div>";

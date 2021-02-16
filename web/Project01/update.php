@@ -15,6 +15,7 @@ try {
     $cust_id = $_POST['cust_id'];
     $pay_id = $_POST['pay_id'];
     $prod_id = $_POST['prod_id'];
+    $add_id = $_POST['add_id'];
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
@@ -38,9 +39,8 @@ try {
     $queryCustomer = "UPDATE customer SET first_name='{$first_name}', last_name='{$last_name}', email='{$email}', phone_number='{$phone}' 
     WHERE customer_id='{$cust_id}'";
 
-    // TASL: Need to update address
-    // $queryAddress = "UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$adress_state}, 'postal_code='{$zipCode}' 
-    // WHERE address_id='{}'";
+    $queryAddress = "UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$adress_state}, 'postal_code='{$zipCode}' 
+    WHERE address_id='{$add_id}'";
 
     $queryPayment = "UPDATE payment SET payment_type='{$cardType}', card_number='{$card_number}', security_code='{$card_security}', exp_month='{$exp_month}', exp_year='{$exp_year}', name_on_card='{$card_name}'
     WHERE payment_id='{$pay_id}'";
@@ -48,8 +48,8 @@ try {
     // TASK: ADD Product Update
 
     // Prepare each query and execute
-    // $statement1 = $db->prepare($queryAddress);
-    // $statement1->execute();
+    $statement1 = $db->prepare($queryAddress);
+    $statement1->execute();
 
     $statement2 = $db->prepare($queryCustomer);
     $statement2->execute();
@@ -59,9 +59,7 @@ try {
 }
 catch (Exception $ex)
 {
-	// Please be aware that you don't want to output the Exception message in
-	// a production environment
-	echo "Error with DB. Details: $ex";
+	echo "Error with DB. Data did not update!";
 	die();
 }
 
@@ -78,20 +76,7 @@ function deleteOrder() {
     $cust_id = $_POST['cust_id'];
     $pay_id = $_POST['pay_id'];
     $prod_id = $_POST['prod_id'];
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $address_st = $_POST['address'];
-    $adress_state = $_POST['state'];
-    $city = $_POST['city'];
-    $zipCode = $_POST['zipCode'];
-    $cardType = $_POST['card_type'];
-    $card_name = $_POST['card_name'];
-    $card_number = $_POST['card_number'];
-    $card_security = $_POST['card_security'];
-    $exp_month = $_POST['card_exp_month'];
-    $exp_year = $_POST['card_exp_year'];
+    $add_id = $_POST['add_id'];
 
     // Connect to DB
     include "../Project01/dbConnect.php";
@@ -102,21 +87,28 @@ function deleteOrder() {
         $queryCustomerOrder = "DELETE FROM customer_order WHERE order_id='{$id}'";
         $queryCustomer = "DELETE FROM customer WHERE customer_id='{$cust_id}'";
         $queryPayment = "DELETE FROM payment WHERE payment_id='{$pay_id}'";
-        $queryAddress = "DELETE FROM address WHERE address_id='{$add_is}'";
+        $queryAddress = "DELETE FROM address WHERE address_id='{$add_id}'";
         $queryProduct = "DELETE FROM product WHERE product_id='{$prod_id}'";
 
+
+        $statement1 = $db->prepare($queryCustomerOrder);
+        $statement1->execute();
 
         $statement2 = $db->prepare($queryCustomer);
         $statement2->execute();
 
         $statement3 = $db->prepare($queryPayment);
         $statement3->execute();
+
+        $statement4 = $db->prepare($queryAddress);
+        $statement4->execute();
+
+        $statement5 = $db->prepare($queryProduct);
+        $statement5->execute();
     }
     catch (Exception $ex)
     {
-        // Please be aware that you don't want to output the Exception message in
-        // a production environment
-        echo "Error with DB. Details: $ex";
+        echo "Error with DB. Data did not delete!";
         die();
     }
 
