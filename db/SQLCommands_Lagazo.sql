@@ -64,7 +64,7 @@ CREATE TABLE employee (
 	occupation VARCHAR (50) NOT NULL
 );
 
--- INSERT Customer #1
+-- INSERT Example Customer #1
 INSERT INTO address (address_st, city, state, postal_code) 
 VALUES ('905 N Hargrave St', 'Banning', 'CA', '92220');
 
@@ -83,7 +83,7 @@ VALUES ('jill.korn', 'jill.korn121', 'jill.korn@gmail.com', 'Jill', 'Korn', '951
 INSERT INTO customer_order (customer_id, payment_id, product_id, address_id)
 VALUES ((SELECT customer_id from customer), (SELECT payment_id from payment), (SELECT product_id from product), (SELECT address_id from address));
 
--- INSERT Customer #2
+-- INSERT Example Customer #2
 INSERT INTO address (address_st, city, state, postal_code) 
 VALUES ('1500 s 1000 w', 'Logan', 'UT', '84321');
 
@@ -102,7 +102,7 @@ VALUES ('josie.russian', 'josie.russian212', 'josie.russian@gmail.com', 'Josie',
 INSERT INTO customer_order (customer_id, payment_id, product_id, address_id)
 VALUES ((SELECT customer_id from customer WHERE customer_id = '2'), (SELECT payment_id from payment where payment_id = '2'), (SELECT product_id from product WHERE product_id = '2'), (SELECT address_id from address WHERE address_id = '2'));
 
---  INSERT Customer #3
+--  INSERT Example Customer #3
 INSERT INTO address (address_st, city, state, postal_code) 
 VALUES ('Poop Lane', 'Kansas City', 'KS', '58999');
 
@@ -121,7 +121,7 @@ VALUES ('josie.russian', 'josie.russian212', 'josie.russian@gmail.com', 'Josie',
 INSERT INTO customer_order (customer_id, payment_id, product_id, address_id)
 VALUES ((SELECT customer_id from customer WHERE customer_id = '3'), (SELECT payment_id from payment where payment_id = '3'), (SELECT product_id from product WHERE product_id = '3'), (SELECT address_id from address WHERE address_id = '3'));
 
---  Commands needed to alter data tables
+--  Commands needed to alter data tables if needed
 ALTER TABLE customer
 DROP COLUMN phone_number;
 
@@ -147,7 +147,15 @@ WHERE customer_id='{$cust_id}';
 UPDATE payment SET payment_type='{$cardType}', card_number='{$card_number}', security_code='{$card_security}', exp_month='{$exp_month}', exp_year='{$exp_year}', name_on_card='{$card_name}'
 WHERE payment_id='{$pay_id}';
 
+ UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$adress_state}, 'postal_code='{$zipCode}' 
+    WHERE address_id='{$add_id}';
+
 -- Delete Data
+DELETE FROM customer_order WHERE order_id='{$id}';
+DELETE FROM customer WHERE customer_id='{$cust_id}';
+DELETE FROM payment WHERE payment_id='{$pay_id}';
+DELETE FROM address WHERE address_id='{$add_id}';
+DELETE FROM product WHERE product_id='{$prod_id}';
 
 -- View Data
 SELECT * FROM customer_order;

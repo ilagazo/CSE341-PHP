@@ -85,14 +85,14 @@ $id = $_GET['order_id'];
     ?>
 
     <div class="text-section">
-        <h2>Dear Employee:</h2>
+        <h3>Dear Employee:</h3>
         <p>Please fill out the form fully and only make changes where needed.<br><br>
-            <b>REMEMBER TO NEVER CHANGE ANY OF THE DISPLAYED IDs!FILL OUT THAT SECTION AS DISPLAYED ABOVE!</b>
+            <b>REMEMBER TO NEVER CHANGE ANY OF THE DISPLAYED IDs! FILL OUT THAT SECTION AS DISPLAYED ABOVE!</b>
         </p>
     </div>
 
     <!-- Change Data Form -->
-    <h3>Edit Data Form:</h3>
+    <h4>Edit Data Form:</h4>
     <div class="billing_info">
         <form action="../Project01/updateOrder.php" method="POST">
             <div class="billing_info_seperate">
