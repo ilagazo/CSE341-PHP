@@ -28,10 +28,10 @@ $id = $_GET['order_id'];
         <img src="../Project01/Images/hero_editOrders.jpg" alt="Josie's Mountain Spa Retreat Edit Orders">
     </div>
     <h2>Customer Order Information:</h2>
-        <?php
-        echo " <div class=\"order_container\">";
-        // Retrieve data from each column and table
-        $statement = $db->query("SELECT customer_order.order_id, customer_order.customer_id, customer_order.payment_id, customer_order.product_id, customer_order.address_id,
+    <?php
+    echo " <div class=\"order_container\">";
+    // Retrieve data from each column and table
+    $statement = $db->query("SELECT customer_order.order_id, customer_order.customer_id, customer_order.payment_id, customer_order.product_id, customer_order.address_id,
                                 customer.first_name, customer.last_name, customer.email, customer.phone_number, 
                                 product.product_name, product.price, product.quantity,
                                 address.address_st, address.city, address.postal_code, address.state,
@@ -42,63 +42,70 @@ $id = $_GET['order_id'];
                                 INNER JOIN address ON customer_order.address_id = address.address_id
                                 INNER JOIN product ON customer_order.product_id = product.product_id
                                 WHERE customer_order.order_id = '{$id}'");
-        $statement->execute();
+    $statement->execute();
 
-        // Display the table into a "neat" table
-        echo "<div class=\"order_container\"><table><tr><th>Order Number:</th><th>Customer ID:</th><th>Payment ID:</th><th>Product ID:</th><th>Address ID:</th></tr>";
-        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            // Order Info Row
-            $order_id = $row['order_id'];
-            $cust_id = $row['customer_id'];
-            $pay_id = $row['payment_id'];
-            $prod_id = $row['product_id'];
-            $add_id = $row['address_id'];
-            echo "<tr><td>$order_id</td><td>$cust_id</td><td>$pay_id</td><td>$prod_id</td><td>$add_id</td></tr></table></div>";
-            // / Customer Info Row
-            echo "<div class=\"order_container\"><table><tr><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
-            $first_name = $row['first_name'];
-            $last_name = $row['last_name'];
-            $email = $row['email'];
-            $phone = $row['phone_number'];
-            echo "<tr><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td></tr></table></div>";
-            // Product Info Row
-            echo "<div class=\"order_container\"><table><tr><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
-            $prod_name = $row['product_name'];
-            $price = $row['price'];
-            $prod_qty = $row['quantity'];
-            $total = $price * $prod_qty;
-            echo "<tr><td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr></table></div>";
-            // Address / Payment Row
-            echo "<div class=\"order_container\"><table><tr><th>Address:</th>
+    // Display the table into a "neat" table
+    echo "<div class=\"order_container\"><table><tr><th>Order Number:</th><th>Customer ID:</th><th>Payment ID:</th><th>Product ID:</th><th>Address ID:</th></tr>";
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        // Order Info Row
+        $order_id = $row['order_id'];
+        $cust_id = $row['customer_id'];
+        $pay_id = $row['payment_id'];
+        $prod_id = $row['product_id'];
+        $add_id = $row['address_id'];
+        echo "<tr><td>$order_id</td><td>$cust_id</td><td>$pay_id</td><td>$prod_id</td><td>$add_id</td></tr></table></div>";
+        // / Customer Info Row
+        echo "<div class=\"order_container\"><table><tr><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th></tr>";
+        $first_name = $row['first_name'];
+        $last_name = $row['last_name'];
+        $email = $row['email'];
+        $phone = $row['phone_number'];
+        echo "<tr><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td></tr></table></div>";
+        // Product Info Row
+        echo "<div class=\"order_container\"><table><tr><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
+        $prod_name = $row['product_name'];
+        $price = $row['price'];
+        $prod_qty = $row['quantity'];
+        $total = $price * $prod_qty;
+        echo "<tr><td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr></table></div>";
+        // Address / Payment Row
+        echo "<div class=\"order_container\"><table><tr><th>Address:</th>
             <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
-            $add_st = $row['address_st'];
-            $city = $row['city'];
-            $postal_code = $row['postal_code'];
-            $state = $row['state'];
-            $pay_type = $row['payment_type'];
-            $pay_num = $row['card_number'];
-            $pay_name = $row['name_on_card'];
-            echo "<tr><td>$add_st, $city $state, $postal_code</td>
+        $add_st = $row['address_st'];
+        $city = $row['city'];
+        $postal_code = $row['postal_code'];
+        $state = $row['state'];
+        $pay_type = $row['payment_type'];
+        $pay_num = $row['card_number'];
+        $pay_name = $row['name_on_card'];
+        echo "<tr><td>$add_st, $city $state, $postal_code</td>
             <td>$pay_type</td><td>$pay_num</td><td>$pay_name</td></tr>";
-        }
-        echo "</table></div></div>";
-        ?>
+    }
+    echo "</table></div></div>";
+    ?>
+
+    <div class="text-section">
+        <h2>Dear Employee:</h2>
+        <p>Please fill out the form fully and only make changes where needed.<br><br>
+            <b>REMEMBER TO NEVER CHANGE ANY OF THE DISPLAYED IDs!FILL OUT THAT SECTION AS DISPLAYED ABOVE!</b>
+        </p>
+    </div>
 
     <!-- Change Data Form -->
     <h3>Edit Data Form:</h3>
     <div class="billing_info">
-        <form action="../Project01/update.php" method="POST">
+        <form action="../Project01/updateOrder.php" method="POST">
             <div class="billing_info_seperate">
                 <label for="id">Order ID:</label>
-                <input type="number" id="id" name="id" required  minlength="1">
+                <input type="number" id="id" name="id" required minlength="1">
                 <label for="id">Customer ID:</label>
-                <input type="number" id="cust_id" name="cust_id" required  minlength="1">
+                <input type="number" id="cust_id" name="cust_id" required minlength="1">
                 <label for="id">Payment ID:</label>
-                <input type="number" id="pay_id" name="pay_id" required  minlength="1">
+                <input type="number" id="pay_id" name="pay_id" required minlength="1">
                 <label for="id">Product ID:</label>
-                <input type="number" id="prod_id" name="prod_id" required  minlength="1">
+                <input type="number" id="prod_id" name="prod_id" required minlength="1">
                 <label for="id">Address ID:</label>
-                <input type="number" id="add_id" name="add_id" required  minlength="1">
+                <input type="number" id="add_id" name="add_id" required minlength="1">
             </div>
             <div class="billing_info_seperate">
                 <label for="first_name">First Name:</label>
