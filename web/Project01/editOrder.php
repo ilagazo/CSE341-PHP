@@ -28,8 +28,8 @@ $id = $_GET['order_id'];
         <img src="../Project01/Images/hero_editOrders.jpg" alt="Josie's Mountain Spa Retreat Edit Orders">
     </div>
     <h2>Customer Order Information:</h2>
-    <div class="order_container">
         <?php
+        echo " <div class=\"order_container\">";
         // Retrieve data from each column and table
         $statement = $db->query("SELECT customer_order.order_id, customer_order.customer_id, customer_order.payment_id, customer_order.product_id, customer_order.address_id,
                                 customer.first_name, customer.last_name, customer.email, customer.phone_number, 
@@ -81,8 +81,8 @@ $id = $_GET['order_id'];
             <td>$pay_type</td><td>$pay_num</td><td>$pay_name</td></tr>";
         }
         echo "</table>";
+        echo "</div>";
         ?>
-    </div>
 
     <!-- Change Data Form -->
     <h3>Edit Data Form:</h3>
