@@ -28,8 +28,9 @@ if (isset($_POST['submit'])) {
     $firstNameFromDb = $userDataFromDB['first_name'];
     $lastNameFromDb = $userDataFromDB['last_name'];
 
-    if ($statement->rowCount() > 0) {
-      header("Location: ../Project01/employeePortalDashboard.php?firstName=$firstNameFromDb,lastName=$lastNameFromDb");
+    // Check if username & password are correct
+    if ($statement->rowCount() > 0 && $verifyPassword) {
+      header("Location: ../Project01/employeePortalDashboard.php?firstName=$firstNameFromDb?lastName=$lastNameFromDb");
     } else {
       $error_message = 'Incorrect email or password. Please try again!';
     }
