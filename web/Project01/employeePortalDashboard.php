@@ -35,8 +35,8 @@ $emp_id = $_GET['emp_id'];
     $empFromDB = $employee_statement->fetch(PDO::FETCH_ASSOC);
     $emp_firstName = $empFromDB['first_name'];
     $emp_lastName = $empFromDB['last_name'];
-
-    echo "\"<h3>Welcome\" . $emp_firstName . \" \" . $emp_lastName . \"</h3>\"";
+    
+    // echo "\"<h3>Welcome\" . $emp_firstName . \" \" . $emp_lastName . \"</h3>\"";
   ?>
   <div class="order_container">
     <?php
