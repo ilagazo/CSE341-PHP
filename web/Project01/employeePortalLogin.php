@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
   if (!empty($username) && !empty($password)) {
 
     // Prepare query and execute
-    $query = 'SELECT employee.username, employee.employee_password, employee.employee_id
+    $query = 'SELECT employee.employee_id, employee.username, employee.employee_password
     FROM employee WHERE employee.username = :username';
     $statement = $db->prepare($query);
     $statement->bindValue(':username', $username);
@@ -23,6 +23,7 @@ if (isset($_POST['submit'])) {
 
     $userDataFromDB = $statement->fetch(PDO::FETCH_ASSOC);
     $statement->closeCursor();
+    
     $empIDFromDb = $userDataFromDB['employee_id'];
     $passwordFromDb = $userDataFromDB['employee_password'];
 
