@@ -2,7 +2,7 @@
 include "../Project01/dbConnect.php";
 $db = get_db();
 
-$emp_id = $_GET['emp_id'];
+$emp_id = $_GET['employee_id'];
 ?>
 
 <!doctype html>
