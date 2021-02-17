@@ -29,10 +29,12 @@ $emp_id = $_GET['id'];
   </div>
   <h2>Employee Portal Dashboard:</h2>
   <?php
+    echo $emp_id;
     $employee_statement = $db->query("SELECT employee.first_name, employee.last_name FROM employee WHERE employee.employee_id = '{$emp_id}'");
     $employee_statement->execute();
-
-    $empFromDB = $statement->fetch(PDO::FETCH_ASSOC);
+  echo "here";
+    $empFromDB = $employee_statement->fetch(PDO::FETCH_ASSOC);
+    echo "here2";
     $emp_firstName = $empFromDB['first_name'];
     $emp_lastName = $empFromDB['last_name'];
 
