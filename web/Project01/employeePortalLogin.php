@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
   </div>
   <h2>Employee Login:</h2>
   <div class="emp_login">
-    <form action="employeePortalDashboard.php" method="POST">
+    <form method="POST">
       <label for="emp_username">Username:</label>
       <input type="text" name="emp_username" id="emp_username" required><br><br>
       <label for="emp_password">Password:</label>
