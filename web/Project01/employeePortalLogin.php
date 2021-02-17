@@ -21,18 +21,19 @@ if (isset($_POST['submit'])) {
     $statement->bindValue(':username', $username);
     $statement->execute();
 
-    $userDataFromDB = $statement->fetch(PDO::FETCH_ASSOC);
-    $statement->closeCursor();
-    
-    $empIDFromDb = $userDataFromDB['employee_id'];
-    $passwordFromDb = $userDataFromDB['employee_password'];
+    while ($userDataFromDB = $statement->fetch(PDO::FETCH_ASSOC)) {
+      $statement->closeCursor();
 
-    // Check if username & password are correct
-    if ($statement->rowCount() > 0 && $password == $passwordFromDb) {
-      header("Location: ../Project01/employeePortalDashboard.php?employee_id=$passwordFromDb");
-      die();
-    } else {
-      $error_message = 'Incorrect email or password. Please try again!';
+      $empIDFromDb = $userDataFromDB['employee_id'];
+      $passwordFromDb = $userDataFromDB['employee_password'];
+
+      // Check if username & password are correct
+      if ($statement->rowCount() > 0 && $password == $passwordFromDb) {
+        header("Location: ../Project01/employeePortalDashboard.php?employee_id=$empIDFromDb");
+        die();
+      } else {
+        $error_message = 'Incorrect email or password. Please try again!';
+      }
     }
   } else {
     $error_message = 'Please enter email and password!';
