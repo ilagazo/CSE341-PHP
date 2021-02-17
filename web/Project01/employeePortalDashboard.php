@@ -32,10 +32,10 @@ $emp_id = $_GET['emp_id'];
     $employee_statement = $db->query("SELECT employee.first_name, employee.last_name, employee.employee_id 
     FROM employee WHERE employee.employee_id = '{$emp_id}'");
     $employee_statement->execute();
-    $empFromDB = $employee_statement->fetch(PDO::FETCH_ASSOC);
-    $emp_firstName = $empFromDB['first_name'];
-    $emp_lastName = $empFromDB['last_name'];
-    
+    // while($empFromDB = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
+    // $emp_firstName = $empFromDB['first_name'];
+    // $emp_lastName = $empFromDB['last_name'];
+    // }
     // echo "\"<h3>Welcome\" . $emp_firstName . \" \" . $emp_lastName . \"</h3>\"";
   ?>
   <div class="order_container">
