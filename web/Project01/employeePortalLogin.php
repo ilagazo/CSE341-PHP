@@ -22,6 +22,7 @@ if (isset($_POST['submit'])) {
     $statement->execute();
 
     $userDataFromDB = $statement->fetch(PDO::FETCH_ASSOC);
+    $statement->closeCursor();
     $empIDFromDb = $userDataFromDB['employee_id'];
     $passwordFromDb = $userDataFromDB['employee_password'];
 
