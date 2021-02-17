@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
   if (!empty($username) && !empty($password)) {
 
     // Prepare query and execute
-    $query = 'SELECT employee.username, employee.employee_password, employee.first_name, employee.last_name
+    $query = 'SELECT employee.username, employee.employee_password, employee.employee_id
     FROM employee WHERE employee.username = :username';
     $statement = $db->prepare($query);
     $statement->bindValue(':username', $username);
@@ -25,13 +25,12 @@ if (isset($_POST['submit'])) {
     $statement->closeCursor();
 
     // $verifyPassword = password_verify($password, $userDataFromDB['employee_password']);
-    $firstNameFromDb = $userDataFromDB['first_name'];
-    $lastNameFromDb = $userDataFromDB['last_name'];
+    $empIDFromDb = $userDataFromDB['employee_id'];
     $passwordFromDb = $userDataFromDB['employee_password'];
 
     // Check if username & password are correct
     if ($statement->rowCount() > 0 && $password == $passwordFromDb) {
-      header("Location: ../Project01/employeePortalDashboard.php?firstName=$firstNameFromDb?lastName=$lastNameFromDb");
+      header("Location: ../Project01/employeePortalDashboard.php?id=$empIDFromDB");
     } else {
       $error_message = 'Incorrect email or password. Please try again!';
     }

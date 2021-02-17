@@ -2,8 +2,7 @@
 include "../Project01/dbConnect.php";
 $db = get_db();
 
-$firstName = $_GET['firstName'];
-$lastName = $_GET['lastName'];
+$emp_id = $_GET['id'];
 ?>
 
 <!doctype html>
@@ -29,7 +28,16 @@ $lastName = $_GET['lastName'];
     <img src="../Project01/Images/hero_empDashboard.jpg" alt="Josie's Mountain Spa Retreat Pool">
   </div>
   <h2>Employee Portal Dashboard:</h2>
-  <h3>Welcome <?php echo $firstName . $lastName; ?>!</h3>
+  <?php
+    $employee_statement = $db->query("SELECT employee.first_name, employee.last_name FROM employee WHERE employee.employee_id = '{$emp_id}'");
+    $employee_statement->execute();
+
+    $empFromDB = $statement->fetch(PDO::FETCH_ASSOC);
+    $emp_firstName = $empFromDB['first_name'];
+    $emp_lastName = $empFromDB['last_name'];
+
+    echo "<h3>Welcome\" . $emp_firstName . $emp_lastName</h3>";
+  ?>
   <div class="order_container">
     <?php
     // Retrieve data from each column and table
