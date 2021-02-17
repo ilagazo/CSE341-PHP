@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
 
     // Check if username & password are correct
     if ($statement->rowCount() > 0 && $password == $passwordFromDb) {
-      header("Location: ../Project01/employeePortalDashboard.php?employee_id=$empIDFromDB");
+      header("Location: ../Project01/employeePortalDashboard.php?employee_id=$passwordFromDb");
       die();
     } else {
       $error_message = 'Incorrect email or password. Please try again!';
