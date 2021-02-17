@@ -26,7 +26,6 @@ if (isset($_POST['submit'])) {
 
     // $verifyPassword = password_verify($password, $userDataFromDB['employee_password']);
     $empIDFromDb = $userDataFromDB['employee_id'];
-    echo $empIDFromDB;
     $passwordFromDb = $userDataFromDB['employee_password'];
 
     // Check if username & password are correct

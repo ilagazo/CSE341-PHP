@@ -29,17 +29,14 @@ $emp_id = $_GET['emp_id'];
   </div>
   <h2>Employee Portal Dashboard:</h2>
   <?php
-    echo $emp_id;
     $employee_statement = $db->query("SELECT employee.first_name, employee.last_name, employee.employee_id 
     FROM employee WHERE employee.employee_id = '{$emp_id}'");
     $employee_statement->execute();
-    echo "here";
     $empFromDB = $employee_statement->fetch(PDO::FETCH_ASSOC);
-    echo "here2";
     $emp_firstName = $empFromDB['first_name'];
     $emp_lastName = $empFromDB['last_name'];
 
-    echo "<h3>Welcome\" . $emp_firstName . $emp_lastName</h3>";
+    echo "\"<h3>Welcome\" . $emp_firstName . \" \" . $emp_lastName . \"</h3>\"";
   ?>
   <div class="order_container">
     <?php
