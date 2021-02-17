@@ -27,7 +27,7 @@ $emp_id = $_GET['employee_id'];
   <div class="heroImg">
     <img src="../Project01/Images/hero_empDashboard.jpg" alt="Josie's Mountain Spa Retreat Pool">
   </div>
-  <?php echo $emp_id; ?>
+  <?php echo "Here:" . $emp_id; ?>
   <h2>Employee Portal Dashboard:</h2>
   <?php
     // $employee_statement = $db->query("SELECT employee.first_name, employee.last_name, employee.employee_id 
