@@ -3,6 +3,7 @@ include "../Project01/dbConnect.php";
 $db = get_db();
 
 $firstName = $_GET['firstName'];
+$lastName = $_GET['lastName'];
 ?>
 
 <!doctype html>
@@ -28,7 +29,7 @@ $firstName = $_GET['firstName'];
     <img src="../Project01/Images/hero_empDashboard.jpg" alt="Josie's Mountain Spa Retreat Pool">
   </div>
   <h2>Employee Portal Dashboard:</h2>
-  <h3>Welcome <?php echo $firstName; ?></h3>
+  <h3>Welcome <?php echo $firstName . $lastName; ?>!</h3>
   <div class="order_container">
     <?php
     // Retrieve data from each column and table
