@@ -21,12 +21,11 @@ include "../Project01/dbConnect.php";
 $db = get_db();
 
 try {
-    // FirstL Prepare Query Statements
+    // First Prepare Query Statements
     $queryCustomer = 'INSERT INTO customer(first_name, last_name, email, phone_number, address_id) 
     VALUES($first_name, $last_name, $email, $phone, (SELECT address_id FROM address))';
 
-    // NOTE: Need to Add state to DB
-    $queryAddress = 'INSERT INTO address(address_st, city, country, postal_code) 
+    $queryAddress = 'INSERT INTO address(address_st, city, state, postal_code) 
     VALUES($address_st, $city, $address_state, $zipCode)';
 
     $queryPayment = 'INSERT INTO payment(payment_type, card_number, security_code, exp_month, exp_year, name_on_card)

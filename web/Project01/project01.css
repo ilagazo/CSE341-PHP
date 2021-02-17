@@ -1,6 +1,7 @@
 h1,
 h2,
-h3 {
+h3,
+h4 {
   text-align: center;
 }
 
@@ -186,4 +187,8 @@ footer {
 
 .footer-links > a:hover {
   color: #9ba4b4;
+}
+
+.error_alert {
+  color: red;
 }

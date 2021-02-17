@@ -1,7 +1,39 @@
 <?php
-// require "dbConnect.php";
+// Connect to db
 include "../Project01/dbConnect.php";
 $db = get_db();
+
+// Initialize error message and check if submitted
+$error_message = '';
+if (isset($_POST['submit'])) {
+
+  // Grab data from form
+  $username = $_POST['emp_username'];
+  $password = $_POST['emp_password'];
+
+  // Check if data was empty
+  if (!empty($username) && !empty($password)) {
+
+    // Prepare query and execute
+    $query = 'SELECT employee.username, employee.employee_password FROM employee WHERE employee.username = :username';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':username', $username);
+    $statement->execute();
+
+    $userDataFromDB = $statement->fetch(PDO::FETCH_ASSOC);
+    $statement->closeCursor();
+
+    $verifyPassword = password_verify($password, $userDataFromDB['employee_password']);
+
+    if ($statement->rowCount() > 0) {
+      header('Location: ../Project01/employeePortalDashboard.php');
+    } else {
+      $error_message = 'Incorrect email or password. Please try again!';
+    }
+  } else {
+    $error_message = 'Please enter email and password!';
+  }
+}
 ?>
 
 <!doctype html>
@@ -30,9 +62,13 @@ $db = get_db();
   <div class="emp_login">
     <form action="employeePortalDashboard.php" method="POST">
       <label for="emp_username">Username:</label>
-      <input type="text" name="emp_username" id="emp_username"><br><br>
+      <input type="text" name="emp_username" id="emp_username" required><br><br>
       <label for="emp_password">Password:</label>
-      <input type="text" name="emp_password" id="emp_password"><br><br>
+      <input type="text" name="emp_password" id="emp_password" required><br><br>
+
+      <!-- Error Message -->
+      <div class="error_alert"><?php echo $error_message; ?></div>
+
       <!-- Submit Button -->
       <button type="submit" name="submit">Login</button>
     </form>
