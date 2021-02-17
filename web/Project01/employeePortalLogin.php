@@ -24,9 +24,11 @@ if (isset($_POST['submit'])) {
     $statement->closeCursor();
 
     $verifyPassword = password_verify($password, $userDataFromDB['employee_password']);
+    $firstNameFromDb = $userDataFromDB['first_name'];
+    $lastNameFromDb = $userDataFromDB['last_name'];
 
     if ($statement->rowCount() > 0) {
-      header('Location: ../Project01/employeePortalDashboard.php');
+      header("Location: ../Project01/employeePortalDashboard.php?firstName='{$firstNameFromDb}'");
     } else {
       $error_message = 'Incorrect email or password. Please try again!';
     }
@@ -67,7 +69,7 @@ if (isset($_POST['submit'])) {
       <input type="text" name="emp_password" id="emp_password" required><br><br>
 
       <!-- Error Message -->
-      <div class="error_alert"><?php echo $error_message; ?></div>
+      <div class="error_alert"><?php echo $error_message . "<br>"; ?></div>
 
       <!-- Submit Button -->
       <button type="submit" name="submit">Login</button>
