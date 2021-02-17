@@ -26,11 +26,12 @@ if (isset($_POST['submit'])) {
 
     // $verifyPassword = password_verify($password, $userDataFromDB['employee_password']);
     $empIDFromDb = $userDataFromDB['employee_id'];
+    echo $empIDFromDB;
     $passwordFromDb = $userDataFromDB['employee_password'];
 
     // Check if username & password are correct
     if ($statement->rowCount() > 0 && $password == $passwordFromDb) {
-      header("Location: ../Project01/employeePortalDashboard.php?id=$empIDFromDB");
+      header("Location: ../Project01/employeePortalDashboard.php?emp_id=$empIDFromDB");
     } else {
       $error_message = 'Incorrect email or password. Please try again!';
     }
