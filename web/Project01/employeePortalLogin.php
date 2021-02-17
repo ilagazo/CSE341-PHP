@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
   if (!empty($username) && !empty($password)) {
 
     // Prepare query and execute
-    $query = 'SELECT employee.username, employee.employee_password FROM employee WHERE employee.username = :username';
+    $query = 'SELECT employee.username, employee.employee_password, employee.first_name FROM employee WHERE employee.username = :username';
     $statement = $db->prepare($query);
     $statement->bindValue(':username', $username);
     $statement->execute();
@@ -25,7 +25,6 @@ if (isset($_POST['submit'])) {
 
     $verifyPassword = password_verify($password, $userDataFromDB['employee_password']);
     $firstNameFromDb = $userDataFromDB['first_name'];
-    $lastNameFromDb = $userDataFromDB['last_name'];
 
     if ($statement->rowCount() > 0) {
       header("Location: ../Project01/employeePortalDashboard.php?firstName='{$firstNameFromDb}'");
