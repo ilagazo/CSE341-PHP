@@ -27,11 +27,12 @@ $emp_id = $_GET['emp_id'];
   <div class="heroImg">
     <img src="../Project01/Images/hero_empDashboard.jpg" alt="Josie's Mountain Spa Retreat Pool">
   </div>
+  <?php echo $emp_id ?>
   <h2>Employee Portal Dashboard:</h2>
   <?php
-    $employee_statement = $db->query("SELECT employee.first_name, employee.last_name, employee.employee_id 
-    FROM employee WHERE employee.employee_id = '{$emp_id}'");
-    $employee_statement->execute();
+    // $employee_statement = $db->query("SELECT employee.first_name, employee.last_name, employee.employee_id 
+    // FROM employee WHERE employee.employee_id = '{$emp_id}'");
+    // $employee_statement->execute();
     // while($empFromDB = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
     // $emp_firstName = $empFromDB['first_name'];
     // $emp_lastName = $empFromDB['last_name'];
