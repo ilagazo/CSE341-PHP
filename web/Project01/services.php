@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-// Initialize cart
-if(!(isset($_SESSION['cart']))) {
-    $_SESSION['cart'];
-}
-// Destroy the cart
-if(isset($_GET['clear'])) {
-    $_SESSION['cart'] = array();
-}
+// // Initialize cart
+// if(!(isset($_SESSION['cart']))) {
+//     $_SESSION['cart'];
+// }
+// // Destroy the cart
+// if(isset($_GET['clear'])) {
+//     $_SESSION['cart'] = array();
+// }
 
 ?>
 

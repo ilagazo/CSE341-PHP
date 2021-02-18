@@ -30,27 +30,27 @@ session_start();
     <div class="product">
       <p>Price: $100</p>
       <img src="../Project01/Images/swedishMassage.jpg" alt="Swedish Massage Package">
-      <p>Swedish Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item1"]; ?></p>
+      <p>Swedish Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod1"]; ?></p>
     </div>
     <div class="product">
       <p>Price: $150</p>
       <img src="../Project01/Images/hotStoneMassage.jpg" alt="Hot Stone Massage Package">
-      <p>Hot Stone Massage<br>Quantity Ordered: <?php echo $_SESSION["item2"]; ?></p>
+      <p>Hot Stone Massage<br>Quantity Ordered: <?php echo $_SESSION["prod2"]; ?></p>
     </div>
     <div class="product">
       <p>Price: $175</p>
       <img src="../Project01/Images/coupleMassage.jpg" alt="Couples Massage Package">
-      <p>Couples Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item3"]; ?></p>
+      <p>Couples Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod3"]; ?></p>
     </div>
     <div class="product">
       <p>Price: $125</p>
       <img src="../Project01/Images/prenatal.jpg" alt="Prenatal Massage Package">
-      <p>Prenatal Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item4"]; ?></p>
+      <p>Prenatal Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod4"]; ?></p>
     </div>
     <div class="product">
       <p>Price: $125</p>
       <img src="../Project01/Images/aromaTherapy.jpg" alt="Aromatherapy Massage Package">
-      <p>Aromatherapy Massage Package<br>Quantity Ordered: <?php echo $_SESSION["item5"]; ?></p>
+      <p>Aromatherapy Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod5"]; ?></p>
     </div>
   </div>
 
