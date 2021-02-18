@@ -31,18 +31,20 @@ $emp_id = $_GET['employee_id'];
 
   <!-- Display Employee Name and "View Employee Data Button -->
   <?php
-  $employee_statement = $db->query("SELECT employee.first_name, employee.last_name, employee.employee_id, employee.occupation
+  if (!empty($emp_id)) {
+    $employee_statement = $db->query("SELECT employee.first_name, employee.last_name, employee.employee_id, employee.occupation
     FROM employee WHERE employee.employee_id = '{$emp_id}'");
-  $employee_statement->execute();
+    $employee_statement->execute();
 
-  while ($empFromDB = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
-    $emp_firstName = $empFromDB['first_name'];
-    $emp_lastName = $empFromDB['last_name'];
-    $emp_occup = $empFromDB['occupation'];
+    while ($empFromDB = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
+      $emp_firstName = $empFromDB['first_name'];
+      $emp_lastName = $empFromDB['last_name'];
+      $emp_occup = $empFromDB['occupation'];
+    }
+
+    echo "<h3>Welcome $emp_occup $emp_firstName $emp_lastName!</h3>";
+    echo "<div class=\"button_checkout\"><a href=\"../Project01/editEmployee.php?emp_id=$emp_id\">View Employee Information</a></div>";
   }
-
-  echo "<h3>Welcome $emp_occup $emp_firstName $emp_lastName!</h3>";
-  echo "<div class=\"button_checkout\"><a href=\"../Project01/editEmployee.php?emp_id=$emp_id\">View Employee Information</a></div>";
   ?>
 
   <!-- Display Order data in a table -->

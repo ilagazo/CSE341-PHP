@@ -152,7 +152,7 @@ function updateEmployee() {
     }
     
     // Redirect to Confirmation Page
-    header("Location: ../Project01/employeePortalDashboard.php");
+    header("Location: ../Project01/employeePortalDashboard.php?");
     die();
     
     }
