@@ -36,7 +36,7 @@ $employee_statement = $db->query("SELECT employee.first_name, employee.last_name
 FROM employee WHERE employee.employee_id = '{$emp_id}'");
 $employee_statement->execute();
 
-echo "<div class=\"order_container\"><table><tr><th>Name</th><th>Occupation</th></tr>";
+echo "<div class=\"order_container\"><table><tr><th>Name</th><th>Occupation</th><th>ID</th></tr>";
 while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
     $emp_firstName = $row['first_name'];
     $emp_lastName = $row['last_name'];
@@ -46,7 +46,7 @@ while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
     $emp_pw = $row['employee_password'];
     $emp_un = $row['username'];
 
-    echo "<tr><td>$emp_firstName $emp_lastName</td><td>$emp_occup</td></tr></table></div>";
+    echo "<tr><td>$emp_firstName $emp_lastName</td><td>$emp_occup</td><td>$emp_id</td></tr></table></div>";
     echo "<div class=\"order_container\"><table><tr><th>Phone</th><th>Email</th></tr>";
     echo "<tr><td>$emp_phone</td><td>$emp_email</td></tr></table></div>";
     echo "<div class=\"order_container\"><table><tr><th>Username</th><th>Password</th></tr>";
@@ -59,6 +59,8 @@ while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
     <div class="billing_info">
         <form action="../Project01/updateData.php" method="POST">
             <div class="billing_info_seperate">
+                <label for="transfer_id">Employee ID:</label>
+                <input type="number" id="transfer_id" name="transfer_id" required  minlength="1" maxlength="1">
                 <label for="emp_fn">First Name:</label>
                 <input type="text" id="emp_fn" name="emp_fn" required maxlength="50">
                 <label for="emp_ln">Last Name:</label>
@@ -71,7 +73,6 @@ while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
                 <input type="text" id="emp_username" name="emp_username" required maxlength="50">
                 <label for="emp_pw">Password:</label>
                 <input type="text" id="emp_pw" name="emp_pw" required maxlength="50">
-                <input type="hidden" id="transfer_id" name="transfer_id" value="<?= $emp_id ?>"/>
             </div>
 
             <!-- Button Container -->
