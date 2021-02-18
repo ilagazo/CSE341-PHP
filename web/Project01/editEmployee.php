@@ -46,13 +46,12 @@ while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
     $emp_pw = $row['employee_password'];
     $emp_un = $row['username'];
 
-    echo "<tr><td>$emp_firstName $emp_lastName</td><td>$emp_occup</td></tr></table>";
-    echo "<table><tr><th>Phone</th><th>Email</th></tr>";
-    echo "<tr><td>$emp_phone</td><td>$emp_email</td></tr></table>";
-    echo "<table><tr><th>Username</th><th>Password</th></tr>";
-    echo "<tr><td>$emp_un</td><td>$emp_pw</td></tr></table>";
+    echo "<tr><td>$emp_firstName $emp_lastName</td><td>$emp_occup</td></tr></table></div>";
+    echo "<div class=\"order_container\"><table><tr><th>Phone</th><th>Email</th></tr>";
+    echo "<tr><td>$emp_phone</td><td>$emp_email</td></tr></table></div>";
+    echo "<div class=\"order_container\"><table><tr><th>Username</th><th>Password</th></tr>";
+    echo "<tr><td>$emp_un</td><td>$emp_pw</td></tr></table></div>";
 }
-echo "</div>"
 ?>
 
  <!-- Change Data Form -->

@@ -129,7 +129,7 @@ function updateEmployee() {
      $emp_email = $_POST['emp_email'];
      $emp_username = $_POST['emp_username'];
      $emp_pw = $_POST['emp_pw'];
-     
+
     try {
         // Connect to DB
         include "../Project01/dbConnect.php";
@@ -137,8 +137,7 @@ function updateEmployee() {
     
         // First Prepare Query Statements
         $queryEmployee = "UPDATE employee SET first_name='{$emp_fn}', last_name='{$emp_ln}', email='{$emp_email}', phone_number='{$emp_phone}', username='{$emp_username}', employee_password='{$emp_pw}' 
-        WHERE username='{$emp_id}' AND email='{$emp_email}' AND first_name='{$emp_fn} AND last_name='{$emp_ln}'";
-
+        WHERE username='{$emp_username}' AND email='{$emp_email}' AND first_name='{$emp_fn} AND last_name='{$emp_ln}'";
 
         // Prepare each query and execute
         $statement = $db->prepare($queryEmployee);
