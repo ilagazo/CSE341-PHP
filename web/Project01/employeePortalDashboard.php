@@ -37,7 +37,7 @@ $emp_id = $_GET['employee_id'];
     $emp_firstName = $empFromDB['first_name'];
     $emp_lastName = $empFromDB['last_name'];
     }
-    echo "<h3>Welcome $emp_firstName $emp_lastName</h3>";
+    echo "<h3>Welcome $emp_firstName $emp_lastName!</h3>";
   ?>
   <div class="order_container">
     <?php

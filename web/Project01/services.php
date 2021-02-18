@@ -1,5 +1,15 @@
 <?php
 session_start();
+
+// Initialize cart
+if(!(isset($_SESSION['cart']))) {
+    $_SESSION['cart'];
+}
+// Destroy the cart
+if(isset($_GET['clear'])) {
+    $_SESSION['cart'] = array();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -38,32 +48,31 @@ session_start();
                 <div class="product">
                     <p>Price: $100</p>
                     <img src="../Project01/Images/swedishMassage.jpg" alt="Swedish Massage Package">
-                    <input type="number" id="prod1" name="item1" min="0" max="3" value="0">
+                    <input type="number" id="prod1" name="prod1" min="0" max="3">
                     <br><br><label for="prod1">Swedish Massage Package<br></label>
-
                 </div>
                 <div class="product">
                     <p>Price: $150</p>
                     <img src="../Project01/Images/hotStoneMassage.jpg" alt="Hot Stone Massage Package">
-                    <input type="number" id="prod2" name="item2" min="0" max="3" value="0">
+                    <input type="number" id="prod2" name="prod2" min="0" max="3">
                     <br><br><label for="prod2">Hot Stone Massage Package<br></label>
                 </div>
                 <div class="product">
                     <p>Price: $175</p>
                     <img src="../Project01/Images/coupleMassage.jpg" alt="Couples Massage Package">
-                    <input type="number" id="prod3" name="item3" min="0" max="3" value="0">
+                    <input type="number" id="prod3" name="prod3" min="0" max="3">
                     <br><br><label for="prod3">Couples Massage Package<br></label>
                 </div>
                 <div class="product">
                     <p>Price: $125</p>
                     <img src="../Project01/Images/prenatal.jpg" alt="Prenatal Massage Package">
-                    <input type="number" id="prod4" name="item4" min="0" max="3" value="0">
+                    <input type="number" id="prod4" name="prod4" min="0" max="3">
                     <br><br><label for="prod4">Prenatal Massage Package<br></label>
                 </div>
                 <div class="product">
                     <p>Price: $125</p>
                     <img src="../Project01/Images/aromaTherapy.jpg" alt="Aromatherapy Massage Package">
-                    <input type="number" id="prod5" name="item5" min="0" max="3" value="0">
+                    <input type="number" id="prod5" name="prod5" min="0" max="3">
                     <br><br><label for="prod5">Aromatherapy Massage Package<br></label>
                 </div>
             </div>
@@ -73,20 +82,20 @@ session_start();
 
         <!-- Check if items were sent via post -->
         <?php
-        if (isset($_POST["item1"])) {
-            $_SESSION["item1"] = $_POST["item1"];
+        if (isset($_POST["prod1"])) {
+            $_SESSION["prod1"] = $_POST["prod1"];
         }
-        if (isset($_POST["item2"])) {
-            $_SESSION["item2"] = $_POST["item2"];
+        if (isset($_POST["prod2"])) {
+            $_SESSION["prod2"] = $_POST["prod2"];
         }
-        if (isset($_POST["item3"])) {
-            $_SESSION["item3"] = $_POST["item3"];
+        if (isset($_POST["prod3"])) {
+            $_SESSION["prod3"] = $_POST["prod3"];
         }
-        if (isset($_POST["item4"])) {
-            $_SESSION["item4"] = $_POST["item4"];
+        if (isset($_POST["prod4"])) {
+            $_SESSION["prod4"] = $_POST["prod4"];
         }
-        if (isset($_POST["item5"])) {
-            $_SESSION["item5"] = $_POST["item5"];
+        if (isset($_POST["prod5"])) {
+            $_SESSION["prod5"] = $_POST["prod5"];
         }
         ?>
 

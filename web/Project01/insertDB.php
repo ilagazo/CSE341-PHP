@@ -3,7 +3,7 @@
  // NOTE: Will be switching to $_POST instead of Session
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
-$email = $_POST['email'];
+$email = htmlspecialchars($_POST['email']);
 $phone = $_POST['phone'];
 $address_st = $_POST['address'];
 $adress_state = $_POST['state'];
