@@ -59,8 +59,9 @@ while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
     <div class="billing_info">
         <form action="../Project01/updateData.php" method="POST">
             <div class="billing_info_seperate">
-                <label for="transfer_id">Employee ID:</label>
-                <input type="number" id="transfer_id" name="transfer_id" required  minlength="1" maxlength="1">
+                <!-- <label for="transfer_id">Employee ID:</label>
+                <input type="number" id="transfer_id" name="transfer_id" required  minlength="1" maxlength="1"> -->
+                <input type="hidden" name="transfer_id" id="transfer_id" value="<?= $emp_id ?>"/>
                 <label for="emp_fn">First Name:</label>
                 <input type="text" id="emp_fn" name="emp_fn" required maxlength="50">
                 <label for="emp_ln">Last Name:</label>
@@ -77,7 +78,7 @@ while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
 
             <!-- Button Container -->
             <div class="button_checkout">
-                <button type="submit" name="change" value="change_employee">Confirm Changes</button>
+                <button type="submit" name="employeeData" value="employeeData">Confirm Changes</button>
             </div>
         </form>
     </div>

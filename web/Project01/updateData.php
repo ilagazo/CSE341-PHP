@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['change'])){
 elseif ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['delete'])) {
     deleteOrder();
 }
-elseif($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['change_employee'])) {
+elseif($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['employeeData'])) {
     updateEmployee();
 }
 
