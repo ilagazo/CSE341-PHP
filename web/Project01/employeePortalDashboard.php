@@ -28,17 +28,24 @@ $emp_id = $_GET['employee_id'];
     <img src="../Project01/Images/hero_empDashboard.jpg" alt="Josie's Mountain Spa Retreat Pool">
   </div>
   <h2>Employee Portal Dashboard:</h2>
-  <?php
-    $employee_statement = $db->query("SELECT employee.first_name, employee.last_name, employee.employee_id 
-    FROM employee WHERE employee.employee_id = '{$emp_id}'");
-    $employee_statement->execute();
 
-    while($empFromDB = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
+  <!-- Display Employee Name and "View Employee Data Button -->
+  <?php
+  $employee_statement = $db->query("SELECT employee.first_name, employee.last_name, employee.employee_id, employee.occupation
+    FROM employee WHERE employee.employee_id = '{$emp_id}'");
+  $employee_statement->execute();
+
+  while ($empFromDB = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
     $emp_firstName = $empFromDB['first_name'];
     $emp_lastName = $empFromDB['last_name'];
-    }
-    echo "<h3>Welcome $emp_firstName $emp_lastName!</h3>";
+    $emp_occup = $empFromDB['occupation'];
+  }
+
+  echo "<h3>Welcome $emp_occup $emp_firstName $emp_lastName!</h3>";
+  echo "<div class=\"button_checkout\"><a href=\"../Project01/editEmployee.php?emp_id=$emp_id\">View Employee Information</a></div>";
   ?>
+
+  <!-- Display Order data in a table -->
   <div class="order_container">
     <?php
     // Retrieve data from each column and table
@@ -67,6 +74,7 @@ $emp_id = $_GET['employee_id'];
     echo "</table>";
     ?>
   </div>
+
   <?php include('footer.php'); ?>
 </body>
 

@@ -121,6 +121,10 @@ th {
   border-collapse: collapse;
 }
 
+.order_container > th {
+  background-color: black;
+}
+
 .button_checkout {
   text-align: center;
   padding: 10px;
