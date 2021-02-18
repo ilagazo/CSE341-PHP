@@ -3,6 +3,7 @@
 include "../Project01/dbConnect.php";
 $db = get_db();
 
+$emp_id = $_GET['emp_id'];
 ?>
 
 <!doctype html>
@@ -25,10 +26,61 @@ $db = get_db();
   <h1><a href="../Project01/homepage.php">Josie's Mountain Spa Retreat</a></h1>
   <?php include('navbar.php'); ?>
   <div class="heroImg">
-    <img src="../Project01/Images/hero_empLogin.jpg" alt="Josie's Mountain Spa Retreat Pool">
+    <img src="../Project01/Images/hero_empInfo.jpg" alt="Josie's Mountain Spa Happy Employee #2">
   </div>
-  <h2>Employee Login:</h2>
+  <h2>Employee Information:</h2>
  
+  <!-- Display Employee Data -->
+<?php
+$employee_statement = $db->query("SELECT employee.first_name, employee.last_name, employee.occupation, employee.phone_number, employee.email, employee.employee_password, employee.username
+FROM employee WHERE employee.employee_id = '{$emp_id}'");
+$employee_statement->execute();
+
+echo "<table><tr><th>Name</th><th>Occupation</th></tr>";
+while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
+    $emp_firstName = $row['first_name'];
+    $emp_lastName = $row['last_name'];
+    $emp_occup = $row['occupation'];
+    $emp_phone = $row['phone_number'];
+    $emp_email = $row['email'];
+    $emp_pw = $row['password'];
+    $emp_un = $row['username'];
+
+    echo "<tr><td>$emp_firstName $emp_lastName</td><td>$emp_occup</td></tr></table>";
+    echo "<table><tr><th>Phone</th><th>Email</th></tr>";
+    echo "<tr><td>$emp_phone</td><td>$emp_email</td></tr></table>";
+    echo "<table><tr><th>Username</th><th>Password</th></tr>";
+    echo "<tr><td>$emp_un</td><td>$emp_pw</td></tr></table>";
+}
+?>
+
+ <!-- Change Data Form -->
+ <h4>Edit Employee Data Form:</h4>
+    <div class="billing_info">
+        <form action="../Project01/updateData.php" method="POST">
+            <div class="billing_info_seperate">
+                <label for="emp_fn">First Name:</label>
+                <input type="text" id="emp_fn" name="emp_fn" required maxlength="50">
+                <label for="emp_ln">Last Name:</label>
+                <input type="text" id="emp_ln" name="emp_ln" required maxlength="50">
+                <!-- <label for="id">Occupation:</label>
+                <input type="number" id="pay_id" name="pay_id" required minlength="1"> -->
+                <label for="emp_phone">Phone:</label>
+                <input type="text" id="emp_phone" name="emp_phone" required maxlength="11">
+                <label for="emp_email">Email:</label>
+                <input type="text" id="emp_email" name="emp_email" required maxlength="50">
+                <label for="emp_username">Username:</label>
+                <input type="text" id="emp_username" name="emp_username" required maxlength="50">
+                <label for="emp_pw">Password:</label>
+                <input type="text" id="emp_pw" name="emp_pw" required maxlength="50">
+            </div>
+
+            <!-- Button Container -->
+            <div class="button_checkout">
+                <button type="submit" name="change" value="change_employee">Confirm Changes</button>
+            </div>
+        </form>
+    </div>
 
   <?php include('footer.php'); ?>
 </body>

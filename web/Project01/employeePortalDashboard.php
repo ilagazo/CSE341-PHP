@@ -25,7 +25,7 @@ $emp_id = $_GET['employee_id'];
   <h1><a href="../Project01/homepage.php">Josie's Mountain Spa Retreat</a></h1>
   <?php include('navbar.php'); ?>
   <div class="heroImg">
-    <img src="../Project01/Images/hero_empDashboard.jpg" alt="Josie's Mountain Spa Retreat Pool">
+    <img src="../Project01/Images/hero_empDashboard.jpg" alt="Josie's Mountain Spa Retreat Happy Employee #1">
   </div>
   <h2>Employee Portal Dashboard:</h2>
 
@@ -56,7 +56,7 @@ $emp_id = $_GET['employee_id'];
     $customerOrder_statement->execute();
 
     // Retrieve and display data per row
-    echo "<table><tr><th>Order Number:</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th><th>Options:</th></tr>";
+    echo "<table><tr><th>Order Number</th><th>Customer's First Name</th><th>Last Name</th><th>Email</th><th>Phone #</th><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total</th><th>Options</th></tr>";
     while ($customerInfo_row = $customerOrder_statement->fetch(PDO::FETCH_ASSOC)) {
       $order_id = $customerInfo_row['order_id'];
       $customer_first_name = $customerInfo_row['first_name'];

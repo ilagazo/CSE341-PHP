@@ -6,6 +6,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['change'])){
 elseif ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['delete'])) {
     deleteOrder();
 }
+elseif($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['change_employee'])) {
+    updateEmployee();
+}
 
 // Updates the order
 function updateOrder() {
@@ -115,6 +118,41 @@ function deleteOrder() {
     // Redirect to Confirmation Page
     header("Location: ../Project01/employeePortalDashboard.php");
     die();
+    }
 
+    // Updates the order
+function updateEmployee() {
+     // Initialize and Declare PHP variables from Form
+     $emp_fn = $_POST['emp_fn'];
+     $emp_ln = $_POST['emp_ln'];
+     $emp_phone = $_POST['emp_phone'];
+     $emp_email = $_POST['emp_email'];
+     $emp_username = $_POST['emp_username'];
+     $emp_pw = $_POST['emp_pw'];
+     
+    try {
+        // Connect to DB
+        include "../Project01/dbConnect.php";
+        $db = get_db();
+    
+        // First Prepare Query Statements
+        $queryEmployee = "UPDATE employee SET first_name='{$emp_fn}', last_name='{$emp_ln}', email='{$emp_email}', phone_number='{$emp_phone}', username='{$emp_username}', employee_password='{$emp_pw}' 
+        WHERE username='{$emp_id}' AND email='{$emp_email}' AND first_name='{$emp_fn} AND last_name='{$emp_ln}'";
+
+
+        // Prepare each query and execute
+        $statement = $db->prepare($queryEmployee);
+        $statement->execute();
+    }
+    catch (Exception $ex)
+    {
+        echo "Error with DB. Data did not update!";
+        die();
+    }
+    
+    // Redirect to Confirmation Page
+    header("Location: ../Project01/employeePortalDashboard.php");
+    die();
+    
     }
 ?>

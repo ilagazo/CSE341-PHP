@@ -45,7 +45,7 @@ $id = $_GET['order_id'];
     $statement->execute();
 
     // Display the table into a "neat" table
-    echo "<div class=\"order_container\"><table><tr><th>Order Number:</th><th>Customer ID:</th><th>Payment ID:</th><th>Product ID:</th><th>Address ID:</th></tr>";
+    echo "<div class=\"order_container\"><table><tr><th>Order Number</th><th>Customer ID</th><th>Payment ID</th><th>Product ID</th><th>Address ID</th></tr>";
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
         // Order Info Row
         $order_id = $row['order_id'];
@@ -62,15 +62,15 @@ $id = $_GET['order_id'];
         $phone = $row['phone_number'];
         echo "<tr><td>$first_name</td><td>$last_name</td><td>$email</td><td>$phone</td></tr></table></div>";
         // Product Info Row
-        echo "<div class=\"order_container\"><table><tr><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total:</th></tr>";
+        echo "<div class=\"order_container\"><table><tr><th>Product</th><th>Price</th><th>Quantity Ordered</th><th>Total</th></tr>";
         $prod_name = $row['product_name'];
         $price = $row['price'];
         $prod_qty = $row['quantity'];
         $total = $price * $prod_qty;
         echo "<tr><td>$prod_name</td><td>$price</td><td>$prod_qty</td><td>$total</td></tr></table></div>";
         // Address / Payment Row
-        echo "<div class=\"order_container\"><table><tr><th>Address:</th>
-            <th>Payment Type:</th><th>Card Number:</th><th>Name On Card:</th></tr>";
+        echo "<div class=\"order_container\"><table><tr><th>Address</th>
+            <th>Payment Type</th><th>Card Number</th><th>Name On Card</th></tr>";
         $add_st = $row['address_st'];
         $city = $row['city'];
         $postal_code = $row['postal_code'];
@@ -94,17 +94,17 @@ $id = $_GET['order_id'];
     <!-- Change Data Form -->
     <h4>Edit Data Form:</h4>
     <div class="billing_info">
-        <form action="../Project01/updateOrder.php" method="POST">
+        <form action="../Project01/updateData.php" method="POST">
             <div class="billing_info_seperate">
                 <label for="id">Order ID:</label>
                 <input type="number" id="id" name="id" required minlength="1">
-                <label for="id">Customer ID:</label>
+                <label for=cust_id>Customer ID:</label>
                 <input type="number" id="cust_id" name="cust_id" required minlength="1">
-                <label for="id">Payment ID:</label>
+                <label for="pay_id">Payment ID:</label>
                 <input type="number" id="pay_id" name="pay_id" required minlength="1">
-                <label for="id">Product ID:</label>
+                <label for="prod_id">Product ID:</label>
                 <input type="number" id="prod_id" name="prod_id" required minlength="1">
-                <label for="id">Address ID:</label>
+                <label for="add_id">Address ID:</label>
                 <input type="number" id="add_id" name="add_id" required minlength="1">
             </div>
             <div class="billing_info_seperate">

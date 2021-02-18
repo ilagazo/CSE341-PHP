@@ -121,8 +121,17 @@ th {
   border-collapse: collapse;
 }
 
-.order_container > th {
+.order_container > table > th {
   background-color: black;
+}
+
+.order_container > table > tr:hover {
+  background-color: blue;
+}
+
+.order_container > table > tr:nth-child(even) {
+  background-color: aqua;
+
 }
 
 .button_checkout {
