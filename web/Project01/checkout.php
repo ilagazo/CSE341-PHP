@@ -25,7 +25,7 @@ include_once('../Project01/services.php');
   <div class="heroImg">
     <img src="../Project01/Images/hero_checkout.jpg" alt="Josie's Mountain Spa Retreat Pool">
   </div>
-
+<?php print_r($_SESSION); ?>
   <!-- Products -->
   <div class="product_container">
     <div class="product">
