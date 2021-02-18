@@ -130,7 +130,7 @@ function updateEmployee() {
         $emp_email = $_POST['emp_email'];
         $emp_username = $_POST['emp_username'];
         $emp_pw = $_POST['emp_pw'];
-        $emp_id = $_POST['transfer_id'];
+        $emp_id = $_GET['transfer_id'];
 
         // Connect to DB
         include "../Project01/dbConnect.php";
