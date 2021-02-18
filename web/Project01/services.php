@@ -49,7 +49,7 @@ session_unset();
                 <div class="product">
                     <p>Price: $100</p>
                     <img src="../Project01/Images/swedishMassage.jpg" alt="Swedish Massage Package">
-                    <input type="number" id="prod1" name="prod1" min="0" max="3">
+                    <input type="number" id="prod1" name="prod1" min="0" max="3" value="1">
                     <br><br><label for="prod1">Swedish Massage Package<br></label>
                 </div>
                 <div class="product">
