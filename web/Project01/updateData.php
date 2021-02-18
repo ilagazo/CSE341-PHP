@@ -33,6 +33,7 @@ try {
     $card_security = $_POST['card_security'];
     $exp_month = $_POST['card_exp_month'];
     $exp_year = $_POST['card_exp_year'];
+    $emp_id = $_POST['transfer'];
 
     // Connect to DB
     include "../Project01/dbConnect.php";
@@ -67,7 +68,7 @@ catch (Exception $ex)
 }
 
 // Redirect to Confirmation Page
-header("Location: ../Project01/employeePortalDashboard.php");
+header("Location: ../Project01/employeePortalDashboard.php?employee_id=".$emp_id);
 die();
 
 }
@@ -80,6 +81,7 @@ function deleteOrder() {
     $pay_id = $_POST['pay_id'];
     $prod_id = $_POST['prod_id'];
     $add_id = $_POST['add_id'];
+    $emp_id = $_POST['transfer'];
 
     // Connect to DB
     include "../Project01/dbConnect.php";
@@ -116,7 +118,7 @@ function deleteOrder() {
     }
 
     // Redirect to Confirmation Page
-    header("Location: ../Project01/employeePortalDashboard.php");
+    header("Location: ../Project01/employeePortalDashboard.php?employee_id=".$emp_id);
     die();
     }
 
@@ -152,7 +154,7 @@ function updateEmployee() {
     }
     
     // Redirect to Confirmation Page
-    header("Location: ../Project01/employeePortalDashboard.php?");
+    header("Location: ../Project01/employeePortalDashboard.php?employee_id=".$emp_id);
     die();
     
     }

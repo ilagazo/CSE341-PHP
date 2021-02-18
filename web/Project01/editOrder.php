@@ -3,6 +3,7 @@ include "../Project01/dbConnect.php";
 $db = get_db();
 
 $id = $_GET['order_id'];
+$emp_id = $_GET['transfer_id']
 ?>
 
 <!doctype html>
@@ -140,6 +141,7 @@ $id = $_GET['order_id'];
                 <input type="number" id="card_exp_month" name="card_exp_month" min="0" minlength="2" maxlength="2">
                 <label for="card_exp_month">Expiration Year:</label>
                 <input type="number" id="card_exp_year" name="card_exp_year" min="0" minlength="2" maxlength="2">
+                <input type="hidden" name="transfer" id="transfer" value="<?= $emp_id ?>"/>
             </div>
 
             <!-- Button Container -->
