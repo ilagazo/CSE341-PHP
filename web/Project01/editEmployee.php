@@ -71,12 +71,12 @@ while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
                 <input type="text" id="emp_username" name="emp_username" required maxlength="50">
                 <label for="emp_pw">Password:</label>
                 <input type="text" id="emp_pw" name="emp_pw" required maxlength="50">
+                <input type="hidden" id="transfer_id" name="transfer_id" value="<?= $emp_id ?>"/>
             </div>
 
             <!-- Button Container -->
             <div class="button_checkout">
                 <button type="submit" name="change" value="change_employee">Confirm Changes</button>
-                <input type="hidden" id="transfer_id" name="transfer_id" value="<?= $emp_id ?>"/>
             </div>
         </form>
     </div>
