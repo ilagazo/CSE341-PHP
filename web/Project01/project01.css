@@ -113,25 +113,28 @@ form {
 }
 
 .order_container > table,
-td,
-th {
+td {
   text-align: center;
   padding: 8px;
   border: 1px solid black;
   border-collapse: collapse;
 }
 
-.order_container > table > th {
+.order_container > th {
   background-color: black;
+  color: aliceblue;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 
-.order_container > table > tr:hover {
+.order_container > tr:hover {
   background-color: blue;
 }
 
-.order_container > table > tr:nth-child(even) {
+.order_container > tr:nth-child(even) {
   background-color: aqua;
-
 }
 
 .button_checkout {

@@ -36,14 +36,14 @@ $employee_statement = $db->query("SELECT employee.first_name, employee.last_name
 FROM employee WHERE employee.employee_id = '{$emp_id}'");
 $employee_statement->execute();
 
-echo "<table><tr><th>Name</th><th>Occupation</th></tr>";
+echo "<div class=\"order_container\"><table><tr><th>Name</th><th>Occupation</th></tr>";
 while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
     $emp_firstName = $row['first_name'];
     $emp_lastName = $row['last_name'];
     $emp_occup = $row['occupation'];
     $emp_phone = $row['phone_number'];
     $emp_email = $row['email'];
-    $emp_pw = $row['password'];
+    $emp_pw = $row['employee_password'];
     $emp_un = $row['username'];
 
     echo "<tr><td>$emp_firstName $emp_lastName</td><td>$emp_occup</td></tr></table>";
@@ -52,6 +52,7 @@ while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
     echo "<table><tr><th>Username</th><th>Password</th></tr>";
     echo "<tr><td>$emp_un</td><td>$emp_pw</td></tr></table>";
 }
+echo "</div>"
 ?>
 
  <!-- Change Data Form -->
@@ -63,8 +64,6 @@ while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
                 <input type="text" id="emp_fn" name="emp_fn" required maxlength="50">
                 <label for="emp_ln">Last Name:</label>
                 <input type="text" id="emp_ln" name="emp_ln" required maxlength="50">
-                <!-- <label for="id">Occupation:</label>
-                <input type="number" id="pay_id" name="pay_id" required minlength="1"> -->
                 <label for="emp_phone">Phone:</label>
                 <input type="text" id="emp_phone" name="emp_phone" required maxlength="11">
                 <label for="emp_email">Email:</label>
