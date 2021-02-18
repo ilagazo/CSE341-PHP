@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_unset();
 
 // // Initialize cart
 // if(!(isset($_SESSION['cart']))) {

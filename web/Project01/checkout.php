@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once('../Project01/services.php');
 ?>
 
 <!doctype html>
@@ -30,7 +31,7 @@ session_start();
     <div class="product">
       <p>Price: $100</p>
       <img src="../Project01/Images/swedishMassage.jpg" alt="Swedish Massage Package">
-      <p>Swedish Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod1"]; ?></p>
+      <?php echo "<p>Swedish Massage Package<br>Quantity Ordered:" . $_SESSION['prod1'] . "</p>"; ?>
     </div>
     <div class="product">
       <p>Price: $150</p>
