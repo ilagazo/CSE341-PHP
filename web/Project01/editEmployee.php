@@ -76,6 +76,7 @@ while ($row = $employee_statement->fetch(PDO::FETCH_ASSOC)) {
             <!-- Button Container -->
             <div class="button_checkout">
                 <button type="submit" name="change" value="change_employee">Confirm Changes</button>
+                <input type="hidden" id="transfer_id" name="transfer_id" value="<?= $emp_id ?>"/>
             </div>
         </form>
     </div>

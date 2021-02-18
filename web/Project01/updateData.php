@@ -120,24 +120,26 @@ function deleteOrder() {
     die();
     }
 
-    // Updates the order
+    // Updates Employee
 function updateEmployee() {
-     // Initialize and Declare PHP variables from Form
-     $emp_fn = $_POST['emp_fn'];
-     $emp_ln = $_POST['emp_ln'];
-     $emp_phone = $_POST['emp_phone'];
-     $emp_email = $_POST['emp_email'];
-     $emp_username = $_POST['emp_username'];
-     $emp_pw = $_POST['emp_pw'];
-
     try {
+        // Initialize and Declare PHP variables from Form
+        $emp_fn = $_POST['emp_fn'];
+        $emp_ln = $_POST['emp_ln'];
+        $emp_phone = $_POST['emp_phone'];
+        $emp_email = $_POST['emp_email'];
+        $emp_username = $_POST['emp_username'];
+        $emp_pw = $_POST['emp_pw'];
+        $emp_id = $_POST['transfer_id'];
+
         // Connect to DB
         include "../Project01/dbConnect.php";
         $db = get_db();
     
         // First Prepare Query Statements
-        $queryEmployee = "UPDATE employee SET first_name='{$emp_fn}', last_name='{$emp_ln}', email='{$emp_email}', phone_number='{$emp_phone}', username='{$emp_username}', employee_password='{$emp_pw}' 
-        WHERE username='{$emp_username}' AND email='{$emp_email}' AND first_name='{$emp_fn}' AND last_name='{$emp_ln}'";
+        $queryEmployee = "UPDATE employee SET username='{$emp_username}', employee_password='{$emp_pw}', email='{$emp_email}', 
+        first_name='{$emp_fn}', last_name='{$emp_ln}', phone_number='{$emp_phone}'
+        WHERE employee_id='{$emp_id}'";
 
         // Prepare each query and execute
         $statement = $db->prepare($queryEmployee);
