@@ -137,7 +137,7 @@ function updateEmployee() {
     
         // First Prepare Query Statements
         $queryEmployee = "UPDATE employee SET first_name='{$emp_fn}', last_name='{$emp_ln}', email='{$emp_email}', phone_number='{$emp_phone}', username='{$emp_username}', employee_password='{$emp_pw}' 
-        WHERE username='{$emp_username}' AND email='{$emp_email}' AND first_name='{$emp_fn} AND last_name='{$emp_ln}'";
+        WHERE username='{$emp_username}' AND email='{$emp_email}' AND first_name='{$emp_fn}' AND last_name='{$emp_ln}'";
 
         // Prepare each query and execute
         $statement = $db->prepare($queryEmployee);
@@ -145,7 +145,7 @@ function updateEmployee() {
     }
     catch (Exception $ex)
     {
-        echo "Error with DB. Data did not update!";
+        echo "Error with DB. Employee data did not update!";
         die();
     }
     
