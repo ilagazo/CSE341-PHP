@@ -42,8 +42,8 @@ try {
     $queryCustomer = "UPDATE customer SET first_name='{$first_name}', last_name='{$last_name}', email='{$email}', phone_number='{$phone}' 
     WHERE customer_id='{$cust_id}'";
 
-    $queryAddress = "UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$addess_state}', postal_code='{$zipCode}' 
-    WHERE address_id='{$add_id}'";
+    // $queryAddress = "UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$address_state}', postal_code='{$zipCode}' 
+    // WHERE address_id='{$add_id}'";
 
     $queryPayment = "UPDATE payment SET payment_type='{$cardType}', card_number='{$card_number}', security_code='{$card_security}', exp_month='{$exp_month}', exp_year='{$exp_year}', name_on_card='{$card_name}'
     WHERE payment_id='{$pay_id}'";
@@ -51,8 +51,8 @@ try {
     // TASK: ADD Product Update
 
     // Prepare each query and execute
-    $statement1 = $db->prepare($queryAddress);
-    $statement1->execute();
+    // $statement1 = $db->prepare($queryAddress);
+    // $statement1->execute();
 
     $statement2 = $db->prepare($queryCustomer);
     $statement2->execute();
@@ -65,11 +65,9 @@ catch (Exception $ex)
 	echo "Error with DB. Data did not update!";
 	die();
 }
-
 // Redirect to Confirmation Page
 header("Location: ../Project01/employeePortalDashboard.php?employee_id=".$emp_id);
 die();
-
 }
 
 // Deletes the order
@@ -152,10 +150,8 @@ function updateEmployee() {
         echo "Error with DB. Employee data did not update!";
         die();
     }
-    
     // Redirect to Confirmation Page
     header("Location: ../Project01/employeePortalDashboard.php?employee_id=".$emp_id);
     die();
-    
     }
 ?>

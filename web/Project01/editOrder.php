@@ -96,19 +96,7 @@ $emp_id = $_GET['transfer_id']
     <h4>Edit Data Form:</h4>
     <div class="billing_info">
         <form action="../Project01/updateData.php" method="POST">
-
-            <?php 
-                 while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<input type=\"hidden\" name=\"id\" id=\"id\" value=\"$order_id\"/>";
-                    echo "<input type=\"hidden\" name=\"transfer\" id=\"transfer\" value=\"$emp_id\"/>";
-                    echo "<input type=\"hidden\" name=\"cust_id\" id=\"cust_id\" value=\"$cust_id\"/>";
-                    echo "<input type=\"hidden\" name=\"pay_id\" id=\"pay_id\" value=\"$pay_id\"/>";
-                    echo "<input type=\"hidden\" name=\"prod_id\" id=\"prod_id\" value=\"$prod_id\"/>";
-                    echo "<input type=\"hidden\" name=\"add_id\" id=\"add_id\" value=\"$add_id\"/>";
-                }
-            ?>
-
-            <!-- <div class="billing_info_seperate">
+            <div class="billing_info_seperate">
                 <label for="id">Order ID:</label>
                 <input type="number" id="id" name="id" required minlength="1">
                 <label for=cust_id>Customer ID:</label>
@@ -119,8 +107,7 @@ $emp_id = $_GET['transfer_id']
                 <input type="number" id="prod_id" name="prod_id" required minlength="1">
                 <label for="add_id">Address ID:</label>
                 <input type="number" id="add_id" name="add_id" required minlength="1">
-            </div> -->
-
+            </div>
             <div class="billing_info_seperate">
                 <label for="first_name">First Name:</label>
                 <input type="text" id="first_name" name="first_name" required maxlength="50">
