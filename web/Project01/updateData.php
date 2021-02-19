@@ -42,7 +42,7 @@ try {
     $queryCustomer = "UPDATE customer SET first_name='{$first_name}', last_name='{$last_name}', email='{$email}', phone_number='{$phone}' 
     WHERE customer_id='{$cust_id}'";
 
-    $queryAddress = "UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$adress_state}, 'postal_code='{$zipCode}' 
+    $queryAddress = "UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$adress_state}', postal_code='{$zipCode}' 
     WHERE address_id='{$add_id}'";
 
     $queryPayment = "UPDATE payment SET payment_type='{$cardType}', card_number='{$card_number}', security_code='{$card_security}', exp_month='{$exp_month}', exp_year='{$exp_year}', name_on_card='{$card_name}'
