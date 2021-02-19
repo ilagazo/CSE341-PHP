@@ -23,7 +23,7 @@ try {
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $address_st = $_POST['address'];
-    $adress_state = $_POST['state'];
+    $address_state = $_POST['state'];
     $city = $_POST['city'];
     $zipCode = $_POST['zipCode'];
     $cardType = $_POST['card_type'];
@@ -42,7 +42,7 @@ try {
     $queryCustomer = "UPDATE customer SET first_name='{$first_name}', last_name='{$last_name}', email='{$email}', phone_number='{$phone}' 
     WHERE customer_id='{$cust_id}'";
 
-    $queryAddress = "UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$adress_state}', postal_code='{$zipCode}' 
+    $queryAddress = "UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$addess_state}', postal_code='{$zipCode}' 
     WHERE address_id='{$add_id}'";
 
     $queryPayment = "UPDATE payment SET payment_type='{$cardType}', card_number='{$card_number}', security_code='{$card_security}', exp_month='{$exp_month}', exp_year='{$exp_year}', name_on_card='{$card_name}'
@@ -117,6 +117,7 @@ function deleteOrder() {
     }
 
     // Redirect to Confirmation Page
+    echo "Here is the: $id $cust_id $pay_id $prod_id $add_id";
     header("Location: ../Project01/employeePortalDashboard.php?employee_id=".$emp_id);
     die();
     }
