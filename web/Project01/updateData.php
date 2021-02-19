@@ -112,12 +112,12 @@ function deleteOrder() {
     }
     catch (Exception $ex)
     {
+        echo "Here is the: $id $cust_id $pay_id $prod_id $add_id";
         echo "Error with DB. Data did not delete!";
         die();
     }
 
     // Redirect to Confirmation Page
-    echo "Here is the: $id $cust_id $pay_id $prod_id $add_id";
     header("Location: ../Project01/employeePortalDashboard.php?employee_id=".$emp_id);
     die();
     }
