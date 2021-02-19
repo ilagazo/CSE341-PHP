@@ -56,8 +56,8 @@ session_start();
 
   <!-- Button Container -->
   <div class="button_checkout">
-    <a href="../Project01/services.php">Continue Shopping</a>
-    <a href="../Project01/checkout.php">Proceed to Checkout</a>
+    <a class="btn btn-secondary" href="../Project01/services.php">Continue Shopping</a>
+    <a class="btn btn-secondary" href="../Project01/checkout.php">Proceed to Checkout</a>
   </div>
 
   <div class="text-section">

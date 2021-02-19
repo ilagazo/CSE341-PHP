@@ -107,7 +107,7 @@ $emp_id = $_GET['transfer_id']
                 <input type="number" id="prod_id" name="prod_id" required minlength="1">
                 <label for="add_id">Address ID:</label>
                 <input type="number" id="add_id" name="add_id" required minlength="1">
-                <input type="hidden" id="transfer" name="transfer" value="<?= $emp_id ?>"/>
+                <input type="hidden" id="transfer" name="transfer" value="<?= $emp_id ?>" />
             </div>
             <div class="billing_info_seperate">
                 <label for="first_name">First Name:</label>
@@ -132,12 +132,18 @@ $emp_id = $_GET['transfer_id']
             <div class="billing_info_seperate">
                 <!-- Radio Buttons -->
                 <div class="radio_container">
-                    <input type="radio" id="card_type_visa" name="card_type" value="Visa" required>
-                    <label for="card_type_visa">Visa</label>
-                    <input type="radio" id="card_type_mc" name="card_type" value="Mastercard" required>
-                    <label for="card_type_mc">Mastercard</label>
-                    <input type="radio" id="card_type_dis" name="card_type" value="Discover" required>
-                    <label for="card_type_dis">Discover</label>
+                    <div>
+                        <input type="radio" id="card_type_visa" name="card_type" value="Visa" required>
+                        <label for="card_type_visa">Visa</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="card_type_mc" name="card_type" value="Mastercard" required>
+                        <label for="card_type_mc">Mastercard</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="card_type_dis" name="card_type" value="Discover" required>
+                        <label for="card_type_dis">Discover</label>
+                    </div>
                 </div>
                 <label for="card_name">Name on Card:</label>
                 <input type="text" id="card_name" name="card_name" required maxlength="255">

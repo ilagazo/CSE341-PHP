@@ -78,7 +78,7 @@ session_unset();
                 </div>
             </div>
             <!-- Submit Button -->
-            <button type="submit" name="submit">Proceed to Cart</button>
+            <button class="btn btn-secondary" type="submit" name="submit">Proceed to Cart</button>
         </form>
 
         <!-- Check if items were sent via post -->

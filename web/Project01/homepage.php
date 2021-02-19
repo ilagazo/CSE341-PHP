@@ -26,7 +26,7 @@
     <div class="text-section">
         <h2>Our Legacy. Our Passion.</h2>
         <p>Rated as one of Utah's best destinations to relax and destress, Josie's Mountain Spa Retreat's goal is help you relax and destress! To do so we take pride in providing quality customer service and satisfaction.
-            We offer top-tier massage services from Hot Stone Massage to Swedish.<br><br>Welcome to your spa retreat!
+            We offer top-tier massage services from Hot Stone Massage to Swedish.<br><br><b>Welcome to your spa retreat!</b>
         </p>
     </div>
 

@@ -1,6 +1,5 @@
 <?php
 session_start();
-include_once('../Project01/services.php');
 ?>
 
 <!doctype html>
@@ -23,9 +22,8 @@ include_once('../Project01/services.php');
   <h1><a href="../Project01/homepage.php">Josie's Mountain Spa Retreat</a></h1>
   <?php include('navbar.php'); ?>
   <div class="heroImg">
-    <img src="../Project01/Images/hero_checkout.jpg" alt="Josie's Mountain Spa Retreat Pool">
+    <img src="../Project01/Images/hero_checkout.jpg" alt="Josie's Mountain Spa Retreat Aromatherapy Service">
   </div>
-<?php print_r($_SESSION); ?>
   <!-- Products -->
   <div class="product_container">
     <div class="product">
@@ -96,8 +94,8 @@ include_once('../Project01/services.php');
 
       <!-- Button Container -->
       <div class="button_checkout">
-        <a href="../Project01/cart.php">Return to Cart</a>
-        <button type="submit" name="submitChecktout">Confirm Purchase</button>
+        <a class="btn btn-secondary" href="../Project01/cart.php">Return to Cart</a>
+        <button class="btn btn-secondary" type="submit" name="submitChecktout">Confirm Purchase</button>
       </div>
     </form>
   </div>
