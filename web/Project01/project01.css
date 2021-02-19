@@ -128,7 +128,7 @@ th {
 }
 
 .button_checkout > a {
-  background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+  /* background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
   border: 2px solid -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
   color: black;
   margin-right: 10px;
@@ -137,7 +137,7 @@ th {
   letter-spacing: normal;
   text-indent: 0px;
   word-spacing: normal;
-  font: 400 15px Arial;
+  font: 400 15px Arial; */
 }
 
 .billing_info {
@@ -164,6 +164,10 @@ th {
 
 .radio_container {
   padding: 5px;
+  margin: 5px;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
   display: flex;
   flex-flow: row wrap;
 }

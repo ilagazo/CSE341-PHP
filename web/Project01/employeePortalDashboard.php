@@ -43,7 +43,7 @@ $emp_id = $_GET['employee_id'];
     }
 
     echo "<h3>Welcome $emp_occup $emp_firstName $emp_lastName!</h3>";
-    echo "<div class=\"button_checkout\"><a href=\"../Project01/editEmployee.php?emp_id=$emp_id\">View Employee Information</a></div>";
+    echo "<div class=\"button_checkout\"><a class=\"btn btn-light\" href=\"../Project01/editEmployee.php?emp_id=$emp_id\">View Employee Information</a></div>";
   }
   ?>
 

@@ -88,7 +88,7 @@ $emp_id = $_GET['transfer_id']
     <div class="text-section">
         <h3>Dear Employee:</h3>
         <p>Please fill out the form fully and only make changes where needed.<br><br>
-            <b>REMEMBER TO NEVER CHANGE ANY OF THE DISPLAYED IDs! FILL OUT THAT SECTION AS DISPLAYED ABOVE!</b>
+            <b>REMEMBER TO NEVER CHANGE ANY OF THE DISPLAYED IDs! FILL OUT IDs AS DISPLAYED ABOVE! FOR STATE, USE ABBREVIATION!</b>
         </p>
     </div>
 
@@ -107,7 +107,7 @@ $emp_id = $_GET['transfer_id']
                 <input type="number" id="prod_id" name="prod_id" required minlength="1">
                 <label for="add_id">Address ID:</label>
                 <input type="number" id="add_id" name="add_id" required minlength="1">
-                <input type="hidden" id="transfer" name="transfer" value="<?= $emp_id ?>">
+                <input type="hidden" id="transfer" name="transfer" value="<?= $emp_id ?>"/>
             </div>
             <div class="billing_info_seperate">
                 <label for="first_name">First Name:</label>
