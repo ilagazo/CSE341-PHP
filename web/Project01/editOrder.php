@@ -129,17 +129,15 @@ $emp_id = $_GET['transfer_id']
                 <input type="text" id="zipCode" name="zipCode" required maxlength="10">
             </div>
             <div class="billing_info_seperate">
-                <!-- <label for="card_type">Card Type:</label>
-                <input type="text" id="card_type" name="card_type" required maxlength="50"> -->
-
                 <!-- Radio Buttons -->
-                <input type="radio" id="card_type_visa" name="card_type" value="Visa" required >
-                <label for="card_type_visa">Visa</label>
-                <input type="radio" id="card_type_mc" name="card_type" value="Mastercard" required >
-                <label for="card_type_mc">Mastercard</label>
-                <input type="radio" id="card_type_dis" name="card_type" value="Discover" required >
-                <label for="card_type_dis">Discover</label>
-
+                <div class="radio_container">
+                    <input type="radio" id="card_type_visa" name="card_type" value="Visa" required>
+                    <label for="card_type_visa">Visa</label>
+                    <input type="radio" id="card_type_mc" name="card_type" value="Mastercard" required>
+                    <label for="card_type_mc">Mastercard</label>
+                    <input type="radio" id="card_type_dis" name="card_type" value="Discover" required>
+                    <label for="card_type_dis">Discover</label>
+                </div>
                 <label for="card_name">Name on Card:</label>
                 <input type="text" id="card_name" name="card_name" required maxlength="255">
                 <label for="card_number">Card Number:</label>

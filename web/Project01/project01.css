@@ -162,6 +162,12 @@ th {
   flex-flow: column wrap;
 }
 
+.radio_container {
+  padding: 5px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .display_customer_info {
   justify-content: center;
   align-items: center;

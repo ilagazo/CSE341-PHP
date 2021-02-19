@@ -62,7 +62,6 @@ try {
 }
 catch (Exception $ex)
 {
-    echo "Here it is: $address_st, $city, $address_state, $zipCode, $add_id";
 	echo "Error with DB. Data did not update!";
     echo "$queryAddress";
 	die();
