@@ -129,8 +129,17 @@ $emp_id = $_GET['transfer_id']
                 <input type="text" id="zipCode" name="zipCode" required maxlength="10">
             </div>
             <div class="billing_info_seperate">
-                <label for="card_type">Card Type:</label>
-                <input type="text" id="card_type" name="card_type" required maxlength="50">
+                <!-- <label for="card_type">Card Type:</label>
+                <input type="text" id="card_type" name="card_type" required maxlength="50"> -->
+
+                <!-- Radio Buttons -->
+                <input type="radio" id="card_type_visa" name="card_type" value="Visa" required >
+                <label for="card_type_visa">Visa</label>
+                <input type="radio" id="card_type_mc" name="card_type" value="Mastercard" required >
+                <label for="card_type_mc">Mastercard</label>
+                <input type="radio" id="card_type_dis" name="card_type" value="Discover" required >
+                <label for="card_type_dis">Discover</label>
+
                 <label for="card_name">Name on Card:</label>
                 <input type="text" id="card_name" name="card_name" required maxlength="255">
                 <label for="card_number">Card Number:</label>
@@ -138,9 +147,9 @@ $emp_id = $_GET['transfer_id']
                 <label for="card_security">Security Code:</label>
                 <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3">
                 <label for="card_exp_month">Expiration Month:</label>
-                <input type="number" id="card_exp_month" name="card_exp_month" min="0" minlength="2" maxlength="2">
+                <input type="number" id="card_exp_month" name="card_exp_month" min="1" max="12" minlength="2" maxlength="2">
                 <label for="card_exp_month">Expiration Year:</label>
-                <input type="number" id="card_exp_year" name="card_exp_year" min="0" minlength="2" maxlength="2">
+                <input type="number" id="card_exp_year" name="card_exp_year" min="22" max='99' minlength="2" maxlength="2">
             </div>
 
             <!-- Button Container -->

@@ -20,7 +20,7 @@ try {
     $add_id = $_POST['add_id'];
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
-    $email = $_POST['email'];
+    $email = htmlspecialchars($_POST['email']);
     $phone = $_POST['phone'];
     $address_st = $_POST['address'];
     $address_state = $_POST['state'];
@@ -42,8 +42,8 @@ try {
     $queryCustomer = "UPDATE customer SET first_name='{$first_name}', last_name='{$last_name}', email='{$email}', phone_number='{$phone}' 
     WHERE customer_id='{$cust_id}'";
 
-    // $queryAddress = "UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$address_state}', postal_code='{$zipCode}' 
-    // WHERE address_id='{$add_id}'";
+    $queryAddress = "UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$address_state}', postal_code='{$zipCode}' 
+    WHERE address_id='{$add_id}'";
 
     $queryPayment = "UPDATE payment SET payment_type='{$cardType}', card_number='{$card_number}', security_code='{$card_security}', exp_month='{$exp_month}', exp_year='{$exp_year}', name_on_card='{$card_name}'
     WHERE payment_id='{$pay_id}'";
@@ -51,8 +51,8 @@ try {
     // TASK: ADD Product Update
 
     // Prepare each query and execute
-    // $statement1 = $db->prepare($queryAddress);
-    // $statement1->execute();
+    $statement1 = $db->prepare($queryAddress);
+    $statement1->execute();
 
     $statement2 = $db->prepare($queryCustomer);
     $statement2->execute();
@@ -62,7 +62,9 @@ try {
 }
 catch (Exception $ex)
 {
+    echo "Here it is: $address_st, $city, $address_state, $zipCode, $add_id";
 	echo "Error with DB. Data did not update!";
+    echo "$queryAddress";
 	die();
 }
 // Redirect to Confirmation Page
@@ -127,10 +129,10 @@ function updateEmployee() {
         $emp_fn = $_POST['emp_fn'];
         $emp_ln = $_POST['emp_ln'];
         $emp_phone = $_POST['emp_phone'];
-        $emp_email = $_POST['emp_email'];
-        $emp_username = $_POST['emp_username'];
-        $emp_pw = $_POST['emp_pw'];
-        $emp_id = $_POST['transfer_id'];
+        $emp_email = htmlspecialchars($_POST['emp_email']);
+        $emp_username = htmlspecialchars($_POST['emp_username']);
+        $emp_pw = htmlspecialchars($_POST['emp_pw']);
+        $emp_id = htmlspecialchars($_POST['transfer_id']);
 
         // Connect to DB
         include "../Project01/dbConnect.php";
