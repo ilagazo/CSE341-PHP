@@ -14,7 +14,6 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['employeeData'])) {
 function updateOrder() {
 try {
     // Initialize and Declare PHP variables from Form
-    $id = $_POST['id'];
     $cust_id = $_POST['cust_id'];
     $pay_id = $_POST['pay_id'];
     $prod_id = $_POST['prod_id'];
