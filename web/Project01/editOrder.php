@@ -107,6 +107,7 @@ $emp_id = $_GET['transfer_id']
                 <input type="number" id="prod_id" name="prod_id" required minlength="1">
                 <label for="add_id">Address ID:</label>
                 <input type="number" id="add_id" name="add_id" required minlength="1">
+                <input type="hidden" id="transfer" name="transfer" value="<?= $emp_id ?>">
             </div>
             <div class="billing_info_seperate">
                 <label for="first_name">First Name:</label>
