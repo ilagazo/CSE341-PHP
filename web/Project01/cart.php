@@ -29,7 +29,8 @@ $error_msg = $_GET['error'];
   <h2>Cart:</h2>
   <div class="text-section">
     <h2>Your Satisfaction is Our Guarantee</h2>
-    <p><b>Remember, all packages come with access to the pool and patio, and a complimentary meal.</b></p><br>
+    <p><b>Remember, all packages come with access to the pool and patio, and a complimentary meal.</b><br>
+    Didn't see a change when removing an item? Try refreshing the page or proceed to checkout!</p><br>
     <?php echo "<div class=\"error_alert\"><p>$error_msg</p></div>"; ?>
   </div>
   <!-- Products -->

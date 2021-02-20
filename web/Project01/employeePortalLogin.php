@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
   <h1><a href="../Project01/homepage.php">Josie's Mountain Spa Retreat</a></h1>
   <?php include('navbar.php'); ?>
   <div class="heroImg">
-    <img src="../Project01/Images/hero_empLogin.jpg" alt="Josie's Mountain Spa Retreat Pool">
+    <img src="../Project01/Images/hero_empLogin.jpg" alt="Josie's Mountain Spa Retreat Massage Room">
   </div>
   <h2>Employee Login:</h2>
   <div class="emp_login">
@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
       <label for="emp_username">Username:</label>
       <input type="text" name="emp_username" id="emp_username" required><br><br>
       <label for="emp_password">Password:</label>
-      <input type="text" name="emp_password" id="emp_password" required><br><br>
+      <input type="text" name="emp_password" id="emp_password" required>
 
       <!-- Error Message -->
       <div class="error_alert"><?php echo $error_message . "<br>"; ?></div>

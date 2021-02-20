@@ -50,7 +50,7 @@ session_start();
                 <div class="product">
                     <p>Price: $175</p>
                     <img src="../Project01/Images/coupleMassage.jpg" alt="Couples Massage Package">
-                    <input type="number" id="prod3" name="prod3" min="0" max="3" value="0"> 
+                    <input type="number" id="prod3" name="prod3" min="0" max="3" value="0">
                     <br><br><label for="prod3">Couples Massage Package<br></label>
                 </div>
                 <div class="product">

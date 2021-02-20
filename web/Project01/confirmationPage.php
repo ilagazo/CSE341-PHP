@@ -22,7 +22,7 @@ session_start();
   <h1><a href="../Project01/homepage.php">Josie's Mountain Spa Retreat</a></h1>
   <?php include('navbar.php'); ?>
   <div class="heroImg">
-    <img src="../Project01/Images/hero_confirmation.jpg" alt="Josie's Mountain Spa Retreat Fireplace">
+    <img src="../Project01/Images/hero_confirmation.jpg" alt="Josie's Mountain Spa Retreat Happy Customer">
   </div>
   <div class="text-section">
     <h2>Confirmation Page</h2>
