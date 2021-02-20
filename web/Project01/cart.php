@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+// For debugging
+var_dump($_SESSION);
+
+// Use unset or decrement to remove the item from the cart
+// Use action=""
 ?>
 
 <!doctype html>
@@ -25,6 +31,10 @@ session_start();
     <img src="../Project01/Images/hero_cart.jpg" alt="Josie's Mountain Spa Retreat Fireplace">
   </div>
   <h2>Please Review Your Order</h2>
+  <div class="text-section">
+    <h2>Your Satisfaction is Our Guarantee</h2>
+    <p><b>Remember, all packages come with access to the pool and patio, and a complimentary meal.</b></p>
+  </div>
   <!-- Products -->
   <div class="product_container">
     <div class="product">
@@ -56,15 +66,10 @@ session_start();
 
   <!-- Button Container -->
   <div class="button_checkout">
-    <a class="btn btn-secondary" href="../Project01/services.php">Continue Shopping</a>
-    <a class="btn btn-secondary" href="../Project01/checkout.php">Proceed to Checkout</a>
+    <a class="btn btn-outline-primary" href="../Project01/services.php">Continue Shopping</a>
+    <a class="btn btn-outline-primary" href="../Project01/checkout.php">Proceed to Checkout</a>
   </div>
 
-  <div class="text-section">
-    <h2>Our Legacy. Our Passion.</h2>
-    <p>Thank you for your order!
-    </p>
-  </div>
   <?php include('footer.php'); ?>
 </body>
 

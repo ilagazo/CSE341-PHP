@@ -33,6 +33,7 @@ try {
 
     // TASK: ADD Product Insert. More complicated then I thought
 
+    // Task: Add address ID
     $query = 'INSERT INTO customer_order(customer_id, payment_id, product_id) 
     VALUES ((SELECT customer_id from customer), (SELECT payment_id from payment), (SELECT product_id from product))';
 
