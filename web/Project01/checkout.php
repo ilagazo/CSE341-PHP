@@ -56,8 +56,8 @@ session_start();
 
   <!-- Customer Input -->
   <h3>Please Fill Out Your Information</h3>
-  <div class="billing_info">
-    <form action="../Project01/insertDB.php" method="POST">
+  <form action="../Project01/insertDB.php" method="POST">
+    <div class="billing_info">
       <div class="billing_info_seperate">
         <div class="form-group">
           <label for="first_name">First Name:</label><br>
@@ -68,7 +68,7 @@ session_start();
           <input type="text" id="last_name" name="last_name" required maxlength="50" placeholder="Last Name">
         </div>
         <div class="form-group">
-        <label for="email_input">Email:</label><br>
+          <label for="email_input">Email:</label><br>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">@</span>
@@ -77,7 +77,7 @@ session_start();
           </div>
         </div>
         <div class="form-group">
-        <label for="phone">Phone Number:</label><br>
+          <label for="phone">Phone Number:</label><br>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">#</span>
@@ -132,7 +132,7 @@ session_start();
         </div>
         <div class="form-group">
           <label for="card_security">Security Code:</label><br>
-          <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3" placeholder="Security Code">
+          <input type="number" id="card_security" name="card_security" minlength="3" maxlength="3" placeholder="Security Code">
         </div>
         <div class="form-group">
           <label for="card_exp_month">Expiration Month:</label><br>
@@ -143,14 +143,14 @@ session_start();
           <input type="number" id="card_exp_year" name="card_exp_year" min="0" minlength="2" maxlength="2" placeholder="Exp. Year">
         </div>
       </div>
-      
-      <!-- Button Container -->
-      <div class="button_checkout">
-        <a class="btn btn-outline-primary" href="../Project01/cart.php">Return to Cart</a>
-        <button class="btn btn-outline-primary" type="submit" name="submitChecktout">Confirm Purchase</button>
-      </div>
-    </form>
-  </div>
+    </div>
+    <!-- Button Container -->
+    <div class="button_checkout">
+      <a class="btn btn-outline-primary" href="../Project01/cart.php">Return to Cart</a>
+      <button class="btn btn-outline-primary" type="submit" name="submitChecktout">Confirm Purchase</button>
+    </div>
+  </form>
+
 
   <!-- Fix this -->
   <!-- Make Session Variables for Payment Info -->
