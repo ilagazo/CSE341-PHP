@@ -130,13 +130,14 @@ th {
 .billing_info {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
   border: 2px solid black;
   padding: 5px;
-  margin: 10px;
   background-color: whitesmoke;
 }
 
-.billing_info > form > input {
+.billing_info > input {
   margin: 10px;
 }
 
@@ -146,16 +147,6 @@ th {
   padding: 5px;
   margin: 5px;
 }
-
-/* .radio_container {
-  padding: 5px;
-  margin: 5px;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  flex-flow: row wrap;
-} */
 
 .display_customer_info {
   justify-content: center;
