@@ -144,11 +144,10 @@ th {
 }
 
 .billing_info_seperate {
+  background-color: aqua;
   text-align: left;
   padding: 5px;
   margin: 5px;
-  display: flex;
-  flex-flow: column wrap;
 }
 
 /* .radio_container {

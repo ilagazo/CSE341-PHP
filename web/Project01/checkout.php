@@ -68,8 +68,8 @@ session_start();
           <input type="text" id="last_name" name="last_name" required maxlength="50" placeholder="Last Name">
         </div>
         <div class="form-group">
+        <label for="email_input">Email:</label><br>
           <div class="input-group mb-3">
-            <label for="email_input">Email:</label><br>
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">@</span>
             </div>
@@ -77,8 +77,8 @@ session_start();
           </div>
         </div>
         <div class="form-group">
+        <label for="phone">Phone Number:</label><br>
           <div class="input-group mb-3">
-            <label for="phone">Phone Number:</label>
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">#</span>
             </div>
@@ -89,19 +89,19 @@ session_start();
 
       <div class="billing_info_seperate">
         <div class="form-group">
-          <label for="address">Street Address:</label>
+          <label for="address">Street Address:</label><br>
           <input type="text" id="address" name="address" required maxlength="50" placeholder="Address">
         </div>
         <div class="form-group">
-          <label for="state">State:</label>
+          <label for="state">State:</label><br>
           <input type="text" id="state" name="state" required maxlength="14" placeholder="State (i.e. UT)">
         </div>
         <div class="form-group">
-          <label for="city">City:</label>
+          <label for="city">City:</label><br>
           <input type="text" id="city" name="city" required maxlength="50" placeholder="City">
         </div>
         <div class="form-group">
-          <label for="zipCode">Zipcode:</label>
+          <label for="zipCode">Zipcode:</label><br>
           <input type="text" id="zipCode" name="zipCode" required maxlength="10" placeholder="Zip Code">
         </div>
       </div>
@@ -123,26 +123,27 @@ session_start();
         <!-- <label for="card_type">Card Type:</label>
         <input type="text" id="card_type" name="card_type" required maxlength="50" placeholder="Card Type"> -->
         <div class="form-group">
-          <label for="card_name">Name on Card:</label>
+          <label for="card_name">Name on Card:</label><br>
           <input type="text" id="card_name" name="card_name" required maxlength="255" placeholder="Name on Card">
         </div>
         <div class="form-group">
-          <label for="card_number">Card Number:</label>
+          <label for="card_number">Card Number:</label><br>
           <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16" placeholder="Card Number">
         </div>
         <div class="form-group">
-          <label for="card_security">Security Code:</label>
+          <label for="card_security">Security Code:</label><br>
           <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3" placeholder="Security Code">
         </div>
         <div class="form-group">
-          <label for="card_exp_month">Expiration Month:</label>
+          <label for="card_exp_month">Expiration Month:</label><br>
           <input type="number" id="card_exp_month" name="card_exp_month" min="0" minlength="2" maxlength="2" placeholder="Exp. Month">
         </div>
         <div class="form-group">
-          <label for="card_exp_month">Expiration Year:</label>
+          <label for="card_exp_month">Expiration Year:</label><br>
           <input type="number" id="card_exp_year" name="card_exp_year" min="0" minlength="2" maxlength="2" placeholder="Exp. Year">
         </div>
       </div>
+      
       <!-- Button Container -->
       <div class="button_checkout">
         <a class="btn btn-outline-primary" href="../Project01/cart.php">Return to Cart</a>
