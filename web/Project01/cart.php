@@ -2,10 +2,6 @@
 session_start();
 
 $error_msg = $_GET['error'];
-
-var_dump($_SESSION);
-// Use unset or decrement to remove the item from the cart
-// Use action=""
 ?>
 
 <!doctype html>
@@ -30,7 +26,7 @@ var_dump($_SESSION);
   <div class="heroImg">
     <img src="../Project01/Images/hero_cart.jpg" alt="Josie's Mountain Spa Retreat Fireplace">
   </div>
-  <h2>Cart</h2>
+  <h2>Cart:</h2>
   <div class="text-section">
     <h2>Your Satisfaction is Our Guarantee</h2>
     <p><b>Remember, all packages come with access to the pool and patio, and a complimentary meal.</b></p><br>
@@ -43,7 +39,7 @@ var_dump($_SESSION);
       <img src="../Project01/Images/swedishMassage.jpg" alt="Swedish Massage Package">
       <p>Swedish Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod1"]; ?></p><br>
       <form action="../Project01/cart.php" method="POST">
-        <button class="btn btn-outline-danger" type="submit" name="submit_p1">Remove 1 Qty.</button>
+        <button class="btn btn-outline-danger" type="submit" name="submit_p1">Remove</button>
       </form>
     </div>
 
@@ -51,24 +47,36 @@ var_dump($_SESSION);
       <p>Price: $150</p>
       <img src="../Project01/Images/hotStoneMassage.jpg" alt="Hot Stone Massage Package">
       <p>Hot Stone Massage<br>Quantity Ordered: <?php echo $_SESSION["prod2"]; ?></p>
+      <form action="../Project01/cart.php" method="POST">
+        <button class="btn btn-outline-danger" type="submit" name="submit_p2">Remove</button>
+      </form>
     </div>
 
     <div class="product">
       <p>Price: $175</p>
       <img src="../Project01/Images/coupleMassage.jpg" alt="Couples Massage Package">
       <p>Couples Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod3"]; ?></p>
+      <form action="../Project01/cart.php" method="POST">
+        <button class="btn btn-outline-danger" type="submit" name="submit_p3">Remove</button>
+      </form>
     </div>
 
     <div class="product">
       <p>Price: $125</p>
       <img src="../Project01/Images/prenatal.jpg" alt="Prenatal Massage Package">
       <p>Prenatal Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod4"]; ?></p>
+      <form action="../Project01/cart.php" method="POST">
+        <button class="btn btn-outline-danger" type="submit" name="submit_p4">Remove</button>
+      </form>
     </div>
 
     <div class="product">
       <p>Price: $125</p>
       <img src="../Project01/Images/aromaTherapy.jpg" alt="Aromatherapy Massage Package">
       <p>Aromatherapy Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod5"]; ?></p>
+      <form action="../Project01/cart.php" method="POST">
+        <button class="btn btn-outline-danger" type="submit" name="submit_p5">Remove</button>
+      </form>
     </div>
   </div>
 
@@ -80,9 +88,29 @@ var_dump($_SESSION);
 
   <!-- PHP to remove products in cart -->
   <?php
-  if (isset($_POST['submit_p1']) && $_SESSION >= 1) {
+  if (isset($_POST['submit_p1']) && $_SESSION["prod1"] >= 1) {
     unset($_SESSION["prod1"]);
     $_SESSION["prod1"] = "0";
+    header("Refresh:0");
+  }
+  if (isset($_POST['submit_p2']) && $_SESSION["prod2"] >= 1) {
+    unset($_SESSION["prod2"]);
+    $_SESSION["prod2"] = "0";
+    header("Refresh:0");
+  }
+  if (isset($_POST['submit_p3']) && $_SESSION["prod3"] >= 1) {
+    unset($_SESSION["prod3"]);
+    $_SESSION["prod3"] = "0";
+    header("Refresh:0");
+  }
+  if (isset($_POST['submit_p4']) && $_SESSION["prod4"] >= 1) {
+    unset($_SESSION["prod4"]);
+    $_SESSION["prod4"] = "0";
+    header("Refresh:0");
+  }
+  if (isset($_POST['submit_p5']) && $_SESSION["prod5"] >= 1) {
+    unset($_SESSION["prod5"]);
+    $_SESSION["prod5"] = "0";
     header("Refresh:0");
   }
   ?>

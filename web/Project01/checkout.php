@@ -25,7 +25,7 @@ session_start();
     <img src="../Project01/Images/hero_checkout.jpg" alt="Josie's Mountain Spa Retreat Lounge">
   </div>
   <div class="text-section">
-    <h2>Please Review Your Order</h2>
+    <h2>Please Review Your Order:</h2>
     <p>We are excited to serve you soon!</p>
   </div>
   
@@ -60,8 +60,8 @@ session_start();
 
   <!-- Customer Input -->
   <div class="text-section">
-    <h3>Please Fill Out Your Information</h3>
-    <p>Your Information will not be shared with third parties.</p>
+    <h3>Please Fill Out Your Information:</h3>
+    <p>Your Information is secure and will never be shared with other parties.</p>
   </div>
   <form action="../Project01/insertDB.php" method="POST">
     <div class="billing_info">
