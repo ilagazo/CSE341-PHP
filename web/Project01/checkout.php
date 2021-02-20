@@ -24,7 +24,10 @@ session_start();
   <div class="heroImg">
     <img src="../Project01/Images/hero_checkout.jpg" alt="Josie's Mountain Spa Retreat Lounge">
   </div>
+  <div class="text-section">
   <h2>Please Review Your Order</h2>
+    <p>We are excited to serve you soon!</p>
+  </div>
   <!-- Products -->
   <div class="product_container">
     <div class="product">
@@ -55,7 +58,10 @@ session_start();
   </div>
 
   <!-- Customer Input -->
+  <div class="text-section">
   <h3>Please Fill Out Your Information</h3>
+    <p>Your Information will not be shared with third parties.</p>
+  </div>
   <form action="../Project01/insertDB.php" method="POST">
     <div class="billing_info">
       <div class="billing_info_seperate">
@@ -177,12 +183,6 @@ session_start();
     $_SESSION["zipCode"] = $_POST["zipCode"];
   }
   ?>
-
-  <div class="text-section">
-    <h2>Our Legacy. Our Passion.</h2>
-    <p>Thank you for your order!
-    </p>
-  </div>
   <?php include('footer.php'); ?>
 </body>
 
