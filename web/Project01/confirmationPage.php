@@ -27,7 +27,7 @@ session_start();
   <div class="text-section">
     <h2>Confirmation Page</h2>
     <p>Thank you for your order <?php echo $_SESSION["first_name"]; ?>!<br> A member of our team will contact you shortly to schedule your visit.
-      We are excited to serve you!</p>
+      We are excited to serve you!<br><b>Please Print this Page for your records.</b></p>
   </div>
 
   <!-- Products Ordered-->
@@ -72,6 +72,7 @@ session_start();
     echo "Zipcode: " . $_SESSION["zipCode"] . "</div>";
     ?>
   </div>
+  <?php include('footer.php'); ?>
 </body>
 
 </html>
