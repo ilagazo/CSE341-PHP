@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$error_msg = $_GET['error'];
+
 // For debugging
 var_dump($_SESSION);
 
@@ -33,7 +35,8 @@ var_dump($_SESSION);
   <h2>Cart</h2>
   <div class="text-section">
     <h2>Your Satisfaction is Our Guarantee</h2>
-    <p><b>Remember, all packages come with access to the pool and patio, and a complimentary meal.</b></p>
+    <p><b>Remember, all packages come with access to the pool and patio, and a complimentary meal.</b><br>
+    <?php echo $error_msg; ?></p>
   </div>
   <!-- Products -->
   <div class="product_container">
@@ -66,7 +69,7 @@ var_dump($_SESSION);
 
   <!-- Button Container -->
   <div class="button_checkout">
-    <a class="btn btn-outline-primary" href="../Project01/services.php">Continue Shopping</a>
+    <a class="btn btn-outline-primary" href="../Project01/isProductThere.php">Continue Shopping</a>
     <a class="btn btn-outline-primary" href="../Project01/checkout.php">Proceed to Checkout</a>
   </div>
 

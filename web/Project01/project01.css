@@ -127,7 +127,9 @@ th {
   margin: 10px;
 }
 
-/* .billing_info {
+.billing_info {
+  display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   border: 2px solid black;
@@ -147,7 +149,7 @@ th {
   margin: 5px;
   display: flex;
   flex-flow: column wrap;
-} */
+}
 
 /* .radio_container {
   padding: 5px;
