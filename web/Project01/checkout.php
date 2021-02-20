@@ -202,9 +202,6 @@ session_start();
   if (isset($_POST["card_exp_year"])) {
     $_SESSION["card_exp_year"] = $_POST["card_exp_year"];
   }
-  
-  // For Debugging. Remove later
-  var_dump($_SESSION);
   ?>
   <?php include('footer.php'); ?>
 </body>
