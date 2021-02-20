@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_unset();
 
 // // Initialize cart
 // if(!(isset($_SESSION['cart']))) {
@@ -83,8 +82,8 @@ session_unset();
 
         <!-- Check if items were sent via post -->
         <?php
-        if (isset($_POST["prod1"])) {
-            $_SESSION["prod1"] = $_POST["prod1"];
+        if (isset($_POST["item1"])) {
+            $_SESSION["item1"] = $_POST["item1"];
         }
         if (isset($_POST["prod2"])) {
             $_SESSION["prod2"] = $_POST["prod2"];
