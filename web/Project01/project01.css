@@ -162,6 +162,7 @@ th {
 .display_container {
   margin: 5px;
   text-align: left;
+  background-color: aqua;
 }
 
 footer {
