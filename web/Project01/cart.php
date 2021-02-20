@@ -3,6 +3,7 @@ session_start();
 
 $error_msg = $_GET['error'];
 
+var_dump($_SESSION);
 // Use unset or decrement to remove the item from the cart
 // Use action=""
 ?>
@@ -47,13 +48,8 @@ $error_msg = $_GET['error'];
 
       <!-- PHP to remove products in cart -->
       <?php
-      if (isset($_POST['submit_p1'])) {
-        if ($_SESSION >= 1) {
-          --$_SESSION['prod1'];
-        }
-        else if ($_SESSION == 0) {
-          $_SESSION = 0;
-        }
+      if (isset($_POST['submit_p1']) && $_SESSION >= 1) {
+          unset($_SESSION["prod1"]);
       }
       ?>
     </div>
