@@ -99,19 +99,19 @@ $emp_id = $_GET['transfer_id']
             <div class="billing_info_seperate">
                 <div class="form-group">
                     <label for="id">Order ID:</label>
-                    <input type="number" id="id" name="id" required minlength="1">
+                    <input type="number" id="id" name="id" required minlength="1"><br>
                 </div>
                 <div class="form-group">
                     <label for=cust_id>Customer ID:</label>
-                    <input type="number" id="cust_id" name="cust_id" required minlength="1">
+                    <input type="number" id="cust_id" name="cust_id" required minlength="1"><br>
                 </div>
                 <div class="form-group">
                     <label for="pay_id">Payment ID:</label>
-                    <input type="number" id="pay_id" name="pay_id" required minlength="1">
+                    <input type="number" id="pay_id" name="pay_id" required minlength="1"><br>
                 </div>
                 <div class="form-group">
                     <label for="prod_id">Product ID:</label>
-                    <input type="number" id="prod_id" name="prod_id" required minlength="1">
+                    <input type="number" id="prod_id" name="prod_id" required minlength="1"><br>
                 </div>
                 <div class="form-group">
                     <label for="add_id">Address ID:</label>
@@ -122,33 +122,33 @@ $emp_id = $_GET['transfer_id']
             <div class="billing_info_seperate">
                 <div class="form-group">
                     <label for="first_name">First Name:</label>
-                    <input type="text" id="first_name" name="first_name" required maxlength="50">
+                    <input type="text" id="first_name" name="first_name" required maxlength="50"><br>
                 </div>
                 <div class="form-group">
                     <label for="last_name">Last Name:</label>
-                    <input type="text" id="last_name" name="last_name" required maxlength="50">
+                    <input type="text" id="last_name" name="last_name" required maxlength="50"><br>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" required maxlength="50">
+                    <input type="text" id="email" name="email" required maxlength="50"><br>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone Number:</label>
+                    <label for="phone">Phone #:</label>
                     <input type="text" id="phone" name="phone" required minlength="11" maxlength="11">
                 </div>
             </div>
             <div class="billing_info_seperate">
                 <div class="form-group">
                     <label for="address">Street Address:</label>
-                    <input type="text" id="address" name="address" required maxlength="50">
+                    <input type="text" id="address" name="address" required maxlength="50"><br>
                 </div>
                 <div class="form-group">
                     <label for="state">State:</label>
-                    <input type="text" id="state" name="state" required maxlength="14">
+                    <input type="text" id="state" name="state" required maxlength="14"><br>
                 </div>
                 <div class="form-group">
                     <label for="city">City:</label>
-                    <input type="text" id="city" name="city" required maxlength="50">
+                    <input type="text" id="city" name="city" required maxlength="50"><br>
                 </div>
                 <div class="form-group">
                     <label for="zipCode">Zipcode:</label>
@@ -172,19 +172,19 @@ $emp_id = $_GET['transfer_id']
 
                 <div class="form-group">
                     <label for="card_name">Name on Card:</label>
-                    <input type="text" id="card_name" name="card_name" required maxlength="255">
+                    <input type="text" id="card_name" name="card_name" required maxlength="255"><br>
                 </div>
                 <div class="form-group">
                     <label for="card_number">Card Number:</label>
-                    <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16">
+                    <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16"><br>
                 </div>
                 <div class="form-group">
                     <label for="card_security">Security Code:</label>
-                    <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3">
+                    <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3"><br>
                 </div>
                 <div class="form-group">
                     <label for="card_exp_month">Expiration Month:</label>
-                    <input type="number" id="card_exp_month" name="card_exp_month" min="1" max="12" minlength="2" maxlength="2">
+                    <input type="number" id="card_exp_month" name="card_exp_month" min="1" max="12" minlength="2" maxlength="2"><br>
                 </div>
                 <div class="form-group">
                     <label for="card_exp_month">Expiration Year:</label>
