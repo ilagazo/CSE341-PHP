@@ -68,6 +68,8 @@ FROM employee WHERE employee.employee_id = '{$emp_id}'");
           <label for="emp_ln">Last Name:</label>
           <input type="text" id="emp_ln" name="emp_ln" required maxlength="50" placeholder="Last Name">
         </div>
+      </div>
+      <div class="billing_info_seperate">
         <div class="form-group">
           <label for="emp_phone">Phone:</label>
           <input type="text" id="emp_phone" name="emp_phone" required maxlength="11" placeholder="Phone #">
@@ -76,6 +78,8 @@ FROM employee WHERE employee.employee_id = '{$emp_id}'");
           <label for="emp_email">Email:</label>
           <input type="text" id="emp_email" name="emp_email" required maxlength="50" placeholder="Email">
         </div>
+      </div>
+      <div class="billing_info_seperate">
         <div class="form-group">
           <label for="emp_username">Username:</label>
           <input type="text" id="emp_username" name="emp_username" required maxlength="50" placeholder="Username">
@@ -85,11 +89,10 @@ FROM employee WHERE employee.employee_id = '{$emp_id}'");
           <input type="text" id="emp_pw" name="emp_pw" required maxlength="50" placeholder="Password">
         </div>
       </div>
-
-      <!-- Button Container -->
-      <div class="button_checkout">
-        <button type="submit" name="employeeData" value="employeeData">Confirm Changes</button>
-      </div>
+    </div>
+    <!-- Button Container -->
+    <div class="button_checkout">
+      <button type="submit" name="employeeData" value="employeeData">Confirm Changes</button>
     </div>
   </form>
 
