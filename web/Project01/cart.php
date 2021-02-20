@@ -3,9 +3,6 @@ session_start();
 
 $error_msg = $_GET['error'];
 
-// For debugging
-var_dump($_SESSION);
-
 // Use unset or decrement to remove the item from the cart
 // Use action=""
 ?>
@@ -47,6 +44,18 @@ var_dump($_SESSION);
       <form action="../Project01/cart.php" method="POST">
         <button class="btn btn-outline-danger" type="submit" name="submit_p1">Remove 1 Qty.</button>
       </form>
+
+      <!-- PHP to remove products in cart -->
+      <?php
+      if (isset($_POST['submit_p1'])) {
+        if ($_SESSION >= 1) {
+          --$_SESSION['prod1'];
+        }
+        else if ($_SESSION == 0) {
+          $_SESSION = 0;
+        }
+      }
+      ?>
     </div>
 
     <div class="product">
@@ -79,17 +88,6 @@ var_dump($_SESSION);
     <a class="btn btn-outline-primary" href="../Project01/services.php">Continue Shopping</a>
     <a class="btn btn-outline-primary" href="../Project01/isProductThere.php">Proceed to Checkout</a>
   </div>
-
-  <!-- PHP to remove products in cart -->
-  <?php
-    if (isset($_POST['submit_p1'])) {
-      if($_SESSION >= 1) {
-      $x = $_SESSION['prod1'];
-      --$x;
-      $_SESSION['prod1'] = $x;
-      }
-  }
-  ?>
 
   <?php include('footer.php'); ?>
 </body>
