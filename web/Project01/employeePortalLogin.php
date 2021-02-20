@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
       <div class="error_alert"><?php echo $error_message . "<br>"; ?></div>
 
       <!-- Submit Button -->
-      <button type="submit" name="submit">Login</button>
+      <button type="submit" name="submit" class="btn btn-outline-primary">Login</button>
     </form>
   </div>
 
