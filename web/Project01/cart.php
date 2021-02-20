@@ -44,7 +44,7 @@ var_dump($_SESSION);
       <p>Price: $100</p>
       <img src="../Project01/Images/swedishMassage.jpg" alt="Swedish Massage Package">
       <p>Swedish Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod1"]; ?></p><br>
-      <form action="" method="POST">
+      <form action="../Project01/cart.php" method="POST">
         <button class="btn btn-outline-danger" type="submit" name="submit_p1">Remove 1 Qty.</button>
       </form>
     </div>
