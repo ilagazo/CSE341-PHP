@@ -1,5 +1,6 @@
 <?php
 session_start();
+var_dump($_SESSION);
 
 $first_name = $_SESSION['first_name'];
 $last_name = $_SESSION['last_name'];
@@ -84,8 +85,8 @@ try {
     $statement2 = $db->prepare($queryCustomer);
     $statement2->execute();
 
-    $statement3 = $db->prepare($queryPayment);
-    $statement3->execute();
+    // $statement3 = $db->prepare($queryPayment);
+    // $statement3->execute();
 
 
     // $statement4 = $db->prepare($queryProduct);
