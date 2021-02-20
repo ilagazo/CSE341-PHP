@@ -43,9 +43,9 @@ var_dump($_SESSION);
     <div class="product">
       <p>Price: $100</p>
       <img src="../Project01/Images/swedishMassage.jpg" alt="Swedish Massage Package">
-      <p>Swedish Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod1"]; ?><br><br>Remove Quantity</p>
+      <p>Swedish Massage Package<br>Quantity Ordered: <?php echo $_SESSION["prod1"]; ?></p><br>
       <form action="" method="POST">
-        <button class="btn btn-outline-danger" type="submit" name="submit_p1">Remove Qty. 1</button>
+        <button class="btn btn-outline-danger" type="submit" name="submit_p1">Remove 1 Qty.</button>
       </form>
     </div>
 
@@ -83,9 +83,11 @@ var_dump($_SESSION);
   <!-- PHP to remove products in cart -->
   <?php
     if (isset($_POST['submit_p1'])) {
+      if($_SESSION >= 1) {
       $x = $_SESSION['prod1'];
       --$x;
       $_SESSION['prod1'] = $x;
+      }
   }
   ?>
 
