@@ -1,6 +1,5 @@
 <?php
 session_start();
-var_dump($_SESSION);
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
@@ -74,7 +73,7 @@ try {
     VALUES (
      (SELECT customer_id from customer WHERE customer.email = '{$email}' AND customer.phone_number = '{$phone}' AND customer.last_name = '{$last_name}'),
      (SELECT payment_id from payment WHERE payment.card_number = '{$card_number}' AND payment.security_code = '{$card_security}'), 
-     (SELECT product_id from product),
+    --  (SELECT product_id from product),
      (SELECT address_id from address WHERE address.address_st = '{$address_st}' AND address.postal_code = '{$zipCode}')
      )";
 
@@ -88,34 +87,26 @@ try {
     $statement3 = $db->prepare($queryPayment);
     $statement3->execute();
 
-    if(!empty($queryProd1)) {
-     $statement4 = $db->prepare($queryProd1);
-        $statement4->execute();
-    }
-    if(!empty($queryProd2)) {
-        $statement6 = $db->prepare($queryProd2);
-        $statement6->execute();
-    }
-    if(!empty($queryProd3)) {
-        $statement7 = $db->prepare($queryProd3);
-        $statement7->execute();
-    }
-    if(!empty($queryProd4)) {
-        $statement8 = $db->prepare($queryProd4);
-        $statement8->execute();
-    }
-    if(!empty($queryProd5)) {
-        $statement9 = $db->prepare($queryProd5);
-        $statement9->execute();
-    }
-    // if($statement4->execute()) {
-    //     $id = $db->lastInsertId();
+    // if(!empty($queryProd1)) {
+    //  $statement4 = $db->prepare($queryProd1);
+    //     $statement4->execute();
     // }
-    // Update all recently inserted products with the same id
-    // $id = $db->lastInsertId();
-    // $queryProd_update = "UPDATE product set product_id='{$id}'";
-    // $statement10 = $db->prepare($queryProd_update);
-    // $statement10->execute();
+    // if(!empty($queryProd2)) {
+    //     $statement6 = $db->prepare($queryProd2);
+    //     $statement6->execute();
+    // }
+    // if(!empty($queryProd3)) {
+    //     $statement7 = $db->prepare($queryProd3);
+    //     $statement7->execute();
+    // }
+    // if(!empty($queryProd4)) {
+    //     $statement8 = $db->prepare($queryProd4);
+    //     $statement8->execute();
+    // }
+    // if(!empty($queryProd5)) {
+    //     $statement9 = $db->prepare($queryProd5);
+    //     $statement9->execute();
+    // }
 
     $statement5 = $db->prepare($queryOrder);
     $statement5->execute();

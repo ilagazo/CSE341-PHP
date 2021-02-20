@@ -62,14 +62,14 @@ session_start();
   <!-- Display Customer Info -->
   <div class="display_customer_info">
     <?php
-    echo "First Name: " . $_SESSION["first_name"] . "<br>";
-    echo "Last Name: " . $_SESSION["last_name"] . "<br>";
-    echo "Email: " . $_SESSION["email"] . "<br>";
-    echo "Phone Number: " . $_SESSION["phone"] . "<br>";
-    echo "Address: " . $_SESSION["address"] . "<br>";
-    echo "City: " . $_SESSION["city"] . "<br>";
-    echo "State: " . $_SESSION["state"] . "<br>";
-    echo "Zipcode: " . $_SESSION["zipCode"];
+    echo "<div class=\"display_container\">First Name: " . $_SESSION["first_name"] . "<br>";
+    echo "Last Name: " . $_SESSION["last_name"] . "</div>";
+    echo "<div class=\"display_container\">Email: " . $_SESSION["email"] . "<br>";
+    echo "Phone Number: " . $_SESSION["phone"] . "</div>";
+    echo "<div class=\"display_container\">Address: " . $_SESSION["address"] . "<br>";
+    echo "City: " . $_SESSION["city"] . "</div>";
+    echo "<div class=\"display_container\">State: " . $_SESSION["state"] . "<br>";
+    echo "Zipcode: " . $_SESSION["zipCode"] . "</div>";
     ?>
   </div>
 </body>
