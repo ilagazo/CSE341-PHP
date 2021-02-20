@@ -25,9 +25,10 @@ session_start();
     <img src="../Project01/Images/hero_checkout.jpg" alt="Josie's Mountain Spa Retreat Lounge">
   </div>
   <div class="text-section">
-  <h2>Please Review Your Order</h2>
+    <h2>Please Review Your Order</h2>
     <p>We are excited to serve you soon!</p>
   </div>
+  
   <!-- Products -->
   <div class="product_container">
     <div class="product">
@@ -59,7 +60,7 @@ session_start();
 
   <!-- Customer Input -->
   <div class="text-section">
-  <h3>Please Fill Out Your Information</h3>
+    <h3>Please Fill Out Your Information</h3>
     <p>Your Information will not be shared with third parties.</p>
   </div>
   <form action="../Project01/insertDB.php" method="POST">
@@ -110,9 +111,6 @@ session_start();
           <label for="zipCode">Zipcode:</label><br>
           <input type="text" id="zipCode" name="zipCode" required maxlength="10" placeholder="Zip Code">
         </div>
-      </div>
-
-      <div class="billing_info_seperate">
         <!-- Radio Buttons -->
         <div class="form-check form-check-inline">
           <input type="radio" id="card_type_visa" name="card_type" value="Visa" class="form-check-input">
@@ -126,8 +124,9 @@ session_start();
           <input type="radio" id="card_type_dis" name="card_type" value="Discover" class="form-check-input">
           <label for="card_type_dis" class="form-check-label">Discover</label>
         </div>
-        <!-- <label for="card_type">Card Type:</label>
-        <input type="text" id="card_type" name="card_type" required maxlength="50" placeholder="Card Type"> -->
+      </div>
+
+      <div class="billing_info_seperate">
         <div class="form-group">
           <label for="card_name">Name on Card:</label><br>
           <input type="text" id="card_name" name="card_name" required maxlength="255" placeholder="Name on Card">
@@ -142,11 +141,11 @@ session_start();
         </div>
         <div class="form-group">
           <label for="card_exp_month">Expiration Month:</label><br>
-          <input type="number" id="card_exp_month" name="card_exp_month" min="0" minlength="2" maxlength="2" placeholder="Exp. Month">
+          <input type="number" id="card_exp_month" name="card_exp_month" min="1" max="12" placeholder="Exp. Month">
         </div>
         <div class="form-group">
           <label for="card_exp_month">Expiration Year:</label><br>
-          <input type="number" id="card_exp_year" name="card_exp_year" min="0" minlength="2" maxlength="2" placeholder="Exp. Year">
+          <input type="number" id="card_exp_year" name="card_exp_year" min="22" max='99' minlength="2" maxlength="2" placeholder="Exp. Year">
         </div>
       </div>
     </div>
