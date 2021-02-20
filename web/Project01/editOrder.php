@@ -17,7 +17,7 @@ $emp_id = $_GET['transfer_id']
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- Local CSS -->
     <link rel="stylesheet" href="project01.css">
-    <title>JMSR: Confirmation Page</title>
+    <title>JMSR: Customer Order Information</title>
 </head>
 
 <body>
@@ -94,40 +94,66 @@ $emp_id = $_GET['transfer_id']
 
     <!-- Change Data Form -->
     <h4>Edit Data Form:</h4>
-    <div class="billing_info">
-        <form action="../Project01/updateData.php" method="POST">
+    <form action="../Project01/updateData.php" method="POST">
+        <div class="billing_info">
             <div class="billing_info_seperate">
-                <label for="id">Order ID:</label>
-                <input type="number" id="id" name="id" required minlength="1">
-                <label for=cust_id>Customer ID:</label>
-                <input type="number" id="cust_id" name="cust_id" required minlength="1">
-                <label for="pay_id">Payment ID:</label>
-                <input type="number" id="pay_id" name="pay_id" required minlength="1">
-                <label for="prod_id">Product ID:</label>
-                <input type="number" id="prod_id" name="prod_id" required minlength="1">
-                <label for="add_id">Address ID:</label>
-                <input type="number" id="add_id" name="add_id" required minlength="1">
+                <div class="form-group">
+                    <label for="id">Order ID:</label>
+                    <input type="number" id="id" name="id" required minlength="1">
+                </div>
+                <div class="form-group">
+                    <label for=cust_id>Customer ID:</label>
+                    <input type="number" id="cust_id" name="cust_id" required minlength="1">
+                </div>
+                <div class="form-group">
+                    <label for="pay_id">Payment ID:</label>
+                    <input type="number" id="pay_id" name="pay_id" required minlength="1">
+                </div>
+                <div class="form-group">
+                    <label for="prod_id">Product ID:</label>
+                    <input type="number" id="prod_id" name="prod_id" required minlength="1">
+                </div>
+                <div class="form-group">
+                    <label for="add_id">Address ID:</label>
+                    <input type="number" id="add_id" name="add_id" required minlength="1">
+                </div>
                 <input type="hidden" id="transfer" name="transfer" value="<?= $emp_id ?>" />
             </div>
             <div class="billing_info_seperate">
-                <label for="first_name">First Name:</label>
-                <input type="text" id="first_name" name="first_name" required maxlength="50">
-                <label for="last_name">Last Name:</label>
-                <input type="text" id="last_name" name="last_name" required maxlength="50">
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" required maxlength="50">
-                <label for="phone">Phone Number:</label>
-                <input type="text" id="phone" name="phone" required minlength="11" maxlength="11">
+                <div class="form-group">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" required maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" required maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" required minlength="11" maxlength="11">
+                </div>
             </div>
             <div class="billing_info_seperate">
-                <label for="address">Street Address:</label>
-                <input type="text" id="address" name="address" required maxlength="50">
-                <label for="state">State:</label>
-                <input type="text" id="state" name="state" required maxlength="14">
-                <label for="city">City:</label>
-                <input type="text" id="city" name="city" required maxlength="50">
-                <label for="zipCode">Zipcode:</label>
-                <input type="text" id="zipCode" name="zipCode" required maxlength="10">
+                <div class="form-group">
+                    <label for="address">Street Address:</label>
+                    <input type="text" id="address" name="address" required maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" required maxlength="14">
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label for="zipCode">Zipcode:</label>
+                    <input type="text" id="zipCode" name="zipCode" required maxlength="10">
+                </div>
             </div>
             <div class="billing_info_seperate">
                 <!-- Radio Buttons -->
@@ -144,25 +170,34 @@ $emp_id = $_GET['transfer_id']
                     <label for="card_type_dis" class="form-check-label">Discover</label>
                 </div>
 
-                <label for="card_name">Name on Card:</label>
-                <input type="text" id="card_name" name="card_name" required maxlength="255">
-                <label for="card_number">Card Number:</label>
-                <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16">
-                <label for="card_security">Security Code:</label>
-                <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3">
-                <label for="card_exp_month">Expiration Month:</label>
-                <input type="number" id="card_exp_month" name="card_exp_month" min="1" max="12" minlength="2" maxlength="2">
-                <label for="card_exp_month">Expiration Year:</label>
-                <input type="number" id="card_exp_year" name="card_exp_year" min="22" max='99' minlength="2" maxlength="2">
+                <div class="form-group">
+                    <label for="card_name">Name on Card:</label>
+                    <input type="text" id="card_name" name="card_name" required maxlength="255">
+                </div>
+                <div class="form-group">
+                    <label for="card_number">Card Number:</label>
+                    <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16">
+                </div>
+                <div class="form-group">
+                    <label for="card_security">Security Code:</label>
+                    <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3">
+                </div>
+                <div class="form-group">
+                    <label for="card_exp_month">Expiration Month:</label>
+                    <input type="number" id="card_exp_month" name="card_exp_month" min="1" max="12" minlength="2" maxlength="2">
+                </div>
+                <div class="form-group">
+                    <label for="card_exp_month">Expiration Year:</label>
+                    <input type="number" id="card_exp_year" name="card_exp_year" min="22" max='99' minlength="2" maxlength="2">
+                </div>
             </div>
-
-            <!-- Button Container -->
-            <div class="button_checkout">
-                <button type="submit" name="change" value="change">Confirm Changes</button>
-                <button type="submit" name="delete" value="delete">Delete Order</button>
-            </div>
-        </form>
-    </div>
+        </div>
+        <!-- Button Container -->
+        <div class="button_checkout">
+            <button type="submit" class="btn btn-outline-primary" name="change" value="change">Confirm Changes</button>
+            <button type="submit" class="btn btn-outline-primary" name="delete" value="delete">Delete Order</button>
+        </div>
+    </form>
     <?php include('footer.php'); ?>
 </body>
 

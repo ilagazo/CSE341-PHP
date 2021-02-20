@@ -62,7 +62,7 @@ FROM employee WHERE employee.employee_id = '{$emp_id}'");
         <input type="hidden" name="transfer_id" id="transfer_id" value="<?= $emp_id ?>" />
         <div class="form-group">
           <label for="emp_fn">First Name:</label>
-          <input type="text" id="emp_fn" name="emp_fn" required maxlength="50" placeholder="First Name">
+          <input type="text" id="emp_fn" name="emp_fn" required maxlength="50" placeholder="First Name"><br>
         </div>
         <div class="form-group">
           <label for="emp_ln">Last Name:</label>
@@ -72,7 +72,7 @@ FROM employee WHERE employee.employee_id = '{$emp_id}'");
       <div class="billing_info_seperate">
         <div class="form-group">
           <label for="emp_phone">Phone:</label>
-          <input type="text" id="emp_phone" name="emp_phone" required maxlength="11" placeholder="Phone #">
+          <input type="text" id="emp_phone" name="emp_phone" required maxlength="11" placeholder="Phone #"><br>
         </div>
         <div class="form-group">
           <label for="emp_email">Email:</label>
@@ -82,7 +82,7 @@ FROM employee WHERE employee.employee_id = '{$emp_id}'");
       <div class="billing_info_seperate">
         <div class="form-group">
           <label for="emp_username">Username:</label>
-          <input type="text" id="emp_username" name="emp_username" required maxlength="50" placeholder="Username">
+          <input type="text" id="emp_username" name="emp_username" required maxlength="50" placeholder="Username"><br>
         </div>
         <div class="form-group">
           <label for="emp_pw">Password:</label>
@@ -92,7 +92,7 @@ FROM employee WHERE employee.employee_id = '{$emp_id}'");
     </div>
     <!-- Button Container -->
     <div class="button_checkout">
-      <button type="submit" name="employeeData" value="employeeData">Confirm Changes</button>
+      <button type="submit" class="btn btn-outline-primary" name="employeeData" value="employeeData">Confirm Changes</button>
     </div>
   </form>
 
