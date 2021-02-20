@@ -8,7 +8,7 @@ die();
 }
 else {
 // Redirect to Confirmation Page
-$error_msg = "Cart is Empty!";
+$error_msg = "Sorry You Cannot Checkout. The Cart is Empty!";
 header("Location: ../Project01/cart.php?error=$error_msg");
 die();
 }
