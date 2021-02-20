@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 // // Initialize cart
 // if(!(isset($_SESSION['cart']))) {
 //     $_SESSION['cart'];
@@ -42,7 +43,7 @@ session_start();
         </p>
     </div>
     <h3>Services Offered:</h2>
-        <form action="cart.php" method="POST">
+        <form action="" method="POST">
             <!-- Products -->
             <div class="product_container">
                 <div class="product">
@@ -82,8 +83,8 @@ session_start();
 
         <!-- Check if items were sent via post -->
         <?php
-        if (isset($_POST["item1"])) {
-            $_SESSION["item1"] = $_POST["item1"];
+        if (isset($_POST["prod1"])) {
+            $_SESSION["prod1"] = $_POST["prod1"];
         }
         if (isset($_POST["prod2"])) {
             $_SESSION["prod2"] = $_POST["prod2"];
