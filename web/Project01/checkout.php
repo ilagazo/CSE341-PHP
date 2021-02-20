@@ -63,7 +63,7 @@ session_start();
     <h3>Please Fill Out Your Information:</h3>
     <p>Your Information is secure and will never be shared with other parties.</p>
   </div>
-  <form action="../Project01/insertDB.php" method="POST">
+  <form action="../Project01/checkout.php" method="POST">
     <div class="billing_info">
       <div class="billing_info_seperate">
         <div class="form-group">
@@ -100,17 +100,17 @@ session_start();
           <input type="text" id="address" name="address" required maxlength="50" placeholder="Address">
         </div>
         <div class="form-group">
-          <label for="state">State:</label><br>
-          <input type="text" id="state" name="state" required maxlength="14" placeholder="State (i.e. UT)">
-        </div>
-        <div class="form-group">
           <label for="city">City:</label><br>
           <input type="text" id="city" name="city" required maxlength="50" placeholder="City">
         </div>
         <div class="form-group">
-          <label for="zipCode">Zipcode:</label><br>
-          <input type="text" id="zipCode" name="zipCode" required maxlength="10" placeholder="Zip Code">
+          <label for="state">State:</label><br>
+          <input type="text" id="state" name="state" required maxlength="14" placeholder="State (i.e. UT)">
         </div>
+        <div class="form-group">
+          <label for="zipCode">Zip code:</label><br>
+          <input type="text" id="zipCode" name="zipCode" required maxlength="10" placeholder="Zip Code">
+        </div><br>
         <!-- Radio Buttons -->
         <div class="form-check form-check-inline">
           <input type="radio" id="card_type_visa" name="card_type" value="Visa" class="form-check-input">
@@ -169,6 +169,9 @@ session_start();
   if (isset($_POST["email_input"])) {
     $_SESSION["email_input"] = $_POST["email_input"];
   }
+  if (isset($_POST["phone"])) {
+    $_SESSION["phone"] = $_POST["phone"];
+  }
   if (isset($_POST["address"])) {
     $_SESSION["address"] = $_POST["address"];
   }
@@ -181,6 +184,26 @@ session_start();
   if (isset($_POST["zipCode"])) {
     $_SESSION["zipCode"] = $_POST["zipCode"];
   }
+  if (isset($_POST["card_type"])) {
+    $_SESSION["card_type"] = $_POST["card_type"];
+  }
+  if (isset($_POST["card_name"])) {
+    $_SESSION["card_name"] = $_POST["card_name"];
+  }
+  if (isset($_POST["card_number"])) {
+    $_SESSION["card_number"] = $_POST["card_number"];
+  }
+  if (isset($_POST["card_security"])) {
+    $_SESSION["card_security"] = $_POST["card_security"];
+  }
+  if (isset($_POST["card_exp_month"])) {
+    $_SESSION["card_exp_month"] = $_POST["card_exp_month"];
+  }
+  if (isset($_POST["card_exp_year"])) {
+    $_SESSION["card_exp_year"] = $_POST["card_exp_year"];
+  }
+  
+  var_dump($_SESSION);
   ?>
   <?php include('footer.php'); ?>
 </body>
