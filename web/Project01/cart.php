@@ -91,27 +91,27 @@ $error_msg = $_GET['error'];
   if (isset($_POST['submit_p1']) && $_SESSION["prod1"] >= 1) {
     unset($_SESSION["prod1"]);
     $_SESSION["prod1"] = "0";
-    header("Refresh:0");
+    header("Refresh:2");
   }
   if (isset($_POST['submit_p2']) && $_SESSION["prod2"] >= 1) {
     unset($_SESSION["prod2"]);
     $_SESSION["prod2"] = "0";
-    header("Refresh:0");
+    header("Refresh:2");
   }
   if (isset($_POST['submit_p3']) && $_SESSION["prod3"] >= 1) {
     unset($_SESSION["prod3"]);
     $_SESSION["prod3"] = "0";
-    header("Refresh:0");
+    header("Refresh:2");
   }
   if (isset($_POST['submit_p4']) && $_SESSION["prod4"] >= 1) {
     unset($_SESSION["prod4"]);
     $_SESSION["prod4"] = "0";
-    header("Refresh:0");
+    header("Refresh:2");
   }
   if (isset($_POST['submit_p5']) && $_SESSION["prod5"] >= 1) {
     unset($_SESSION["prod5"]);
     $_SESSION["prod5"] = "0";
-    header("Refresh:0");
+    header("Refresh:2");
   }
   ?>
 

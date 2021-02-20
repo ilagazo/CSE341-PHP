@@ -161,7 +161,7 @@ session_start();
   <!-- Make Session Variables for Payment Info -->
   <?php
   if (isset($_POST["first_name"])) {
-    $_SESSION["first_Name"] = $_POST["first_name"];
+    $_SESSION["first_name"] = $_POST["first_name"];
   }
   if (isset($_POST["last_name"])) {
     $_SESSION["last_name"] = $_POST["last_name"];
@@ -203,6 +203,7 @@ session_start();
     $_SESSION["card_exp_year"] = $_POST["card_exp_year"];
   }
   
+  // For Debugging. Remove later
   var_dump($_SESSION);
   ?>
   <?php include('footer.php'); ?>
