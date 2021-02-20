@@ -2,6 +2,50 @@
 session_start();
 var_dump($_SESSION);
 
+// Make Session Variables for Payment Info
+if (isset($_POST["first_name"])) {
+  $_SESSION["first_name"] = $_POST["first_name"];
+}
+if (isset($_POST["last_name"])) {
+  $_SESSION["last_name"] = $_POST["last_name"];
+}
+if (isset($_POST["email_input"])) {
+  $_SESSION["email_input"] = $_POST["email_input"];
+}
+if (isset($_POST["phone"])) {
+  $_SESSION["phone"] = $_POST["phone"];
+}
+if (isset($_POST["address"])) {
+  $_SESSION["address"] = $_POST["address"];
+}
+if (isset($_POST["city"])) {
+  $_SESSION["city"] = $_POST["city"];
+}
+if (isset($_POST["state"])) {
+  $_SESSION["state"] = $_POST["state"];
+}
+if (isset($_POST["zipCode"])) {
+  $_SESSION["zipCode"] = $_POST["zipCode"];
+}
+if (isset($_POST["card_type"])) {
+  $_SESSION["card_type"] = $_POST["card_type"];
+}
+if (isset($_POST["card_name"])) {
+  $_SESSION["card_name"] = $_POST["card_name"];
+}
+if (isset($_POST["card_number"])) {
+  $_SESSION["card_number"] = $_POST["card_number"];
+}
+if (isset($_POST["card_security"])) {
+  $_SESSION["card_security"] = $_POST["card_security"];
+}
+if (isset($_POST["card_exp_month"])) {
+  $_SESSION["card_exp_month"] = $_POST["card_exp_month"];
+}
+if (isset($_POST["card_exp_year"])) {
+  $_SESSION["card_exp_year"] = $_POST["card_exp_year"];
+}
+
 $first_name = $_SESSION['first_name'];
 $last_name = $_SESSION['last_name'];
 $email = htmlspecialchars($_SESSION['email_input']);
