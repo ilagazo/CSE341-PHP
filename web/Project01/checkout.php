@@ -63,7 +63,7 @@ session_start();
     <h3>Please Fill Out Your Information:</h3>
     <p>Your Information is secure and will never be shared with other parties.</p>
   </div>
-  <form action="../Project01/checkout.php" method="POST">
+  <form action="../Project01/insertDB.php" method="POST">
     <div class="billing_info">
       <div class="billing_info_seperate">
         <div class="form-group">
