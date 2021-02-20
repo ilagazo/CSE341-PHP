@@ -58,28 +58,36 @@ session_start();
   <h3>Please Fill Out Your Information</h3>
   <div class="billing_info">
     <form action="../Project01/insertDB.php" method="POST">
-      <div class="billing_info_seperate">
-        <div class="form-group">
-          <label for="first_name">First Name:</label>
-          <input type="text" id="first_name" name="first_name" required maxlength="50" placeholder="First Name">
-        </div>
-        <div class="form-group">
-          <label for="last_name">Last Name:</label>
-          <input type="text" id="last_name" name="last_name" required maxlength="50" placeholder="Last Name">
-        </div>
-        <!-- May break here -->
-        <div class="form-group">
+      <!-- <div class="billing_info_seperate"> -->
+      <div class="form-group">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required maxlength="50" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required maxlength="50" placeholder="Last Name">
+      </div>
+      <!-- May break here -->
+      <div class="form-group">
+        <div class="input-group mb-3">
           <label for="email_input">Email:</label>
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">@</span>
           </div>
           <input type="email" id="email_input" name="email_input" class="form-control" placeholder="name@example.com">
         </div>
-        <div class="form-group">
-          <label for="phone">Phone Number:</label>
+      </div>
+      <div class="form-group">
+        <div class="input-group mb-3">
+        <label for="phone">Phone Number:</label>
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">#</span>
+          </div>
           <input type="text" id="phone" name="phone" required minlength="11" maxlength="11" placeholder="19511111111">
         </div>
       </div>
+      <!-- </div> -->
+
       <div class="billing_info_seperate">
         <label for="address">Street Address:</label>
         <input type="text" id="address" name="address" required maxlength="50" placeholder="Address">
@@ -91,6 +99,7 @@ session_start();
         <input type="text" id="zipCode" name="zipCode" required maxlength="10" placeholder="Zip Code">
       </div>
       <div class="billing_info_seperate">
+
         <!-- Radio Buttons -->
         <div class="form-check form-check-inline">
           <input type="radio" id="card_type_visa" name="card_type" value="Visa" class="form-check-input">
@@ -126,6 +135,7 @@ session_start();
     </form>
   </div>
 
+  <!-- Fix this -->
   <!-- Make Session Variables for Payment Info -->
   <?php
   if (isset($_POST["first_name"])) {

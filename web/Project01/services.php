@@ -73,6 +73,13 @@ session_start();
 
         <!-- Check if items were sent via post and add to Global session variable-->
         <?php
+        // Default values set to 0
+        $_SESSION["prod1"] = '0';
+        $_SESSION["prod2"] = '0';
+        $_SESSION["prod3"] = '0';
+        $_SESSION["prod4"] = '0';
+        $_SESSION["prod5"] = '0';
+
         if (isset($_POST["prod1"])) {
             $_SESSION["prod1"] = $_POST["prod1"];
         }
