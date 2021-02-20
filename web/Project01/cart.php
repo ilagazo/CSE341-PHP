@@ -69,8 +69,8 @@ var_dump($_SESSION);
 
   <!-- Button Container -->
   <div class="button_checkout">
-    <a class="btn btn-outline-primary" href="../Project01/isProductThere.php">Continue Shopping</a>
-    <a class="btn btn-outline-primary" href="../Project01/checkout.php">Proceed to Checkout</a>
+    <a class="btn btn-outline-primary" href="../Project01/services.php">Continue Shopping</a>
+    <a class="btn btn-outline-primary" href="../Project01/isProductThere.php">Proceed to Checkout</a>
   </div>
 
   <?php include('footer.php'); ?>
