@@ -25,7 +25,7 @@ session_start();
         <img src="../Project01/Images/hero_services.jpg" alt="Josie's Mountain Spa Retreat Aromatherapy Treatment">
     </div>
     <div class="text-section">
-        <h2>How It Works:</h2>
+        <h2>How It Works</h2>
         <p>We've provided a unique way for you to order the packages you want ahead of time. Simply pick and choose the experiences you want to enjoy
             and once you've finished checking out, we will contact you to schedule an appointment for the best possible time!<br><br>
             <b>Remember, all packages come with access to the pool and patio, and a complimentary meal.</b>

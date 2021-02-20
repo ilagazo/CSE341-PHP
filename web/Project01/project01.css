@@ -149,7 +149,7 @@ th {
   flex-flow: column wrap;
 }
 
-.radio_container {
+/* .radio_container {
   padding: 5px;
   margin: 5px;
   justify-content: space-evenly;
@@ -157,7 +157,7 @@ th {
   text-align: center;
   display: flex;
   flex-flow: row wrap;
-}
+} */
 
 .display_customer_info {
   justify-content: center;

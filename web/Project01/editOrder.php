@@ -131,20 +131,19 @@ $emp_id = $_GET['transfer_id']
             </div>
             <div class="billing_info_seperate">
                 <!-- Radio Buttons -->
-                <div class="radio_container">
-                    <div>
-                        <input type="radio" id="card_type_visa" name="card_type" value="Visa" required>
-                        <label for="card_type_visa">Visa</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="card_type_mc" name="card_type" value="Mastercard" required>
-                        <label for="card_type_mc">Mastercard</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="card_type_dis" name="card_type" value="Discover" required>
-                        <label for="card_type_dis">Discover</label>
-                    </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="card_type_visa" name="card_type" value="Visa" class="form-check-input">
+                    <label for="card_type_visa" class="form-check-label">Visa</label>
                 </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="card_type_mc" name="card_type" value="Mastercard" class="form-check-input">
+                    <label for="card_type_mc" class="form-check-label">Mastercard</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="card_type_dis" name="card_type" value="Discover" class="form-check-input">
+                    <label for="card_type_dis" class="form-check-label">Discover</label>
+                </div>
+
                 <label for="card_name">Name on Card:</label>
                 <input type="text" id="card_name" name="card_name" required maxlength="255">
                 <label for="card_number">Card Number:</label>

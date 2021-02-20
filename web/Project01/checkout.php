@@ -22,8 +22,9 @@ session_start();
   <h1><a href="../Project01/homepage.php">Josie's Mountain Spa Retreat</a></h1>
   <?php include('navbar.php'); ?>
   <div class="heroImg">
-    <img src="../Project01/Images/hero_checkout.jpg" alt="Josie's Mountain Spa Retreat Aromatherapy Service">
+    <img src="../Project01/Images/hero_checkout.jpg" alt="Josie's Mountain Spa Retreat Lounge">
   </div>
+  <h2>Please Review Your Order</h2>
   <!-- Products -->
   <div class="product_container">
     <div class="product">
@@ -58,44 +59,69 @@ session_start();
   <div class="billing_info">
     <form action="../Project01/insertDB.php" method="POST">
       <div class="billing_info_seperate">
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" required maxlength="50">
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" required maxlength="50">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required maxlength="50">
-        <label for="phone">Phone Number:</label>
-        <input type="text" id="phone" name="phone" required minlength="11" maxlength="11">
+        <div class="form-group">
+          <label for="first_name">First Name:</label>
+          <input type="text" id="first_name" name="first_name" required maxlength="50" placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name:</label>
+          <input type="text" id="last_name" name="last_name" required maxlength="50" placeholder="Last Name">
+        </div>
+        <!-- May break here -->
+        <div class="form-group">
+          <label for="email_input">Email:</label>
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+          </div>
+          <input type="email" id="email_input" name="email_input" class="form-control" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="text" id="phone" name="phone" required minlength="11" maxlength="11" placeholder="19511111111">
+        </div>
       </div>
       <div class="billing_info_seperate">
         <label for="address">Street Address:</label>
-        <input type="text" id="address" name="address" required maxlength="50">
+        <input type="text" id="address" name="address" required maxlength="50" placeholder="Address">
         <label for="state">State:</label>
-        <input type="text" id="state" name="state" required maxlength="14">
+        <input type="text" id="state" name="state" required maxlength="14" placeholder="State (i.e. UT)">
         <label for="city">City:</label>
-        <input type="text" id="city" name="city" required maxlength="50">
+        <input type="text" id="city" name="city" required maxlength="50" placeholder="City">
         <label for="zipCode">Zipcode:</label>
-        <input type="text" id="zipCode" name="zipCode" required maxlength="10">
+        <input type="text" id="zipCode" name="zipCode" required maxlength="10" placeholder="Zip Code">
       </div>
       <div class="billing_info_seperate">
-        <label for="card_type">Card Type:</label>
-        <input type="text" id="card_type" name="card_type" required maxlength="50">
+        <!-- Radio Buttons -->
+        <div class="form-check form-check-inline">
+          <input type="radio" id="card_type_visa" name="card_type" value="Visa" class="form-check-input">
+          <label for="card_type_visa" class="form-check-label">Visa</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" id="card_type_mc" name="card_type" value="Mastercard" class="form-check-input">
+          <label for="card_type_mc" class="form-check-label">Mastercard</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" id="card_type_dis" name="card_type" value="Discover" class="form-check-input">
+          <label for="card_type_dis" class="form-check-label">Discover</label>
+        </div>
+        <!-- <label for="card_type">Card Type:</label>
+        <input type="text" id="card_type" name="card_type" required maxlength="50" placeholder="Card Type"> -->
         <label for="card_name">Name on Card:</label>
-        <input type="text" id="card_name" name="card_name" required maxlength="255">
+        <input type="text" id="card_name" name="card_name" required maxlength="255" placeholder="Name on Card">
         <label for="card_number">Card Number:</label>
-        <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16">
+        <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16" placeholder="Card Number">
         <label for="card_security">Security Code:</label>
-        <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3">
+        <input type="number" id="card_security" name="card_security" min="0" minlength="3" maxlength="3" placeholder="Security Code">
         <label for="card_exp_month">Expiration Month:</label>
-        <input type="number" id="card_exp_month" name="card_exp_month" min="0" minlength="2" maxlength="2">
+        <input type="number" id="card_exp_month" name="card_exp_month" min="0" minlength="2" maxlength="2" placeholder="Exp. Month">
         <label for="card_exp_month">Expiration Year:</label>
-        <input type="number" id="card_exp_year" name="card_exp_year" min="0" minlength="2" maxlength="2">
+        <input type="number" id="card_exp_year" name="card_exp_year" min="0" minlength="2" maxlength="2" placeholder="Exp. Year">
       </div>
 
       <!-- Button Container -->
       <div class="button_checkout">
-        <a class="btn btn-secondary" href="../Project01/cart.php">Return to Cart</a>
-        <button class="btn btn-secondary" type="submit" name="submitChecktout">Confirm Purchase</button>
+        <a class="btn btn-outline-primary" href="../Project01/cart.php">Return to Cart</a>
+        <button class="btn btn-outline-primary" type="submit" name="submitChecktout">Confirm Purchase</button>
       </div>
     </form>
   </div>
@@ -107,6 +133,9 @@ session_start();
   }
   if (isset($_POST["last_name"])) {
     $_SESSION["last_name"] = $_POST["last_name"];
+  }
+  if (isset($_POST["email_input"])) {
+    $_SESSION["email_input"] = $_POST["email_input"];
   }
   if (isset($_POST["address"])) {
     $_SESSION["address"] = $_POST["address"];

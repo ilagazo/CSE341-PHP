@@ -30,7 +30,7 @@ var_dump($_SESSION);
   <div class="heroImg">
     <img src="../Project01/Images/hero_cart.jpg" alt="Josie's Mountain Spa Retreat Fireplace">
   </div>
-  <h2>Please Review Your Order</h2>
+  <h2>Cart</h2>
   <div class="text-section">
     <h2>Your Satisfaction is Our Guarantee</h2>
     <p><b>Remember, all packages come with access to the pool and patio, and a complimentary meal.</b></p>
