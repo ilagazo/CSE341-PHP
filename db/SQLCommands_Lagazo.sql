@@ -78,7 +78,7 @@ INSERT INTO product (product_name, price, quantity)
 VALUES ('Hot Stone Massage', '120', '1');
 
 INSERT INTO employee (username, employee_password, email, first_name, last_name, phone_number, occupation)
-VALUES ('jill.korn', 'jill.korn121', 'jill.korn@gmail.com', 'Jill', 'Korn', '9512222222', 'Therapist');
+VALUES ('jill.korn', 'jill.korn121', 'jill.korn@gmail.com', 'Jill', 'Korn', '9512222222', 'Manager');
 
 INSERT INTO customer_order (customer_id, payment_id, product_id, address_id)
 VALUES ((SELECT customer_id from customer), (SELECT payment_id from payment), (SELECT product_id from product), (SELECT address_id from address));
@@ -147,9 +147,9 @@ WHERE customer_id='{$cust_id}';
 UPDATE payment SET payment_type='{$cardType}', card_number='{$card_number}', security_code='{$card_security}', exp_month='{$exp_month}', exp_year='{$exp_year}', name_on_card='{$card_name}'
 WHERE payment_id='{$pay_id}';
 
- UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$adress_state}, 'postal_code='{$zipCode}' 
+ UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$adress_state}', postal_code='{$zipCode}' 
     WHERE address_id='{$add_id}';
-
+    
 -- Delete Data
 DELETE FROM customer_order WHERE order_id='{$id}';
 DELETE FROM customer WHERE customer_id='{$cust_id}';
