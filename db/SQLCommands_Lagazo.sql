@@ -121,25 +121,6 @@ VALUES ('josie.russian', 'josie.russian212', 'josie.russian@gmail.com', 'Josie',
 INSERT INTO customer_order (customer_id, payment_id, product_id, address_id)
 VALUES ((SELECT customer_id from customer WHERE customer_id = '3'), (SELECT payment_id from payment where payment_id = '3'), (SELECT product_id from product WHERE product_id = '3'), (SELECT address_id from address WHERE address_id = '3'));
 
---  Commands needed to alter data tables if needed
-ALTER TABLE customer
-DROP COLUMN phone_number;
-
-ALTER TABLE customer
-ADD phone_number varchar(11) not null;
-
-ALTER TABLE payment
-DROP COLUMN card_number;
-
-ALTER TABLE payment
-ADD card_number varchar(16) NOT NULL;
-
-ALTER TABLE employee
-DROP COLUMN phone_number;
-
-ALTER TABLE employee
-ADD phone_number varchar(11) not null;
-
 -- Commands needed to update data
 UPDATE customer SET first_name='{$first_name}', last_name='{$last_name}', email='{$email}', phone_number='{$phone}' 
 WHERE customer_id='{$cust_id}';
@@ -147,8 +128,11 @@ WHERE customer_id='{$cust_id}';
 UPDATE payment SET payment_type='{$cardType}', card_number='{$card_number}', security_code='{$card_security}', exp_month='{$exp_month}', exp_year='{$exp_year}', name_on_card='{$card_name}'
 WHERE payment_id='{$pay_id}';
 
- UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$adress_state}', postal_code='{$zipCode}' 
-    WHERE address_id='{$add_id}';
+UPDATE address SET address_st='{$address_st}', city='{$city}', state='{$adress_state}', postal_code='{$zipCode}' 
+WHERE address_id='{$add_id}';
+    
+UPDATE employee SET username='{$emp_username}', employee_password='{$emp_pw}', email='{$emp_email}', first_name='{$emp_fn}', last_name='{$emp_ln}', phone_number='{$emp_phone}'
+WHERE employee_id='{$emp_id}';
     
 -- Delete Data
 DELETE FROM customer_order WHERE order_id='{$id}';
@@ -157,10 +141,62 @@ DELETE FROM payment WHERE payment_id='{$pay_id}';
 DELETE FROM address WHERE address_id='{$add_id}';
 DELETE FROM product WHERE product_id='{$prod_id}';
 
--- View Data
-SELECT * FROM customer_order;
-SELECT * FROM customer;
-SELECT * FROM address;
-SELECT * FROM payment;
-SELECT * FROM product;
-SELECT * FROM employee;
+
+-- Select Specific data to pull from
+SELECT employee.first_name, employee.last_name, employee.occupation, employee.phone_number, employee.email, employee.employee_password, employee.username
+FROM employee WHERE employee.employee_id = '{$emp_id}';
+
+SELECT employee.first_name, employee.last_name, employee.employee_id, employee.occupation
+FROM employee WHERE employee.employee_id = '{$emp_id}';
+    
+SELECT employee.employee_id, employee.username, employee.employee_password
+FROM employee WHERE employee.username = :username;
+    
+SELECT customer_order.order_id, customer.first_name, customer.last_name, customer.email, customer.phone_number, product.product_name, product.price, product.quantity
+FROM customer_order 
+INNER JOIN customer ON customer_order.customer_id = customer.customer_id
+INNER JOIN product ON customer_order.product_id = product.product_id;
+
+SELECT customer_order.order_id, customer_order.customer_id, customer_order.payment_id, customer_order.product_id, customer_order.address_id,
+                                customer.first_name, customer.last_name, customer.email, customer.phone_number, 
+                                product.product_name, product.price, product.quantity,
+                                address.address_st, address.city, address.postal_code, address.state,
+                                payment.payment_type, payment.card_number, payment.name_on_card
+                                FROM customer_order 
+                                INNER JOIN customer ON customer_order.customer_id = customer.customer_id
+                                INNER JOIN payment ON customer_order.payment_id = payment.payment_id
+                                INNER JOIN address ON customer_order.address_id = address.address_id
+                                INNER JOIN product ON customer_order.product_id = product.product_id
+                                WHERE customer_order.order_id = '{$id}';
+                                
+-- Insert into DB
+INSERT INTO customer(first_name, last_name, email, phone_number) 
+VALUES('{$first_name}', '{$last_name}', '{$email}', '{$phone}');
+
+INSERT INTO address(address_st, city, state, postal_code) 
+VALUES('{$address_st}', '{$city}', '{$address_state}', '{$zipCode}');
+
+INSERT INTO payment(payment_type, card_number, security_code, exp_month, exp_year, name_on_card)
+VALUES('{$cardType}', '{$card_number}', '{$card_security}', '{$exp_month}', '{$exp_year}', '{$card_name}');
+
+INSERT INTO product(product_name, price, quantity)
+VALUES('{$prod1_name}', '{$prod1_price}', '{$prod1_qty}');  
+ 
+INSERT INTO product(product_name, price, quantity)
+VALUES('{$prod2_name}', '{$prod2_price}', '{$prod2_qty}');
+    
+INSERT INTO product(product_name, price, quantity)
+VALUES('{$prod3_name}', '{$prod3_price}', '{$prod3_qty}');
+
+INSERT INTO product(product_name, price, quantity)
+VALUES('{$prod4_name}', '{$prod4_price}', '{$prod4_qty}');
+
+INSERT INTO product(product_name, price, quantity)
+VALUES('{$prod5_name}', '{$prod5_price}', '{$prod5_qty}');
+
+INSERT INTO customer_order(customer_id, payment_id, product_id, address_id) 
+VALUES (
+(SELECT customer_id from customer WHERE customer.email = '{$email}' AND customer.phone_number = '{$phone}' AND customer.last_name = '{$last_name}'),
+(SELECT payment_id from payment WHERE payment.card_number = '{$card_number}' AND payment.security_code = '{$card_security}'), 
+    --  (SELECT product_id from product),
+(SELECT address_id from address WHERE address.address_st = '{$address_st}' AND address.postal_code = '{$zipCode}'));
